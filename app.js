@@ -1,13 +1,12 @@
+var router = require("./router.js");
+
 const http = require('http');
 
 const hostname = '127.0.0.1';
 const port = 8080;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.write('Hello Andrew');
-  res.end('Hello World\n');
+const server = http.createServer((request, response) => {
+ router.home(request,response);
 });
 
 server.listen(port, hostname, () => {
