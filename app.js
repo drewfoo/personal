@@ -1,16 +1,38 @@
-var router = require("./router.js");
+// require node modules
+var express = require('express');
+var app = express();
 
-const http = require('http');
+// set app to use pug view engine and source for static files
+app.set('view engine', 'pug');
+app.use(express.static('public'));
 
-const hostname = '127.0.0.1';
-const port = 8080;
-
-const server = http.createServer((request, response) => {
- router.home(request,response);
+// beginning of app routing
+app.get('/', function(req, res){
+  res.render('index', {title : "HEY", message : "IT WORKED!!!"});
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(3000);
 
-//testing this commit
+
+
+
+
+
+
+
+// var router = require("./router.js");
+
+// const http = require('http');
+
+// const hostname = '127.0.0.1';
+// const port = 8080;
+
+// const server = http.createServer((request, response) => {
+//  router.home(request,response);
+// });
+
+// server.listen(port, hostname, () => {
+//   console.log(`Server running at http://${hostname}:${port}/`);
+// });
+
+// //testing this commit
