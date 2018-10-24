@@ -14,6 +14,7 @@ router.get('/next/:id', function(req, res){
     const message = cards[id][side];
     const templateData = { message };
 
+
     res.render('index', templateData)
 
     // if ( side === "") {

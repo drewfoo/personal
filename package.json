@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/drewfoo/Personal#readme",
   "dependencies": {
+    "bson-ext": "^2.0.1",
     "express": "^4.16.3",
+    "kerberos": "^1.0.0",
+    "mongodb": "^3.1.7",
     "pug": "^2.0.3"
   }
 }
