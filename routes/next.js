@@ -31,4 +31,14 @@ router.get('/next', function(req,res) {
     message : "TESTING MAIN NEXT PAGE" });
 });
 
+// GET  /register
+router.get('/register', function(req,res,next) {
+    return res.send ('Register today!!');
+});
+
+// POST /register to create new user in the database
+router.post('/register', function(req,res,next) {
+    return res.send ('Registration complete!!!');
+})
+
 module.exports = router;
