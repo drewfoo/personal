@@ -1,8 +1,6 @@
-html
-  include head
-  body
-    include header
-    h1 message : #{message}
-    h1= message
-    h1= `message : ${message}`
-    include footer
+extends layout
+
+block content
+  h1 message : #{message}
+  h1= message
+  h1= `message : ${message}`
