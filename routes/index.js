@@ -4,7 +4,6 @@ var router = express.Router();
 //need to require any mongoose schemas
 var User = require('../models/user');
 
-
 // Homepage Route
 router.get('/', function(req, res){
     res.render('home', {title : "HEY", message : "This is the main index.js page"});
