@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve Static Files and View Engine Setup
-app.set('view engine', 'pug');
 app.use(express.static('public'));
+app.set('view engine', 'pug');
 
 // Import and Use Route Files
 

@@ -7,6 +7,11 @@ var User = require('../models/user');
 
 // Homepage Route
 router.get('/', function(req, res){
+    res.render('home', {title : "HEY", message : "This is the main index.js page"});
+});
+
+// Test Route
+router.get('/index', function(req, res){
     res.render('index', {title : "HEY", message : "This is the main index.js page"});
 });
 
