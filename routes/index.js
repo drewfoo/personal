@@ -1,25 +1,72 @@
 var express = require('express');
 var router = express.Router();
+var User = require('../models/user')
+var mid = require('../middleware');
 
-//need to require any mongoose schemas
-var User = require('../models/user');
 
-// Homepage Route
-router.get('/', function(req, res){
-    res.render('home', {title : "HEY", message : "This is the main index.js page"});
+// GET /profile
+router.get('/profile', mid.requiresLogIn, function(req, res, next) {
+    // if (! req.session.userId ) {
+    //   var err = new Error("You are not authorized to view this page.");
+    //   err.status = 403;
+    //   return next(err);
+    // }
+    User.findById(req.session.userId)
+        .exec(function (error, user) {
+          if (error) {
+            return next(error);
+          } else {
+            return res.render('profile', { title: 'Profile', name: user.name, favorite: user.favoriteBook });
+          }
+        });
+  });
+
+// GET /logout
+router.get('/logout', function(req,res,next) {
+    if (req.session) {
+        //delete session object
+        req.session.destroy( function(err) {
+            if(err) {
+                return next(err);
+            } else {
+                return res.redirect('/');
+            }
+        });
+    }
 });
 
-// Test Route
-router.get('/index', function(req, res){
-    res.render('index', {title : "HEY", message : "This is the main index.js page"});
+// GET /login
+router.get('/login', mid.loggedOut, function(req,res,next){
+    res.render('login', { title : 'Login Page'});
 });
 
-// Registration Route (GET)
-router.get('/register', function(req,res,next){
+// POST /login
+router.post('/login', function(req, res, next) {
+    if (req.body.email && req.body.password) {
+        User.authenticate(req.body.email, req.body.password, function (error, user) {
+        if (error || !user) {
+            var err = new Error('Wrong email or password.');
+            err.status = 401;
+            return next(err);
+        }  else {
+            req.session.userId = user._id;
+            return res.redirect('/profile');
+        }
+        });
+    } else {
+        var err = new Error('Email and password are required.');
+        err.status = 401;
+        return next(err);
+    }
+});
+
+// GET /register
+// setting middleware to see if they are logged in or not
+router.get('/register', mid.loggedOut, function(req,res,next){
     res.render('register', {title : "Sign Up"} );
 });
 
-// Registration Route (POST)
+// POST /register
 router.post('/register', function(req,res,next){
     // validation
     if (req.body.email &&
@@ -49,6 +96,7 @@ router.post('/register', function(req,res,next){
                 if (error) {
                     return next(error)
                 } else {
+                    req.session.userId = user._id;
                     return res.redirect('/profile');
                 }
             });
@@ -60,10 +108,12 @@ router.post('/register', function(req,res,next){
         }
 });
 
-//Profile Route
-router.get('/profile', function(req,res){
-    res.render('profile', { title : "Profile"});
+// Homepage Route
+router.get('/', function(req, res){
+    res.render('home', {title : "HEY", message : "This is the main index.js page"});
 });
+
+
 
 // Sitemap Route
 router.get('/sitemap', function(req, res){
