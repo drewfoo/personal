@@ -51,9 +51,9 @@ app.set('views',[__dirname + '/views/', __dirname + '/views/playbook']);
 
 // Import and Use Route Files
 
-let mainRoutes  = require('./routes')
-let playbookRoutes = require('./routes/playbook')
-let siteMap = require('./routes/sitemap')
+const mainRoutes = require('./routes');
+const playbookRoutes = require('./routes/playbook');
+const siteMap = require('./routes/sitemap');
 
 app.use(mainRoutes);
 app.use(playbookRoutes);
