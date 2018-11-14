@@ -1,29 +1,32 @@
 //require mongoose
 //need to create a new schema with the schema object and pass the object of keys/values from the value and make sure we get all the data
 
-var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
-var UserSchema = new mongoose.Schema({
-    email: {
-      type: String,
-      unique: true,
-      required: true,
-      trim: true
-    },
-    name: {
-      type: String,
-      required: true,
-      trim: true
-    },
-    favoriteBook: {
-      type: String,
-      required: true,
-      trim: true
-    },
-    password: {
-      type: String,
-      required: true
-    }
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+let ObjectId = mongoose.Schema.Types.ObjectId;
+
+const UserSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
+  },
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  favoriteBook: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
 });
 
 //authenticate input against database documents
