@@ -1,24 +1,25 @@
 // require node modules
-var express = require('express');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const session = require('express-session');
 // this calls connect mongo and allows it access to the session
-var MongoStore = require('connect-mongo')(session);
-var app = express();
+const MongoStore = require('connect-mongo')(session);
+
+const app = express();
 
 // Want to add - chalk, morgan, and debug NPM modules to learn how to debug
 
 
 // MongoDB Connection
-var url = 'mongodb://localhost:27017/Personal';
+const url = 'mongodb://localhost:27017/Personal';
 mongoose.connect(url);
-var db = mongoose.connection;
+const db = mongoose.connection;
 // Mongo Error
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (){
   console.log('"Connected Successfully to the Server');
-})
+});
 
 // Use Sessions for Tracking Logins
 // Will need to eventually change the sesssion store using mongo db
@@ -34,7 +35,7 @@ app.use(session({
 
 // make another middleware for the User ID available to our templates
 // locals in the response is something views can access
-app.use(function (req,res,next){
+app.use(function (req, res, next) {
   res.locals.currentUser = req.session.userId;
   next();
 })
@@ -50,9 +51,9 @@ app.set('views',[__dirname + '/views/', __dirname + '/views/playbook']);
 
 // Import and Use Route Files
 
-var mainRoutes  = require('./routes')
-var playbookRoutes = require('./routes/playbook')
-var siteMap = require('./routes/sitemap')
+let mainRoutes  = require('./routes')
+let playbookRoutes = require('./routes/playbook')
+let siteMap = require('./routes/sitemap')
 
 app.use(mainRoutes);
 app.use(playbookRoutes);
@@ -60,7 +61,7 @@ app.use(siteMap);
 
 // Catch 404 Errors and Forward to Error Handler
 app.use(function(req, res, next) {
-  var err = new Error('File Not Found');
+  let err = new Error('File Not Found');
   err.status = 404;
   next(err);
 });

@@ -42,6 +42,7 @@ router.get('/login', mid.loggedOut, function(req,res,next){
 
 // POST /login
 router.post('/login', function(req, res, next) {
+    // req.session.name = 'test_username';
     if (req.body.email && req.body.password) {
         User.authenticate(req.body.email, req.body.password, function (error, user) {
         if (error || !user) {
