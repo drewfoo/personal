@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    .container
+        .card
+        h5.card-header Featured
+        .card-body
+            h5.card-title Special title treatment
+            p.card-text With supporting text below as a natural lead-in to additional content.
+            a.btn.btn-primary(href='#') Go somewhere
+    .container
+        //- h2 Cards Columns
+        //- p
+        //-     | The .card-columns class creates a masonry-like grid of cards. The layout will automatically adjust as you insert more cards.
+        //- p
+        //-     strong Note:
+        //-     |  The cards are displayed vertically on small screens (less than 576px):
+        .card-columns
+            .card.bg-primary
+            .card-body.text-left
+                a.h5.card-title(href='teams') Teams
+                p.card-text All the different players involved
+            .card.bg-primary
+            .card-body.text-left
+                a.h5.card-title(href='backlog') Backlog                
+                p.card-text All the stuff that needs to be built
+            .card.bg-primary
+            .card-body.text-left
+                a.h5.card-title(href='sprint') Sprint
+                p.card-text All the ways to get the work done
+            .card.bg-primary
+            .card-body.text-left
+                a.h5.card-title(href='delivery') Delivery
+                p.card-text All the things to consider
+            .card.bg-primary
+            .card-body.text-left
+                a.h5.card-title(href='tools') Tools and Templates
+                p.card-text All the things to help you get started
+            .card.bg-primary
+            .card-body.text-left
+                a.h5.card-title(href='artifacts') Agile Artifacts
+                p.card-text All the things that are created
+    
+   
+

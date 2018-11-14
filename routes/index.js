@@ -113,10 +113,13 @@ router.get('/', function(req, res){
     res.render('home', {title : "HEY", message : "This is the main index.js page"});
 });
 
-
+// Playbook Route
+router.get('/playbook', mid.requiresLogIn, function(req,res,next){
+    res.render('playbook',{title : "Playbook"});
+});
 
 // Sitemap Route
-router.get('/sitemap', function(req, res){
+router.get('/sitemap', function(req, res) {
     res.render('sitemap', {title : "Sitemap"});
 });
 

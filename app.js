@@ -7,6 +7,8 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var app = express();
 
+// Want to add - chalk, morgan, and debug NPM modules to learn how to debug
+
 
 // MongoDB Connection
 var url = 'mongodb://localhost:27017/Personal';
@@ -44,15 +46,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Serve Static Files and View Engine Setup
 app.use(express.static('public'));
 app.set('view engine', 'pug');
+app.set('views',[__dirname + '/views/', __dirname + '/views/playbook']);
 
 // Import and Use Route Files
 
 var mainRoutes  = require('./routes')
-var secondRoutes = require('./routes/next')
+var playbookRoutes = require('./routes/playbook')
 var siteMap = require('./routes/sitemap')
 
 app.use(mainRoutes);
-app.use(secondRoutes);
+app.use(playbookRoutes);
 app.use(siteMap);
 
 // Catch 404 Errors and Forward to Error Handler
