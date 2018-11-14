@@ -4,23 +4,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 // this calls connect mongo and allows it access to the session
+var MongoStore = require('connect-mongo')(session);
 var app = express();
 
-
-// Use Sessions for Tracking Logins
-// Will need to eventually change the sesssion store using mongo db
-app.use(session({
-  secret: 'password',
-  resave: true,
-  saveUninitialized: false
-}));
-
-// make another middleware for the User ID available to our templates
-// locals in the response is something views can access
-app.use(function (req,res,next){
-  res.locals.currentUser = req.session.userId;
-  next();
-})
 
 // MongoDB Connection
 var url = 'mongodb://localhost:27017/Personal';
@@ -30,6 +16,25 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (){
   console.log('"Connected Successfully to the Server');
+})
+
+// Use Sessions for Tracking Logins
+// Will need to eventually change the sesssion store using mongo db
+// set a new mongo  store for the session storage middleware
+app.use(session({
+  secret: 'password',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+}));
+
+// make another middleware for the User ID available to our templates
+// locals in the response is something views can access
+app.use(function (req,res,next){
+  res.locals.currentUser = req.session.userId;
+  next();
 })
 
 // Parse Incoming Requests
