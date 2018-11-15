@@ -4,7 +4,17 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-let ObjectId = mongoose.Schema.Types.ObjectId;
+const FeedbackSchema = new mongoose.Schema({
+  createdDate: {
+    type: Date,
+  },
+  summary: {
+    type: String,
+  },
+  note: {
+    type: String,
+  }
+});
 
 const UserSchema = new mongoose.Schema({
   email: {
@@ -26,7 +36,8 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  feedback: [FeedbackSchema]
 });
 
 //authenticate input against database documents
@@ -70,5 +81,8 @@ UserSchema.pre('save', function(next) {
 });
 
 // need to export to use schema in repo, create new variable use model method and then it creates our schema.
+var Feedback = mongoose.model('Feedback', FeedbackSchema);
 var User = mongoose.model('User', UserSchema);
+module.exports = Feedback;
 module.exports = User;
+

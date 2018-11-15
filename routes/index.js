@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user')
+var Feedback = require('../models/user')
 var mid = require('../middleware');
 
 
@@ -60,6 +61,26 @@ router.post('/login', function(req, res, next) {
         return next(err);
     }
 });
+
+// // GET /feedback
+router.get('/feedback', mid.requiresLogIn, function(req, res, next){
+    res.render('feedback', { title: "feedback form"}) ;
+});
+
+// // POST /feedback
+router.post('/feedback', function(req, res, next){
+    let date = new Date();
+
+    Feedback.findOneAndUpdate({_id : req.session.userId }, 
+    { $push : { feedback : { summary : req.body.summary, note : req.body.note, createdDate : date}}},
+    function(error, results){
+        if (error) {
+            return next(error)
+        } else {
+            return res.redirect('/profile');
+        }
+    });
+    });
 
 // GET /register
 // setting middleware to see if they are logged in or not
