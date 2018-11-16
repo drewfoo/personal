@@ -1,5 +1,6 @@
-//require mongoose
-//need to create a new schema with the schema object and pass the object of keys/values from the value and make sure we get all the data
+//  require mongoose
+//  need to create a new schema with the schema object and pass the object of keys/values
+//  from the value and make sure we get all the data
 
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
@@ -40,12 +41,13 @@ const UserSchema = new mongoose.Schema({
   feedback: [FeedbackSchema]
 });
 
-//authenticate input against database documents
-// statics allows you to add methods directly to the model; you can call authenticate later in the program
+// authenticate input against database documents
+// statics allows you to add methods directly to the model;
+// you can call authenticate later in the program
 // Query document, then exec method to perform the search.
 // then compare supplied verses whats in mongo
 
-UserSchema.statics.authenticate = function(email, password, callback) {
+UserSchema.statics.authenticate = function (email, password, callback) {
   User.findOne({ email: email })
       .exec(function (error, user) {
         if (error) {

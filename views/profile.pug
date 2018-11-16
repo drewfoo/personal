@@ -2,7 +2,6 @@ extends layout
 
 
 //- Variable Placeholders
-
 block content
   .main.container.clearfix
     .row
@@ -12,5 +11,10 @@ block content
           | #{name}
         h2.favorite-book Favorite Book
         | #{favorite}
-        h2.favorite-book First Feedback Comment
+        h2.favorite-book Comment List
         | #{feedback}
+        h1.display-4 TESTING functionality
+          ul
+            each val, i in feedback
+              li #{val.summary}  
+                li #{val.note}            
