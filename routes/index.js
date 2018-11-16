@@ -17,7 +17,7 @@ router.get('/profile', mid.requiresLogIn, function(req, res, next) {
           if (error) {
             return next(error);
           } else {
-            return res.render('profile', { title: 'Profile', name: user.name, favorite: user.favoriteBook });
+            return res.render('profile', { title: 'Profile', name: user.name, favorite: user.favoriteBook, feedback : user.feedback[0] });
           }
         });
   });
