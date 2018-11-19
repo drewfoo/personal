@@ -1,35 +1,12 @@
-players
-    create new model to house collection information
-    seed players collection with sample data
-    update GET route to source player model information from DB
-    update pug view to display player information
-    create route to take GET parameters for role (teams/product_owner)
-    create pug view to display teams/product_owner level information including detail, responsibilities, roles in different plays,
-playbooks
-    create new model to house playbook information
-    reference player IDs as part of playbook array values
-    seed DB with correct player ID references
-    update GET route to source playbook information from DB and look up the players that have a role in that playbook
-    update pug view to display playbook information
-    create route to take GET paramaters for role (playbook/backlog)
-    create pug view to display playbook/backlog level information using parameters
-
-
-
-
-
-
-
-
 {
+    "_id": ObjectID("C0001"),
     "name": "Product Owner",
     "team": "Core Team",
     "summary": "Owns What and When To Build",
     "detail": "DETAIL PRODUCT OWNER - Lorem ipsum dolor sit amet",
     "position": "POSITION PRODUCT OWNER - Lorem ipsum dolor sit amet",
     "responsibilities": "RESPONSIBILITIES PRODUCT OWNER - Lorem ipsum dolor sit amet",
-    "role": [] })
-    
+    "role": [    
         {
             "_id": 
             "playbook": Backlog
@@ -47,23 +24,130 @@ playbooks
     ]
 }
 
-// Playbooks Sample JSON for Model Creation
 {
-    "_id": qwer
-    "name": Backlog
-    "summary": Lorem Ipsum
-    "detail": Lorem Ipusm
-    "players": [Array of Player.role IDs that will be used to query the sub-document with the same role as the Playbook Name]
-    "plays": [Array of Play IDs that will be used to query that sub-document
+    "_id": ObjectID("C0002"),
+    "name": "Scrum Master",
+    "team": "Core Team",
+    "summary": "Owns What and When To Build",
+    "detail": "DETAIL SCRUM MASTER - Lorem ipsum dolor sit amet",
+    "position": "POSITION SCRUM MASTER - Lorem ipsum dolor sit amet",
+    "responsibilities": "RESPONSIBILITIES SCRUM MASTER - Lorem ipsum dolor sit amet",
+    "role": [    
+        {
+            "_id": 
+            "playbook": Backlog
+            "play": Grooming
+            "summary": Lorem ipsum
+            "responsibility": Lorem Ipsum 
+        },
+        {
+            "_id":
+            "playbook": Sprint
+            "play": Sprint Demo
+            "summary": Lorem ipsum
+            "responsibility": Lorem Ipsum - Sprint Demo
+        }
+    ]
+}
+
+// Playbook and Plays Sample JSON for Model Creation
+{
+    "_id": ObjectId("A0001"),
+    "name": Main,
+    "summary": Lorem Ipsum,
+    "detail": Lorem Ipusm,
+    "players": [],
+    "plays": []
+}
+
+{
+    "_id": ObjectId("A0002"),
+    "name": Backlog,
+    "summary": Lorem Ipsum,
+    "detail": Lorem Ipusm,
+    "players": [ObjectID("C0001"), ObjectID("C0002")],
+    "plays": [ObjectID("B0001")]
 }
 
 // Plays Sample JSON for Model Creation
 
 {
-    "_id": qwer
-    "name": Backlog Grooming
-    "summary": Lorem Ipsum
-    "detail": Lorem Ipusm
-    "players": [player IDs],
-    "
+    "_id": ObjectId("B0001"),
+    "name": Grooming,
+    "summary": Lorem Ipsum,
+    "detail": Lorem Ipusm,
+    "players": [ObjectID("C0001"),ObjectID("C0002")]
+    // Query the player and the search for the name of the play in the roles array
 }
+
+{
+    "_id": ObjectId("B0002"),
+    "name": Sprint Demo,
+    "summary": Lorem Ipsum,
+    "detail": Lorem Ipusm,
+    "players": [player IDs]
+}
+
+
+Implementation Steps:
+    Design App
+        1. Create Style Guide
+        2. Design Wireframes
+            - Homepage
+            - Login Page
+            - Playbook(s)
+            - Play(s)
+            - Players
+            - Index
+    Content Creation 
+        1. Define List of Playbooks
+        2. Define List of Plays
+        3. Define List of Players and Roles
+        4. Define Relationships Between Playbooks <> Plays <> Players
+            - Use Cases:
+                - Get Playbook(s)
+                    - Get Plays By Playbook
+                    - Get Players By Playbook
+                - Get Play(s)
+                    - Get Player(s) by Plays
+                - Get Player(s)
+                    - Get Play(s) by Player
+    Database Creation and Seeding
+        1. Create Playbook Collection
+        2. Create Players Collection
+        3. Create Plays Collection
+        4. Seed Collection Data and Define Relationships
+    App Creation
+        1. Create Players Schema
+        2. Create Plays Schema and Create References to Players 
+        3. Create Playbook Schema and Create References to Players & Plays
+        4. Master Playbook
+            - Create GET Route
+            - Create Dynamic PUG Template
+            - Display Master Playbook Information + Sub-Playbook List
+            - Create Links for Sub-Playbook List (/playbook/backlog)
+            - Create Sub-Playbook Pug Templates
+            - Create Sub-Playbook GET Routes
+        5. Sub-Playbook
+            - Update Dynamic GET Routes (/playbook/backlog or /playbook/teams)
+            - Update Dynamic PUG Templates
+            - Display Sub-Playbook Information + Players + Plays Information
+            - Create Link to Plays List (/playbook/backlog/grooming or /playbook/backlog?play=grooming)
+            - Create Plays Pug Templates
+            - Create Plays GET Routes
+        6. Plays
+            - Update Dynamic GET Routes (/playbook/backlog/grooming or /playbook/backlog?play=grooming)
+            - Update Dynamic PUG Templates
+            - Display Plays Information + Players + Roles
+        7. Player Profile Pages
+            - Create GET Route
+            - Create Dynamic PUG Template
+            - Display Player Information + Roles & Responsibilities
+            - Provide Links to Plays or Playbooks
+        8. Index List (Players and Plays)
+            - Create GET Route
+            - Create Dynamic PUG Template
+            - Display Master Plays List + Dynamic Links to Plays
+            - Display Master Players List + Dynamic Links to Players
+
+
