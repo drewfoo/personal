@@ -45,7 +45,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve Static Files and View Engine Setup
-app.use(express.static('public'));
+app.use(express.static('assets'));
 app.set('view engine', 'pug');
 app.set('views',[__dirname + '/views/', __dirname + '/views/playbook']);
 

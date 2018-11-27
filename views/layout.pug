@@ -1,15 +1,45 @@
 doctype html(lang='en')
 head
+  //- meta(charset='utf-8')
+  //- meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  //- meta(http-equiv='x-ua-compatible', content='ie=edge')
+  //- title Agile Playbook | #{title}
+  //- link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+  //- link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+  //- link(rel='stylesheet', href='/css/main.css', type='text/css')
+  //- link(rel='stylesheet', href='/stylesheets/style.css')
+  // Title
+  title Unify - Responsive Website Template
+  // Required Meta Tags Always Come First
   meta(charset='utf-8')
-  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  meta(http-equiv='x-ua-compatible', content='ie=edge')
-  title Agile Playbook | #{title}
-  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
-  link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-  link(rel='stylesheet', href='/css/main.css', type='text/css')
-  link(rel='stylesheet', href='/stylesheets/style.css')
-
-
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(http-equiv='x-ua-compatible' content='ie=edge')
+  // Favicon
+  link(rel='shortcut icon' href='favicon.ico')
+  // Google Fonts
+  link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet')
+  // CSS Global Compulsory
+  link(rel='stylesheet' href='/vendor/bootstrap/bootstrap.min.css')
+  link(rel='stylesheet' href='/vendor/bootstrap/offcanvas.css')
+  // CSS Global Icons
+  link(rel='stylesheet' href='/vendor/icon-awesome/css/font-awesome.min.css')
+  link(rel='stylesheet' href='/vendor/icon-line/css/simple-line-icons.css')
+  link(rel='stylesheet' href='/vendor/icon-etlinefont/style.css')
+  link(rel='stylesheet' href='/vendor/icon-line-pro/style.css')
+  link(rel='stylesheet' href='/vendor/icon-hs/style.css')
+  link(rel='stylesheet' href='/vendor/dzsparallaxer/dzsparallaxer.css')
+  link(rel='stylesheet' href='/vendor/dzsparallaxer/dzsscroller/scroller.css')
+  link(rel='stylesheet' href='/vendor/dzsparallaxer/advancedscroller/plugin.css')
+  link(rel='stylesheet' href='/vendor/animate.css')
+  link(rel='stylesheet' href='/vendor/hamburgers/hamburgers.min.css')
+  link(rel='stylesheet' href='/vendor/slick-carousel/slick/slick.css')
+  link(rel='stylesheet' href='/vendor/fancybox/jquery.fancybox.css')
+  // CSS Unify
+  link(rel='stylesheet' href='/css/unify-core.css')
+  link(rel='stylesheet' href='/css/unify-components.css')
+  link(rel='stylesheet' href='/css/unify-globals.css')
+  // CSS Customization
+  link(rel='stylesheet' href='/css/custom.css')
 
   body
     // load header.pug
@@ -21,7 +51,60 @@ head
     // footer
     include footer
     
-    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
-    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+    //- script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+    //- script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+// JS Global Compulsory
+script(src='/vendor/jquery/jquery.min.js')
+script(src='/vendor/jquery-migrate/jquery-migrate.min.js')
+script(src='/vendor/popper.min.js')
+script(src='/vendor/bootstrap/bootstrap.min.js')
+script(src='/vendor/bootstrap/offcanvas.js')
+// JS Implementing Plugins
+script(src='/vendor/dzsparallaxer/dzsparallaxer.js')
+script(src='/vendor/dzsparallaxer/dzsscroller/scroller.js')
+script(src='/vendor/dzsparallaxer/advancedscroller/plugin.js')
+script(src='/vendor/masonry/dist/masonry.pkgd.min.js')
+script(src='/vendor/imagesloaded/imagesloaded.pkgd.min.js')
+script(src='/vendor/slick-carousel/slick/slick.js')
+script(src='/vendor/fancybox/jquery.fancybox.min.js')
+// JS Unify
+script(src='/js/hs.core.js')
+script(src='/js/components/hs.header.js')
+script(src='/js/helpers/hs.hamburgers.js')
+script(src='/js/components/hs.dropdown.js')
+script(src='/js/components/hs.popup.js')
+script(src='/js/components/hs.carousel.js')
+script(src='/js/components/hs.go-to.js')
+// JS Custom
+script(src='/js/custom.js')
+// JS Plugins Init.
+script.
+  $(document).on('ready', function () {
+  // initialization of go to
+  $.HSCore.components.HSGoTo.init('.js-go-to');
+  // initialization of carousel
+  $.HSCore.components.HSCarousel.init('.js-carousel');
+  // initialization of HSDropdown component
+  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+  afterOpen: function(){
+  $(this).find('input[type="search"]').focus();
+  }
+  });
+  // initialization of masonry
+  $('.masonry-grid').imagesLoaded().then(function () {
+  $('.masonry-grid').masonry({
+  columnWidth: '.masonry-grid-sizer',
+  itemSelector: '.masonry-grid-item',
+  percentPosition: true
+  });
+  });
+  // initialization of popups
+  $.HSCore.components.HSPopup.init('.js-fancybox');
+  });
+  $(window).on('load', function () {
+  // initialization of header
+  $.HSCore.components.HSHeader.init($('#js-header'));
+  $.HSCore.helpers.HSHamburgers.init('.hamburger');
+  });
 
