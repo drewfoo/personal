@@ -54,6 +54,7 @@
 {
     "_id": ObjectId("A0001"),
     "name": Main,
+    "heading": "",
     "summary": Lorem Ipsum,
     "detail": Lorem Ipusm,
     "players": [],
@@ -63,6 +64,7 @@
 {
     "_id": ObjectId("A0002"),
     "name": Backlog,
+    "heading": "",
     "summary": Lorem Ipsum,
     "detail": Lorem Ipusm,
     "players": [ObjectID("C0001"), ObjectID("C0002")],
@@ -74,6 +76,7 @@
 {
     "_id": ObjectId("B0001"),
     "name": Grooming,
+    "heading": "",
     "summary": Lorem Ipsum,
     "detail": Lorem Ipusm,
     "players": [ObjectID("C0001"),ObjectID("C0002")]
@@ -83,6 +86,7 @@
 {
     "_id": ObjectId("B0002"),
     "name": Sprint Demo,
+    "heading": "",
     "summary": Lorem Ipsum,
     "detail": Lorem Ipusm,
     "players": [player IDs]
@@ -93,11 +97,11 @@ Implementation Steps:
     Design App
         1. Create Style Guide
         2. Design Wireframes
-            - Homepage
-            - Login Page
-            - Playbook(s)
-            - Play(s)
-            - Players
+            // - Homepage
+            // - Login Page
+            // - Playbook(s)
+            // - Play(s)
+            // - Players
             - Index
     Content Creation 
         1. Define List of Playbooks
