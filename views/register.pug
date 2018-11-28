@@ -1,25 +1,32 @@
 extends layout
 
 block content
-  .main.container.row
-    .col-md-6.col-md-offset-3
-      h1.display-4.m-b-2 Sign Up
-      
-      // register form
-      form(method='POST' action='/register')
-        div.form-group
-          label(for='name') Name:
-          input#name.form-control(type='text', placeholder='first and last' name='name')
-        div.form-group
-          label(for='email') Email:
-          input#email.form-control(type='email', placeholder='name@email.com' name='email')
-        div.form-group
-          label(for='favoriteBook') Favorite Book:
-          input#favoriteBook.form-control(type='text', placeholder='title of book' name='favoriteBook')
-        div.form-group
-          label(for='pw') Password:
-          input#pw.form-control(type='password' name='password')
-        div.form-group
-          label(for='pw2') Confirm Password:
-          input#pw2.form-control(type='password' name='confirmPassword')
-        button.btn.btn-primary(type='submit') Sign up
+  section.container.g-py-100
+    .row.justify-content-center
+      .col-sm-10.col-md-9.col-lg-6
+        .g-brd-around.g-brd-gray-light-v4.rounded.g-py-40.g-px-30
+          header.text-center.mb-4
+            h2.h2.g-color-black.g-font-weight-600 Signup
+          // Form
+          form.g-py-15(method='POST' action='/register')
+            .mb-4
+              label.g-color-gray-dark-v2.g-font-weight-600.g-font-size-13 First and Last Name:
+              input.form-control.g-color-black.g-bg-white.g-bg-white--focus.g-brd-gray-light-v4.g-brd-primary--hover.rounded.g-py-15.g-px-15(type='text' placeholder='John Doe' name='name')
+            .mb-4
+              label.g-color-gray-dark-v2.g-font-weight-600.g-font-size-13 Email:
+              input.form-control.g-color-black.g-bg-white.g-bg-white--focus.g-brd-gray-light-v4.g-brd-primary--hover.rounded.g-py-15.g-px-15(type='email' placeholder='johndoe@gmail.com' name='email')
+            .row
+              .col-xs-12.col-sm-6.mb-4
+                label.g-color-gray-dark-v2.g-font-weight-600.g-font-size-13 Password:
+                input.form-control.g-color-black.g-bg-white.g-bg-white--focus.g-brd-gray-light-v4.g-brd-primary--hover.rounded.g-py-15.g-px-15(type='password' placeholder='********' name='password')
+              .col-xs-12.col-sm-6.mb-4
+                label.g-color-gray-dark-v2.g-font-weight-600.g-font-size-13 Confirm Password:
+                input.form-control.g-color-black.g-bg-white.g-bg-white--focus.g-brd-gray-light-v4.g-brd-primary--hover.rounded.g-py-15.g-px-15(type='password' placeholder='********' name='confirmPassword')
+            .row.justify-content-between.mb-5
+              .col-8.align-self-center
+                label.form-check-inline.u-check.g-color-gray-dark-v5.g-font-size-13.g-pl-25
+                p.g-color-gray-dark-v5.g-font-size-13.mb-0
+                  | Already have an account? 
+                  a.g-font-weight-600(href='login') Login
+              .col-4.align-self-center.text-right
+                button.btn.btn-md.u-btn-primary.rounded.g-py-13.g-px-25(type='submit') Sign Up

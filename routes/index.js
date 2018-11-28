@@ -99,7 +99,6 @@ router.post('/register', function(req,res,next){
     // validation
     if (req.body.email &&
         req.body.name &&
-        req.body.favoriteBook &&
         req.body.password &&
         req.body.confirmPassword) {      
             //confirm that user typed in the same password fields
@@ -113,7 +112,6 @@ router.post('/register', function(req,res,next){
             var userData = {
                 email : req.body.email,
                 name: req.body.name,
-                favoriteBook: req.body.favoriteBook,
                 password: req.body.password
             };
 
@@ -138,7 +136,7 @@ router.post('/register', function(req,res,next){
 
 // Homepage Route
 router.get('/', function(req, res){
-    res.render('home', {title : "HEY", message : "This is the main index.js page"});
+    res.render('index', {title : "HEY", message : "This is the main index.js page"});
 });
 
 // Playbook Route
@@ -147,7 +145,7 @@ router.get('/playbook', mid.requiresLogIn, function(req,res,next){
 });
 
 // Sitemap Route
-router.get('/sitemap', function(req, res) {
+router.get('/sitemap', mid.requiresLogIn, function(req, res) {
     res.render('sitemap', {title : "Sitemap"});
 });
 
