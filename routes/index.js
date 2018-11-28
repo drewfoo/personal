@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user')
 var Feedback = require('../models/user')
+var Play = require('../models/play')
+var Detail = require('../models/play')
 var mid = require('../middleware');
 
 
@@ -21,7 +23,8 @@ router.get('/profile', mid.requiresLogIn, function(req, res, next) {
             for (i = 0 ; i < user.feedback.length ; i++ ){
                 userFeedback.push(user.feedback[i]);
             }
-            console.log(userFeedback);
+            console.log(user);
+            // console.log(userFeedback);
             return res.render('profile', { title: 'Profile', name: user.name, favorite: user.favoriteBook, feedback : userFeedback });
       }
     });
@@ -140,7 +143,23 @@ router.get('/', function(req, res){
 
 // Playbook Route
 router.get('/playbook', function(req,res,next){
-    res.render('playbook',{title : "Playbook"});
+    Play.find( { name : "Overview" }, function (err, play){
+        console.log(play);
+    });
+});
+
+// GET /logout
+router.get('/logout', function(req,res,next) {
+if (req.session) {
+    //delete session object
+    req.session.destroy( function(err) {
+        if(err) {
+            return next(err);
+        } else {
+            return res.redirect('/');
+        }
+    });
+}
 });
 
 // Sitemap Route
@@ -149,3 +168,5 @@ router.get('/sitemap', mid.requiresLogIn, function(req, res) {
 });
 
 module.exports = router;
+
+
