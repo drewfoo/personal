@@ -1,183 +1,126 @@
-/* Primary Colors */
+/*------------------------------------
+  Fill Colors
+------------------------------------*/
+
 .g-fill {
-  &-primary {
-    fill: $g-color-primary !important;
-
-    path,
-    polygon {
-      fill: $g-color-primary !important;
-    }
-
-    &--hover:hover {
-      path,
-      polygon {
-        fill: $g-color-primary !important;
-      }
-    }
-
-    &--hover-parent {
-      *:hover > * > & {
-        svg {
-          path,
-          polygon {
-            fill: $g-color-primary !important;
-          }
-        }
-      }
-    }
+  // Fill Primary Color
+  &-primary path,
+  &-primary polygon {
+    fill: $g-color-primary;
   }
 
-  &-white {
-    fill: $g-color-white !important;
-
-    path,
-    polygon {
-      fill: $g-color-white !important;
-    }
-
-    &--opened-menu:not(.collapsed) {
-      path,
-      polygon {
-        fill: $g-color-white !important;
-      }
-    }
-
-    &--parent-opened-menu {
-      *:not(.collapsed) > & {
-        path,
-        polygon {
-          fill: $g-color-white !important;
-        }
-      }
-    }
-
-    &--hover:hover {
-      path,
-      polygon {
-        fill: $g-color-white !important;
-      }
-    }
-
-    &--hover-parent {
-      *:hover > * > & {
-        svg {
-          path,
-          polygon {
-            fill: $g-color-white !important;
-          }
-        }
-      }
-    }
+  // Fill Secondary Color
+  &-secondary path,
+  &-secondary polygon {
+    fill: $g-color-secondary;
   }
 
-  &-main {
-    fill: $g-color-main !important;
-
-    path,
-    polygon {
-      fill: $g-color-main !important;
-    }
-
-    &--opened-menu:not(.collapsed) {
-      path,
-      polygon {
-        fill: $g-color-main !important;
-      }
-    }
-
-    &--parent-opened-menu {
-      *:not(.collapsed) > & {
-        path,
-        polygon {
-          fill: $g-color-main !important;
-        }
-      }
-    }
-
-    &--hover:hover {
-      path,
-      polygon {
-        fill: $g-color-main !important;
-      }
-    }
-
-    &--hover-parent {
-      *:hover > * > & {
-        svg {
-          path,
-          polygon {
-            fill: $g-color-white !important;
-          }
-        }
-      }
-    }
+  // Fill Color Light Gray
+  &-gray-light-v6 path,
+  &-gray-light-v6 polygon {
+    fill: $g-color-gray-light-v6;
   }
 
-  &-gray-light {
-    &-v4 {
-      path,
-      polygon {
-        fill: $g-color-gray-light-v4 !important;
-      }
-
-      &--hover:hover {
-        path,
-        polygon {
-          fill: $g-color-gray-light-v4 !important;
-        }
-      }
-
-      &--hover-parent {
-        *:hover > * > & {
-          svg {
-            path,
-            polygon {
-              fill: $g-color-gray-light-v4 !important;
-            }
-          }
-        }
-      }
-    }
+  &-gray-light-v7 path,
+  &-gray-light-v7 polygon {
+    fill: $g-color-gray-light-v7;
   }
 
-  &-red {
-    path,
-    polygon {
-      fill: $g-color-red !important;
-    }
+  &-gray-light-v8 path,
+  &-gray-light-v8 polygon {
+    fill: $g-color-gray-light-v8;
+  }
 
-    &--hover:hover {
-      path,
-      polygon {
-        fill: $g-color-red !important;
-      }
-    }
+  &-gray-light-v9 path,
+  &-gray-light-v9 polygon {
+    fill: $g-color-gray-light-v9;
+  }
 
-    &--hover-parent {
-      *:hover > * > & {
-        path,
-        polygon {
-          fill: $g-color-red !important;
-        }
-      }
-    }
+  // Fill Color Dark Gray
+  &-gray-dark-v6 path,
+  &-gray-dark-v6 polygon {
+    fill: $g-color-gray-dark-v6;
+  }
 
-    &--parent-hover {
-      *:hover > & {
-        path,
-        polygon {
-          fill: $g-color-red !important;
-        }
-      }
-    }
+  &-gray-dark-v7 path,
+  &-gray-dark-v7 polygon {
+    fill: $g-color-gray-dark-v7;
+  }
 
-    &--parent-parent-parent-hover {
-      *:hover > * > * > & {
-        path,
-        polygon {
-          fill: $g-color-red !important;
-        }
-      }
-    }
+  &-gray-dark-v8 path,
+  &-gray-dark-v8 polygon {
+    fill: $g-color-gray-dark-v8;
+  }
+
+  &-gray-dark-v9 path,
+  &-gray-dark-v9 polygon {
+    fill: $g-color-gray-dark-v9;
+  }
+
+  // Fill Color Light Blue
+  &-lightblue-v2 path,
+  &-lightblue-v2 polygon {
+    fill: $g-color-lightblue-v2;
+  }
+
+  &-lightblue-v3 path,
+  &-lightblue-v3 polygon {
+    fill: $g-color-lightblue-v3;
+  }
+
+  // Fill Color Dark Blue
+  &-darkblue-v2 path,
+  &-darkblue-v2 polygon {
+    fill: $g-color-darkblue-v2;
+  }
+
+  &-darkblue-v3 path,
+  &-darkblue-v3 polygon {
+    fill: $g-color-darkblue-v3;
+  }
+
+  &-darkblue-v4 path,
+  &-darkblue-v4 polygon {
+    fill: $g-color-darkblue-v4;
+  }
+
+  &-darkblue-v5 path,
+  &-darkblue-v5 polygon {
+    fill: $g-color-darkblue-v5;
+  }
+
+  &-darkblue-v6 path,
+  &-darkblue-v6 polygon {
+    fill: $g-color-darkblue-v6;
+  }
+
+  // Fill Color White
+  &-white-opacity-0_5 path,
+  &-white-opacity-0_5 polygon {
+    fill: rgba($g-color-white, .5);
+  }
+
+  // Fill Color Teal
+  &-teal-v2 path,
+  &-teal-v2 polygon {
+    fill: $g-color-teal-v2;
+  }
+
+  // Fill Color Light Red
+  &-lightred-v2 path,
+  &-lightred-v2 polygon {
+    fill: $g-color-lightred-v2;
+  }
+
+  // Fill Color Brown
+  &-lightbrown path,
+  &-lightbrown polygon {
+    fill: $g-color-lightbrown;
+  }
+
+  // Fill Color Yellow
+  &-lightyellow path,
+  &-lightyellow polygon {
+    fill: $g-color-lightyellow;
   }
 }

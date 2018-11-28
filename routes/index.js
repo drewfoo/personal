@@ -139,7 +139,7 @@ router.get('/', function(req, res){
 });
 
 // Playbook Route
-router.get('/playbook', mid.requiresLogIn, function(req,res,next){
+router.get('/playbook', function(req,res,next){
     res.render('playbook',{title : "Playbook"});
 });
 

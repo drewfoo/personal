@@ -1,17 +1,16 @@
 /*------------------------------------
   Typography Text Decoration
 ------------------------------------*/
-.g-text-underline {
-  text-decoration: underline;
-
-  &--none--hover {
-    &:focus,
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
 
 .g-text-strike {
   text-decoration: line-through;
+
+  &--checked {
+    input[type="checkbox"]:checked + * + &,
+    input[type="radio"]:checked + * + &,
+    input[type="checkbox"]:checked + &,
+    input[type="radio"]:checked + & {
+      text-decoration: line-through;
+    }
+  }
 }

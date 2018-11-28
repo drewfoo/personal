@@ -6,20 +6,11 @@
     "detail": "DETAIL PRODUCT OWNER - Lorem ipsum dolor sit amet",
     "position": "POSITION PRODUCT OWNER - Lorem ipsum dolor sit amet",
     "responsibilities": "RESPONSIBILITIES PRODUCT OWNER - Lorem ipsum dolor sit amet",
-    "role": [    
-        {
-            "_id": 
-            "playbook": Backlog
-            "play": Grooming
-            "summary": Lorem ipsum
-            "responsibility": Lorem Ipsum 
+    "role": [{
+            "_id": "playbook": Backlog "play": Grooming "summary": Lorem ipsum "responsibility": Lorem Ipsum
         },
         {
-            "_id":
-            "playbook": Sprint
-            "play": Sprint Demo
-            "summary": Lorem ipsum
-            "responsibility": Lorem Ipsum - Sprint Demo
+            "_id": "playbook": Sprint "play": Sprint Demo "summary": Lorem ipsum "responsibility": Lorem Ipsum - Sprint Demo
         }
     ]
 }
@@ -32,20 +23,11 @@
     "detail": "DETAIL SCRUM MASTER - Lorem ipsum dolor sit amet",
     "position": "POSITION SCRUM MASTER - Lorem ipsum dolor sit amet",
     "responsibilities": "RESPONSIBILITIES SCRUM MASTER - Lorem ipsum dolor sit amet",
-    "role": [    
-        {
-            "_id": 
-            "playbook": Backlog
-            "play": Grooming
-            "summary": Lorem ipsum
-            "responsibility": Lorem Ipsum 
+    "role": [{
+            "_id": "playbook": Backlog "play": Grooming "summary": Lorem ipsum "responsibility": Lorem Ipsum
         },
         {
-            "_id":
-            "playbook": Sprint
-            "play": Sprint Demo
-            "summary": Lorem ipsum
-            "responsibility": Lorem Ipsum - Sprint Demo
+            "_id": "playbook": Sprint "play": Sprint Demo "summary": Lorem ipsum "responsibility": Lorem Ipsum - Sprint Demo
         }
     ]
 }
@@ -79,7 +61,7 @@
     "heading": "",
     "summary": Lorem Ipsum,
     "detail": Lorem Ipusm,
-    "players": [ObjectID("C0001"),ObjectID("C0002")]
+    "players": [ObjectID("C0001"), ObjectID("C0002")]
     // Query the player and the search for the name of the play in the roles array
 }
 
@@ -95,63 +77,102 @@
 
 Implementation Steps:
     Design App
-        1. Create Style Guide
-        2. Design Wireframes
-            // - Homepage
-            // - Login Page
-            // - Playbook(s)
-            // - Play(s)
-            // - Players
-            - Index
-    Content Creation 
-        1. Define List of Playbooks
-        2. Define List of Plays
-        3. Define List of Players and Roles
-        4. Define Relationships Between Playbooks <> Plays <> Players
-            - Use Cases:
-                - Get Playbook(s)
-                    - Get Plays By Playbook
-                    - Get Players By Playbook
-                - Get Play(s)
-                    - Get Player(s) by Plays
-                - Get Player(s)
-                    - Get Play(s) by Player
-    Database Creation and Seeding
-        1. Create Playbook Collection
-        2. Create Players Collection
-        3. Create Plays Collection
-        4. Seed Collection Data and Define Relationships
-    App Creation
-        1. Create Players Schema
-        2. Create Plays Schema and Create References to Players 
-        3. Create Playbook Schema and Create References to Players & Plays
-        4. Master Playbook
-            - Create GET Route
-            - Create Dynamic PUG Template
-            - Display Master Playbook Information + Sub-Playbook List
-            - Create Links for Sub-Playbook List (/playbook/backlog)
-            - Create Sub-Playbook Pug Templates
-            - Create Sub-Playbook GET Routes
-        5. Sub-Playbook
-            - Update Dynamic GET Routes (/playbook/backlog or /playbook/teams)
-            - Update Dynamic PUG Templates
-            - Display Sub-Playbook Information + Players + Plays Information
-            - Create Link to Plays List (/playbook/backlog/grooming or /playbook/backlog?play=grooming)
-            - Create Plays Pug Templates
-            - Create Plays GET Routes
-        6. Plays
-            - Update Dynamic GET Routes (/playbook/backlog/grooming or /playbook/backlog?play=grooming)
-            - Update Dynamic PUG Templates
-            - Display Plays Information + Players + Roles
-        7. Player Profile Pages
-            - Create GET Route
-            - Create Dynamic PUG Template
-            - Display Player Information + Roles & Responsibilities
-            - Provide Links to Plays or Playbooks
-        8. Index List (Players and Plays)
-            - Create GET Route
-            - Create Dynamic PUG Template
-            - Display Master Plays List + Dynamic Links to Plays
-            - Display Master Players List + Dynamic Links to Players
+1. Create Style Guide
+2. Design Wireframes
+    // - Homepage
+    // - Login Page
+    // - Playbook(s)
+    // - Play(s)
+    // - Players
+    -
+    Index
+"Content" Creation
+1. Define List of Playbooks
+2. Define List of Plays
+3. Define List of Players and Roles
+4. Define Relationships Between Playbooks < > Plays < > Players -
+    Use Cases:
+    -Get Playbook(s) -
+    Get Plays By Playbook -
+    Get Players By Playbook -
+    Get Play(s) -
+    Get Player(s) by Plays -
+    Get Player(s) -
+    Get Play(s) by Player
+Database Creation and Seeding
+1. Create Playbook Collection
+2. Create Players Collection
+3. Create Plays Collection
+4. Seed Collection Data and Define Relationships
+App Creation
+1. Create Players Schema
+2. Create Plays Schema and Create References to Players
+3. Create Playbook Schema and Create References to Players & Plays
+4. Master Playbook
+    -
+    Create GET Route -
+    Create Dynamic PUG Template -
+    Display Master Playbook Information + Sub - Playbook List -
+    Create Links
+for Sub - Playbook List(/playbook/backlog) -
+    Create Sub - Playbook Pug Templates -
+    Create Sub - Playbook GET Routes
+5. Sub - Playbook -
+    Update Dynamic GET Routes(/playbook/backlog
+        or / playbook / teams) -
+    Update Dynamic PUG Templates -
+    Display Sub - Playbook Information + Players + Plays Information -
+    Create Link to Plays List(/playbook/backlog / grooming or / playbook / backlog ? play = grooming) -
+    Create Plays Pug Templates -
+    Create Plays GET Routes
+6. Plays
+    -
+    Update Dynamic GET Routes(/playbook/backlog / grooming or / playbook / backlog ? play = grooming) -
+    Update Dynamic PUG Templates -
+    Display Plays Information + Players + Roles
+7. Player Profile Pages
+    -
+    Create GET Route -
+    Create Dynamic PUG Template -
+    Display Player Information + Roles & Responsibilities -
+    Provide Links to Plays or Playbooks
+8. Index List(Players and Plays) -
+    Create GET Route -
+    Create Dynamic PUG Template -
+    Display Master Plays List + Dynamic Links to Plays -
+    Display Master Players List + Dynamic Links to Players
 
 
+// Plays Insert
+db.plays.insertOne({
+            "name": "Overview",
+            "heading": "Introducing of the Agile Delivery Model and Playbook",
+            "summary": "Here we introduce the overall Agile Delivery Model in which the information contained within this Playbook can be applied. The Model and Playbook is not intended to be prescriptive but can and should be adapted to a given situation. The intention of this playbook is to assist in applying an Agile Delivery Model into practice and drive delivery value across the organizations",
+            "detail": [{
+                    "section": "Reading the Playbook",
+                    "content": "This playbook is to be read an illustrative guide when applying the values and principles of Agile development in the context of your organization. Each section of the playbook provides a set of plays that can be called when putting the model into practice. These plays broadly describe the players, activities and considerations to take when putting them into practice"
+                },
+                {
+                    "section": "Who is it For?",
+                    "content": "The playbook is for all team members with varying levels of experience with the Agile Delivery Model. We hope that this playbook can provide everyone from a novice practioner to an seasoned professional value as implementing this model successfully takes time and patience. "
+                },
+                {
+                    "section": "Contributor",
+                    "content": "year seasoned professional in the Agile Delivery space. Andrew has provided consulting services to Fortune 500 clients as well as delivered products in the context of Agile in multiple industries including financial services, consumer products and media and entertainment. This playbook is my attempt at sharing my knowledge and resources to those that strive to deliver with consistency, transparency and excellence."
+                },
+                {
+                    "section": "Get In Touch",
+                    "content": "If you have any questions on things you have read or have suggestions what can be made better, I would love to hear from you. You can provide feedback directly using the feedback from www.google.com"
+                }
+            ]
+        })
+
+        {
+            "_id": ObjectId("A0002"),
+            "name": Backlog,
+            "heading": "",
+            "summary": Lorem Ipsum,
+            "detail": Lorem Ipusm,
+            "players": [ObjectID("C0001"), ObjectID("C0002")],
+            "plays": [ObjectID("B0001")]
+        }
