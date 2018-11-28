@@ -22,11 +22,10 @@ router.get('/profile', mid.requiresLogIn, function(req, res, next) {
                 userFeedback.push(user.feedback[i]);
             }
             console.log(userFeedback);
-
             return res.render('profile', { title: 'Profile', name: user.name, favorite: user.favoriteBook, feedback : userFeedback });
-          }
-        });
-  });
+      }
+    });
+});
 
 // GET /logout
 router.get('/logout', function(req,res,next) {
