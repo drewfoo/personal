@@ -14,8 +14,7 @@ router.get('/profile', mid.requiresLogIn, function(req, res, next) {
     //   err.status = 403;
     //   return next(err);
     // }
-    User.findById(req.session.userId)
-        .exec(function (error, user) {
+    User.findById(req.session.userId, function (error, user){
           if (error) {
             return next(error);
           } else {
@@ -144,7 +143,7 @@ router.get('/', function(req, res){
 // Playbook Route
 router.get('/playbook', function(req,res,next){
     Play.find( { name : "Overview" }, function (err, play){
-        console.log(play);
+        console.log(play.Detail);
     });
 });
 
