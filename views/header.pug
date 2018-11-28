@@ -1,33 +1,81 @@
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-  a.navbar-brand(href='/') Agile Playbook
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      if !currentUser
-        li.nav-item.active
-          a.nav-link(href='register') Register 
-      else
-        li.nav-item.active
-          a.nav-link(href='playbook') Playbook
-      li.nav-item.active
-        a.nav-link(href='sitemap') Sitemap
-      li.nav-item.dropdown
-        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-          | Dropdown
-        .dropdown-menu(aria-labelledby='navbarDropdown')
-          a.dropdown-item(href='#') Action
-          a.dropdown-item(href='#') Another action
-          .dropdown-divider
-          a.dropdown-item(href='#') Something else here
-      li.nav-item
-        a.nav-link.disabled(href='#') Disabled
-      if currentUser
-        li.nav-item
-        a.nav-link.disabled(href='logout') Logout
-      else
-        li.nav-item
-          a.nav-link.disabled(href='login') Login
-    //- form.form-inline.my-2.my-lg-0
-    //-   input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
-    //-   button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+// Header
+header#js-header.u-header.u-header--sticky-top.u-header--toggle-section.u-header--change-appearance(data-header-fix-moment='300')
+  .u-header__section.u-header__section--dark.g-bg-black.g-transition-0_3.g-py-10(data-header-fix-moment-exclude='g-py-10' data-header-fix-moment-classes='g-py-0')
+    nav.navbar.navbar-expand-lg
+      .container
+        // Responsive Toggle Button
+        button.navbar-toggler.navbar-toggler-right.btn.g-line-height-1.g-brd-none.g-pa-0.g-pos-abs.g-top-3.g-right-0(type='button' aria-label='Toggle navigation' aria-expanded='false' aria-controls='navBar' data-toggle='collapse' data-target='#navBar')
+          span.hamburger.hamburger--slider
+            span.hamburger-box
+              span.hamburger-inner
+        // End Responsive Toggle Button
+        // Logo
+        a.navbar-brand(href='/')
+          | Agile Playbook
+        // End Logo
+        // Navigation
+        #navBar.collapse.navbar-collapse.align-items-center.flex-sm-row.g-pt-10.g-pt-5--lg
+          ul.navbar-nav.text-uppercase.g-font-weight-600.ml-auto
+            //- li.nav-item.g-mx-20--lg
+            //-   a.nav-link.px-0(href='#!')
+            //-     | Home
+            //- li.nav-item.g-mx-20--lg
+            //-   a.nav-link.px-0(href='#!')
+            //-     | Features
+            //- li.nav-item.g-mx-20--lg.active
+            //-   a.nav-link.px-0(href='#!')
+            //-     | Shortcodes
+            //-     span.sr-only (current)
+            //- li.nav-item.g-mx-20--lg
+            //-   a.nav-link.px-0(href='#!')
+            //-     | Pages
+            //- li.nav-item.g-mx-20--lg
+            //-   a.nav-link.px-0(href='register')
+            //-     | Register
+            if currentUser
+              li.nav-item.g-ml-20--lg.g-mr-0--lg
+                a.nav-link.px-0(href='logout')
+                  | Logout
+            else 
+              li.nav-item.g-ml-20--lg.g-mr-0--lg
+                a.nav-link.px-0(href='login')
+                  | Login
+        // End Navigation
+// End Header
+
+
+
+
+//- nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+//-   a.navbar-brand(href='/') Agile Playbook
+//-   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+//-     span.navbar-toggler-icon
+//-   #navbarSupportedContent.collapse.navbar-collapse
+//-     ul.navbar-nav.mr-auto
+//-       if !currentUser
+//-         li.nav-item.active
+//-           a.nav-link(href='register') Register 
+//-       else
+//-         li.nav-item.active
+//-           a.nav-link(href='playbook') Playbook
+//-       li.nav-item.active
+//-         a.nav-link(href='sitemap') Sitemap
+//-       li.nav-item.dropdown
+//-         a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+//-           | Dropdown
+//-         .dropdown-menu(aria-labelledby='navbarDropdown')
+//-           a.dropdown-item(href='#') Action
+//-           a.dropdown-item(href='#') Another action
+//-           .dropdown-divider
+//-           a.dropdown-item(href='#') Something else here
+//-       li.nav-item
+//-         a.nav-link.disabled(href='#') Disabled
+//-       if currentUser
+//-         li.nav-item
+//-         a.nav-link.disabled(href='logout') Logout
+//-       else
+//-         li.nav-item
+//-           a.nav-link.disabled(href='login') Login
+//-     //- form.form-inline.my-2.my-lg-0
+//-     //-   input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+//-     //-   button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search

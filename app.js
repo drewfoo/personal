@@ -45,7 +45,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve Static Files and View Engine Setup
-app.use(express.static('public'));
+app.use(express.static('assets'));
 app.set('view engine', 'pug');
 app.set('views',[__dirname + '/views/', __dirname + '/views/playbook']);
 
@@ -53,11 +53,11 @@ app.set('views',[__dirname + '/views/', __dirname + '/views/playbook']);
 
 const mainRoutes = require('./routes');
 const playbookRoutes = require('./routes/playbook');
-const siteMap = require('./routes/sitemap');
+// const siteMap = require('./routes/sitemap');
 
 app.use(mainRoutes);
 app.use(playbookRoutes);
-app.use(siteMap);
+// app.use(siteMap);
 
 // Catch 404 Errors and Forward to Error Handler
 app.use(function(req, res, next) {

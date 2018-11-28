@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user')
 var Feedback = require('../models/user')
+var Play = require('../models/play')
+var Detail = require('../models/play')
 var mid = require('../middleware');
 
 
@@ -12,8 +14,7 @@ router.get('/profile', mid.requiresLogIn, function(req, res, next) {
     //   err.status = 403;
     //   return next(err);
     // }
-    User.findById(req.session.userId)
-        .exec(function (error, user) {
+    User.findById(req.session.userId, function (error, user){
           if (error) {
             return next(error);
           } else {
@@ -21,12 +22,12 @@ router.get('/profile', mid.requiresLogIn, function(req, res, next) {
             for (i = 0 ; i < user.feedback.length ; i++ ){
                 userFeedback.push(user.feedback[i]);
             }
-            console.log(userFeedback);
-
+            console.log(user);
+            // console.log(userFeedback);
             return res.render('profile', { title: 'Profile', name: user.name, favorite: user.favoriteBook, feedback : userFeedback });
-          }
-        });
-  });
+      }
+    });
+});
 
 // GET /logout
 router.get('/logout', function(req,res,next) {
@@ -99,7 +100,6 @@ router.post('/register', function(req,res,next){
     // validation
     if (req.body.email &&
         req.body.name &&
-        req.body.favoriteBook &&
         req.body.password &&
         req.body.confirmPassword) {      
             //confirm that user typed in the same password fields
@@ -113,7 +113,6 @@ router.post('/register', function(req,res,next){
             var userData = {
                 email : req.body.email,
                 name: req.body.name,
-                favoriteBook: req.body.favoriteBook,
                 password: req.body.password
             };
 
@@ -138,17 +137,35 @@ router.post('/register', function(req,res,next){
 
 // Homepage Route
 router.get('/', function(req, res){
-    res.render('home', {title : "HEY", message : "This is the main index.js page"});
+    res.render('index', {title : "HEY", message : "This is the main index.js page"});
 });
 
 // Playbook Route
-router.get('/playbook', mid.requiresLogIn, function(req,res,next){
-    res.render('playbook',{title : "Playbook"});
+router.get('/playbook', function(req,res,next){
+    Play.find( { name : "Overview" }, function (err, play){
+        console.log(play.Detail);
+    });
+});
+
+// GET /logout
+router.get('/logout', function(req,res,next) {
+if (req.session) {
+    //delete session object
+    req.session.destroy( function(err) {
+        if(err) {
+            return next(err);
+        } else {
+            return res.redirect('/');
+        }
+    });
+}
 });
 
 // Sitemap Route
-router.get('/sitemap', function(req, res) {
+router.get('/sitemap', mid.requiresLogIn, function(req, res) {
     res.render('sitemap', {title : "Sitemap"});
 });
 
 module.exports = router;
+
+

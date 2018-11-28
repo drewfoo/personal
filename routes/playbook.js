@@ -3,6 +3,7 @@ var router = express.Router();
 var User = require('../models/user')
 var mid = require('../middleware');
 
+
 // GET Teams
 router.get('/teams', function(req,res,next){
     res.render('Teams', {title : 'Teams'});

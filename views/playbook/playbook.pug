@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  .main.container.clearfix
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4 Section List
+          ul
+            each val, i in list
+              li #{val.section}  
+                li #{val.content}            
