@@ -198,4 +198,12 @@ db.players.insertOne({
     "position": "POSITION PRODUCT OWNER - Lorem ipsum dolor sit amet",
     "responsibilities": "RESPONSIBILITIES PRODUCT OWNER - Lorem ipsum dolor sit amet",
 })
-        
+      
+db.players.insertOne({
+    "name": "Scrum Master",
+    "team": "Core Team",
+    "summary": "Owns the environment for success and delivery effectiveness",
+    "detail": "Scrum Master DETAIL -",
+    "position": "Scrum Master RESPONSIBILITIES -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum, justo ut feugiat rutrum, urna nulla hendrerit lorem, sed laoreet mi orci et eros. Praesent congue viverra vulputate. In hac habitasse platea dictumst. Integer consequat justo ut diam vulputate hendrerit. In tristique luctus urna, ut rhoncus libero sagittis in. Quisque sit amet egestas sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras in purus ac tortor mollis dictum. In felis urna, eleifend quis tortor vel, accumsan ornare lacus. Suspendisse cursus dolor vitae egestas convallis. Suspendisse sit amet metus convallis, finibus erat non, iaculis risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sit amet sapien at lectus semper interdum sollicitudin ac elit. Suspendisse dignissim condimentum scelerisque.",
+    "responsibilities": "Scrum Master POSITION",
+})
