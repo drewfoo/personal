@@ -140,12 +140,23 @@ router.get('/', function(req, res){
     res.render('index', {title : "HEY", message : "This is the main index.js page"});
 });
 
-// Playbook Route
-router.get('/playbook', function(req,res,next){
-    Play.find( { name : "Overview" }, function (err, play){
-        console.log(play.Detail);
+// Playbook Route 
+router.get('/playbook/:name', function(req,res,next){
+    Play.findOne( { name : req.params.name }, function (error, play) {
+        if (error) {
+            return next(error);
+          } else {
+            let list = [];
+            for (i = 0 ; i < play.detail.length ; i++ ){
+                list.push(play.detail[i]);
+            }
+            console.log(list);
+            // console.log(userFeedback);
+            return res.render('playbook', { title: 'Playbook', list : list });
+        }
     });
 });
+   
 
 // GET /logout
 router.get('/logout', function(req,res,next) {
