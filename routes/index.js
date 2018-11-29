@@ -140,9 +140,9 @@ router.get('/', function(req, res){
     res.render('index', {title : "HEY", message : "This is the main index.js page"});
 });
 
-// Playbook Route
-router.get('/playbook', function(req,res,next){
-    Play.findOne( { name : "Overview" }, function (error, play) {
+// Playbook Route 
+router.get('/playbook/:name', function(req,res,next){
+    Play.findOne( { name : req.params.name }, function (error, play) {
         if (error) {
             return next(error);
           } else {

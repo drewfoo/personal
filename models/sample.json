@@ -145,7 +145,7 @@ for Sub - Playbook List(/playbook/backlog) -
 
 // Plays Insert
 db.plays.insertOne({
-            "name": "Overview",
+            "name": "overview",
             "heading": "Introducing of the Agile Delivery Model and Playbook",
             "summary": "Here we introduce the overall Agile Delivery Model in which the information contained within this Playbook can be applied. The Model and Playbook is not intended to be prescriptive but can and should be adapted to a given situation. The intention of this playbook is to assist in applying an Agile Delivery Model into practice and drive delivery value across the organizations",
             "detail": [{
