@@ -1,28 +1,35 @@
 const express = require('express');
 
 const router = express.Router();
-const User = require('../models/user')
-const Feedback = require('../models/user')
 const Player = require('../models/play')
-const Play = require('../models/play')
+const Playbook = require('../models/play')
 const Detail = require('../models/play')
 const mid = require('../middleware');
 
 // Playbook Route
 router.get('/playbook/:name', function(req,res,next){
-    Play.findOne( { name : req.params.name }, function (error, play) {
+    Playbook.findOne( { name : req.params.name } ).populate('players').
+    exec(function (error, playbook) {
         if (error) {
             return next(error);
           } else {
-            let list = [];
-            for (i = 0 ; i < play.detail.length ; i++ ){
-                list.push(play.detail[i]);
+            let playbookList = [];
+            let playerList = [];
+            for (i = 0 ; i < playbook.detail.length ; i++ ){
+                playbookList.push(playbook.detail[i]);}
+            for (i = 0 ; i < playbook.players.length ; i++ ){
+                playerList.push(playbook.players[i]);   
             }
-            console.log(list);
-            // console.log(userFeedback);
-            return res.render('playbook', { title: 'Playbook', list : list });
+            console.log(playbookList);
+            console.log(playerList);
+            return res.render('playbook', { title: 'Playbook', 
+                name: playbook.name,
+                heading: playbook.heading,
+                summary: playbook.summary,
+                playbooklist : playbookList,
+                playerlist : playerList});
         }
-    });
+    })
 });
 
 // TEST Route

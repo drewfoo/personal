@@ -32,7 +32,7 @@ const DetailSchema = new mongoose.Schema({
   }
 });
 
-const PlaySchema = new mongoose.Schema({
+const PlaybookSchema = new mongoose.Schema({
   name: {
     type: String
   },
@@ -48,7 +48,7 @@ const PlaySchema = new mongoose.Schema({
 
 const Player = mongoose.model('Player', PlayerSchema);
 const Detail = mongoose.model('Detail', DetailSchema);
-const Play = mongoose.model('Play', PlaySchema);
+const Playbook = mongoose.model('Playbook', PlaybookSchema);
 module.exports = Player;
 module.exports = Detail;
-module.exports = Play;
+module.exports = Playbook;

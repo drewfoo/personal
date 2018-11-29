@@ -2,9 +2,6 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user')
 var Feedback = require('../models/user')
-var Player = require('../models/play')
-var Play = require('../models/play')
-var Detail = require('../models/play')
 var mid = require('../middleware');
 
 
