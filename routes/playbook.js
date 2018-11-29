@@ -1,9 +1,9 @@
 const express = require('express');
 
 const router = express.Router();
-const Player = require('../models/play')
-const Playbook = require('../models/play')
-const Detail = require('../models/play')
+const Player = require('../models/player')
+const Playbook = require('../models/playbook')
+const Detail = require('../models/playbook')
 const mid = require('../middleware');
 
 // Playbook Route

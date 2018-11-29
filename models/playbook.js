@@ -1,27 +1,6 @@
 const mongoose = require('mongoose');
+const Player = require('../models/player')
 var ObjectId = mongoose.Schema.Types.ObjectId;
-
-const PlayerSchema = new mongoose.Schema({
-  _id: ObjectId,
-  name: {
-    type: String,
-  },
-  team: {
-    type: String,
-  },
-  summary: {
-    type: String,
-  },
-  detail: {
-    type: String,
-  },
-  position: {
-    type: String,
-  },
-  responsibilities: {
-    type: String,
-  }
-});
 
 const DetailSchema = new mongoose.Schema({
   section: {
@@ -46,9 +25,7 @@ const PlaybookSchema = new mongoose.Schema({
   players: [ { type : ObjectId, ref: 'Player'} ]
 });
 
-const Player = mongoose.model('Player', PlayerSchema);
 const Detail = mongoose.model('Detail', DetailSchema);
 const Playbook = mongoose.model('Playbook', PlaybookSchema);
-module.exports = Player;
 module.exports = Detail;
 module.exports = Playbook;
