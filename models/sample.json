@@ -164,8 +164,19 @@ db.plays.insertOne({
                     "section": "Get In Touch",
                     "content": "If you have any questions on things you have read or have suggestions what can be made better, I would love to hear from you. You can provide feedback directly using the feedback from www.google.com"
                 }
+            ],
+            "players": [
+                ObjectId("5bff6b61e2a5b9a92024e2d7")
             ]
         })
+
+// Plays Insert
+db.plays.insertOne({
+    "name": "teams",
+    "heading": "The Key to Getting Work Done",
+    "summary": "Teams, which are made up of people (or in this case players), are central to the mission of delivering value through the Agile Delivery Model. Each player is assigned different roles and responsibilities given the play in which they participate. As such, coordination, communication, and collaboration is key to any team's success. This section of the playbook attempts to identify the key player's roles and responsibilities as well as how to best and be effective.",
+    "detail": []
+})
 
         {
             "_id": ObjectId("A0002"),
@@ -176,3 +187,15 @@ db.plays.insertOne({
             "players": [ObjectID("C0001"), ObjectID("C0002")],
             "plays": [ObjectID("B0001")]
         }
+
+
+// Players Insert
+db.players.insertOne({
+    "name": "Product Owner",
+    "team": "Core Team",
+    "summary": "Owns What and When To Build",
+    "detail": "DETAIL PRODUCT OWNER - Lorem ipsum dolor sit amet",
+    "position": "POSITION PRODUCT OWNER - Lorem ipsum dolor sit amet",
+    "responsibilities": "RESPONSIBILITIES PRODUCT OWNER - Lorem ipsum dolor sit amet",
+})
+        

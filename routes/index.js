@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user')
 var Feedback = require('../models/user')
+var Player = require('../models/play')
 var Play = require('../models/play')
 var Detail = require('../models/play')
 var mid = require('../middleware');
@@ -156,7 +157,15 @@ router.get('/playbook/:name', function(req,res,next){
         }
     });
 });
-   
+
+// TEST Route
+router.get('/test', function(req,res,next){
+    Play.findOne( { name : "overview" }).populate('players').
+    exec(function (err, play){
+        if (err) return next(err);
+        console.log(play.players[0].name);
+    })
+});
 
 // GET /logout
 router.get('/logout', function(req,res,next) {
