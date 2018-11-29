@@ -142,10 +142,21 @@ router.get('/', function(req, res){
 
 // Playbook Route
 router.get('/playbook', function(req,res,next){
-    Play.find( { name : "Overview" }, function (err, play){
-        console.log(play.Detail);
+    Play.findOne( { name : "Overview" }, function (error, play) {
+        if (error) {
+            return next(error);
+          } else {
+            let list = [];
+            for (i = 0 ; i < play.detail.length ; i++ ){
+                list.push(play.detail[i]);
+            }
+            console.log(list);
+            // console.log(userFeedback);
+            return res.render('playbook', { title: 'Playbook', list : list });
+        }
     });
 });
+   
 
 // GET /logout
 router.get('/logout', function(req,res,next) {
