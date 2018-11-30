@@ -1,12 +1,14 @@
 const express = require('express');
 
 const router = express.Router();
-const Player = require('../models/player')
-const Playbook = require('../models/playbook')
-const Detail = require('../models/playbook')
+const Player = require('../models/player');
+const PlayDetail = require('../models/play');
+const Play = require('../models/play');
+const Playbook = require('../models/playbook');
+const Detail = require('../models/playbook');
 const mid = require('../middleware');
 
-// Playbook Route
+// Main Playbook Route
 router.get('/playbook', function(req,res,next){
 	Playbook.find().
     exec(function (error, playbook) {
@@ -39,32 +41,44 @@ router.get('/playbook', function(req,res,next){
     }})
 });
 
-// // Playbook Route
-// router.get('/playbook/:name', function(req,res,next){
-// 	Playbook.findOne( { name : req.params.name } ).populate('players').
-//     exec(function (error, playbook) {
-//       if (error) {
-//         return next(error);
-//       } else {
-//         let playbookList = [];
-//         let playerList = [];
-//         for (i = 0 ; i < playbook.detail.length ; i++ ){
-//           playbookList.push(playbook.detail[i]);}
-//         for (i = 0 ; i < playbook.players.length ; i++ ){
-//           playerList.push(playbook.players[i]);   
-//         }
-//         console.log(playbook);
-//         console.log(playbookList);
-//         console.log(playerList);
-//         return res.render('playbook', { title: 'Playbook', 
-//             name: playbook.name,
-//             heading: playbook.heading,
-//             summary: playbook.summary,
-//             playbooklist : playbookList,
-//             playerlist : playerList});
-//     }
-// })
-// });
+// Playbook Section Routes
+router.get('/playbook/:name', function(req,res,next){
+	Playbook.findOne( { name : req.params.name } )
+	.populate('plays').
+    exec(function (error, playbook) {
+      if (error) {
+        return next(error);
+      } else {
+					let sectionContent= [];
+					for ( i = 0 ; i < playbook.detail.length ; i++){
+						sectionContent.push(playbook.detail[i])
+                    }
+                    let relatedContent= [];
+                    for ( i = 0 ; i < playbook.plays.length ; i++){
+                        relatedContent.push({"name": playbook.plays[i].name, "heading": playbook.plays[i].heading})
+                    }
+                    console.log(relatedContent);
+                // console.log(playbook)	
+				// console.log(sectionContent);
+        // let playbookList = [];
+        // let playerList = [];
+        // for (i = 0 ; i < playbook.detail.length ; i++ ){
+        //   playbookList.push(playbook.detail[i]);}
+        // for (i = 0 ; i < playbook.players.length ; i++ ){
+        //   playerList.push(playbook.players[i]);   
+        // }
+        // console.log(playbook);
+        // console.log(playbookList);
+        // console.log(playerList);
+        return res.render('playbook', { title: 'Playbook', 
+            name: playbook.name,
+            heading: playbook.heading,
+            summary: playbook.summary,
+            sectionContent: sectionContent,
+            relatedContent: relatedContent
+    });
+}});
+});
 
 
 // TEST Route

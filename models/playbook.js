@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const Player = require('../models/player')
+const Player = require('../models/player');
+const Play = require('../models/play');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 const DetailSchema = new mongoose.Schema({
@@ -22,7 +23,8 @@ const PlaybookSchema = new mongoose.Schema({
     type: String
   },
   detail: [DetailSchema],
-  players: [ { type : ObjectId, ref: 'Player'} ]
+  plays: [ { type : ObjectId, ref: 'Play' } ]
+  // players: [ { type : ObjectId, ref: 'Player'} ]
 });
 
 const Detail = mongoose.model('Detail', DetailSchema);
