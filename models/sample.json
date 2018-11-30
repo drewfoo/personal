@@ -143,8 +143,8 @@ for Sub - Playbook List(/playbook/backlog) -
     Display Master Players List + Dynamic Links to Players
 
 
-// Plays Insert
-db.plays.insertOne({
+// Playbooks Insert
+db.playbooks.insertOne({
             "name": "overview",
             "heading": "Introducing of the Agile Delivery Model and Playbook",
             "summary": "Here we introduce the overall Agile Delivery Model in which the information contained within this Playbook can be applied. The Model and Playbook is not intended to be prescriptive but can and should be adapted to a given situation. The intention of this playbook is to assist in applying an Agile Delivery Model into practice and drive delivery value across the organizations",
@@ -166,12 +166,13 @@ db.plays.insertOne({
                 }
             ],
             "players": [
-                ObjectId("5bff6b61e2a5b9a92024e2d7")
+                ObjectId("5bff6b61e2a5b9a92024e2d7"),
+                ObjectId("5c001f73782f344c8c0ce7b0")
             ]
         })
 
 // Plays Insert
-db.plays.insertOne({
+db.playbooks.insertOne({
     "name": "teams",
     "heading": "The Key to Getting Work Done",
     "summary": "Teams, which are made up of people (or in this case players), are central to the mission of delivering value through the Agile Delivery Model. Each player is assigned different roles and responsibilities given the play in which they participate. As such, coordination, communication, and collaboration is key to any team's success. This section of the playbook attempts to identify the key player's roles and responsibilities as well as how to best and be effective.",
@@ -207,3 +208,16 @@ db.players.insertOne({
     "position": "Scrum Master RESPONSIBILITIES -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum, justo ut feugiat rutrum, urna nulla hendrerit lorem, sed laoreet mi orci et eros. Praesent congue viverra vulputate. In hac habitasse platea dictumst. Integer consequat justo ut diam vulputate hendrerit. In tristique luctus urna, ut rhoncus libero sagittis in. Quisque sit amet egestas sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras in purus ac tortor mollis dictum. In felis urna, eleifend quis tortor vel, accumsan ornare lacus. Suspendisse cursus dolor vitae egestas convallis. Suspendisse sit amet metus convallis, finibus erat non, iaculis risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sit amet sapien at lectus semper interdum sollicitudin ac elit. Suspendisse dignissim condimentum scelerisque.",
     "responsibilities": "Scrum Master POSITION",
 })
+
+US-C02RF1XNFVH8(mongod-4.0.2) Personal> db.playbooks.find( { 'detail.section': "Contributor"}, { name : 1, 'detail.$.section': 1 })
+{
+  "_id": ObjectId("5c0041e6782f344c8c0ce7b1"),
+  "name": "overview",
+  "detail": [
+    {
+      "section": "Contributor",
+      "content": "year seasoned professional in the Agile Delivery space. Andrew has provided consulting services to Fortune 500 clients as well as delivered products in the context of Agile in multiple industries including financial services, consumer products and media and entertainment. This playbook is my attempt at sharing my knowledge and resources to those that strive to deliver with consistency, transparency and excellence."
+    }
+  ]
+}
+Fetched 1 record(s) in 1ms

@@ -8,28 +8,29 @@ const mid = require('../middleware');
 
 // Playbook Route
 router.get('/playbook/:name', function(req,res,next){
-    Playbook.findOne( { name : req.params.name } ).populate('players').
+	Playbook.findOne( { name : req.params.name } ).populate('players').
     exec(function (error, playbook) {
-        if (error) {
-            return next(error);
-          } else {
-            let playbookList = [];
-            let playerList = [];
-            for (i = 0 ; i < playbook.detail.length ; i++ ){
-                playbookList.push(playbook.detail[i]);}
-            for (i = 0 ; i < playbook.players.length ; i++ ){
-                playerList.push(playbook.players[i]);   
-            }
-            console.log(playbookList);
-            console.log(playerList);
-            return res.render('playbook', { title: 'Playbook', 
-                name: playbook.name,
-                heading: playbook.heading,
-                summary: playbook.summary,
-                playbooklist : playbookList,
-                playerlist : playerList});
+      if (error) {
+        return next(error);
+      } else {
+        let playbookList = [];
+        let playerList = [];
+        for (i = 0 ; i < playbook.detail.length ; i++ ){
+          playbookList.push(playbook.detail[i]);}
+        for (i = 0 ; i < playbook.players.length ; i++ ){
+          playerList.push(playbook.players[i]);   
         }
-    })
+        console.log(playbook);
+        console.log(playbookList);
+        console.log(playerList);
+        return res.render('playbook', { title: 'Playbook', 
+            name: playbook.name,
+            heading: playbook.heading,
+            summary: playbook.summary,
+            playbooklist : playbookList,
+            playerlist : playerList});
+    }
+})
 });
 
 // TEST Route
