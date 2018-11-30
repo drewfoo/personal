@@ -173,9 +173,9 @@ db.playbooks.insertOne({
 
 // Plays Insert
 db.playbooks.insertOne({
-    "name": "teams",
-    "heading": "The Key to Getting Work Done",
-    "summary": "Teams, which are made up of people (or in this case players), are central to the mission of delivering value through the Agile Delivery Model. Each player is assigned different roles and responsibilities given the play in which they participate. As such, coordination, communication, and collaboration is key to any team's success. This section of the playbook attempts to identify the key player's roles and responsibilities as well as how to best and be effective.",
+    "name": "backlog",
+    "heading": "The Work to Be Done",
+    "summary": "Backlogs are key organizing constructs within Agile as they maintain the source of 'what', i.e. the work that needs to be done. These require significant attention and need to be regularly maintained one of the key artifacts for delivery.",
     "detail": []
 })
 

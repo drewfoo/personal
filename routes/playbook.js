@@ -7,31 +7,65 @@ const Detail = require('../models/playbook')
 const mid = require('../middleware');
 
 // Playbook Route
-router.get('/playbook/:name', function(req,res,next){
-	Playbook.findOne( { name : req.params.name } ).populate('players').
+router.get('/playbook', function(req,res,next){
+	Playbook.find().
     exec(function (error, playbook) {
       if (error) {
         return next(error);
       } else {
-        let playbookList = [];
-        let playerList = [];
-        for (i = 0 ; i < playbook.detail.length ; i++ ){
-          playbookList.push(playbook.detail[i]);}
-        for (i = 0 ; i < playbook.players.length ; i++ ){
-          playerList.push(playbook.players[i]);   
+        let main = playbook.filter(function(play){
+            return play.name === "overview";
+        });
+        let sub = playbook.filter(function(play){
+            return play.name !== "overview";
+        });
+        let mainSections = main[0];
+        let sectionContent = [];
+        let related = [];
+        for (i = 0 ; i < mainSections.detail.length ; i++){
+            sectionContent.push(mainSections.detail[i]);
         }
-        console.log(playbook);
-        console.log(playbookList);
-        console.log(playerList);
+        for (i = 0 ; i < sub.length ; i++){
+            related.push({"name":sub[i].name, "heading":sub[i].heading})
+        }
+        console.log(sectionContent);
         return res.render('playbook', { title: 'Playbook', 
-            name: playbook.name,
-            heading: playbook.heading,
-            summary: playbook.summary,
-            playbooklist : playbookList,
-            playerlist : playerList});
-    }
-})
+            name: mainSections.name,
+            heading: mainSections.heading,
+            summary: mainSections.summary,
+            sectionContent : sectionContent,
+            relatedContent : related
+      })
+    }})
 });
+
+// // Playbook Route
+// router.get('/playbook/:name', function(req,res,next){
+// 	Playbook.findOne( { name : req.params.name } ).populate('players').
+//     exec(function (error, playbook) {
+//       if (error) {
+//         return next(error);
+//       } else {
+//         let playbookList = [];
+//         let playerList = [];
+//         for (i = 0 ; i < playbook.detail.length ; i++ ){
+//           playbookList.push(playbook.detail[i]);}
+//         for (i = 0 ; i < playbook.players.length ; i++ ){
+//           playerList.push(playbook.players[i]);   
+//         }
+//         console.log(playbook);
+//         console.log(playbookList);
+//         console.log(playerList);
+//         return res.render('playbook', { title: 'Playbook', 
+//             name: playbook.name,
+//             heading: playbook.heading,
+//             summary: playbook.summary,
+//             playbooklist : playbookList,
+//             playerlist : playerList});
+//     }
+// })
+// });
+
 
 // TEST Route
 router.get('/test', function(req,res,next){
