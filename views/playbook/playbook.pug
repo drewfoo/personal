@@ -3,44 +3,50 @@ extends layout
 block content
   .g-pa-20
     .row
-        // Panel
+    if sectionContent
+      each val, i in sectionContent
         .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
           header.card-header.g-bg-transparent.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-25--sm.pb-0
             .media
-              h3.g-font-weight-800.d-flex.align-self-center.text-uppercase.g-font-size-18.g-color-black.g-mr-10.mb-0 #{name}
+              h3.g-font-weight-800.d-flex.align-self-center.text-uppercase.g-font-size-18.g-color-black.g-mr-10.mb-0 #{val.name}
           .card-block.g-pa-15.g-pa-30--sm
-            h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10 #{heading}
-            p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{summary}
-        // End Panel
-        // Panel
-        if sectionContent
-          .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
-            header.card-header.g-bg-transparent.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-25--sm.pb-0
-              .media
-                h3.g-font-weight-800.d-flex.align-self-center.text-uppercase.g-font-size-18.g-color-black.g-mr-10.mb-0 Overview
-            .card-block.g-pa-15.g-pa-30--sm
-              each val, i in sectionContent
-                h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10(style='margin-top:10px') #{val.section}
-                p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{val.content}
-        // End Panel
-        if relatedContent
-          // Panel
-          .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
-            header.card-header.g-bg-transparent.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-25--sm.pb-0
-              .media
-                h3.g-font-weight-800.d-flex.align-self-center.text-uppercase.g-font-size-18.g-color-black.g-mr-10.mb-0 Related Playbooks
-            .card-block.g-pa-15.g-pa-30--sm
-              each val,i in relatedContent
-                h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10(style='margin-top:10px') #{val.name}
-                p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{val.heading}
-          // End Panel
+              h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10(style='margin-top:10px') #{val.header}
+              p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{val.body}
+        each item in val.listitems
+          p #{item}
+    if referenceLinks
+      each val in referenceLinks
+        h4 #{val}
+    //-     //- // Panel
+    //-     //- .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
+    //-     //-   header.card-header.g-bg-transparent.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-25--sm.pb-0
+    //-     //-     .media
+    //-     //-       h3.g-font-weight-800.d-flex.align-self-center.text-uppercase.g-font-size-18.g-color-black.g-mr-10.mb-0 #{name}
+    //-     //-   .card-block.g-pa-15.g-pa-30--sm
+    //-     //-     h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10 #{heading}
+    //-     //-     p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{summary}
+    //-     //- // End Panel
+    //-     // Panel
+        
+    //-     // End Panel
+    //-     //- if relatedContent
+    //-     //-   // Panel
+    //-     //-   .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
+    //-     //-     header.card-header.g-bg-transparent.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-25--sm.pb-0
+    //-     //-       .media
+    //-     //-         h3.g-font-weight-800.d-flex.align-self-center.text-uppercase.g-font-size-18.g-color-black.g-mr-10.mb-0 Related Playbooks
+    //-     //-     .card-block.g-pa-15.g-pa-30--sm
+    //-     //-       each val,i in relatedContent
+    //-     //-         h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10(style='margin-top:10px') #{val.name}
+    //-     //-         p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{val.heading}
+    //-     //-   // End Panel
 
-    //- .main.container.clearfix
-    //-   .row
-    //-     .col-md-8.col-md-offset-2
-    //-       h1.display-4 Players
-    //-         ul
-    //-           each val, i in playerlist
-    //-             li #{val.name}  
-    //-             li #{val.summary}
-    //-             li #{val.detail}    
+    //- //- .main.container.clearfix
+    //- //-   .row
+    //- //-     .col-md-8.col-md-offset-2
+    //- //-       h1.display-4 Players
+    //- //-         ul
+    //- //-           each val, i in playerlist
+    //- //-             li #{val.name}  
+    //- //-             li #{val.summary}
+    //- //-             li #{val.detail}    
