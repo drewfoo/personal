@@ -50,402 +50,467 @@ header#js-header.u-header.u-header--sticky-top
         a.js-side-nav.u-header__nav-toggler.d-flex.align-self-center.ml-auto(href='#!' data-hssm-class='u-side-nav--mini u-sidebar-navigation-v1--mini' data-hssm-body-class='u-side-nav-mini' data-hssm-is-close-all-except-this='true' data-hssm-target='#sideNav')
           i.hs-admin-align-left
         // End Sidebar Toggler
-      // Top Search Bar
-      form#searchMenu.u-header--search.col-sm.g-py-12.g-ml-15--sm.g-ml-20--md.g-mr-10--sm(aria-labelledby='searchInvoker' action='#!')
-        .input-group.g-max-width-450
-          input.form-control.form-control-md.g-rounded-4(type='text' placeholder='Enter search keywords')
-          button.btn.u-btn-outline-primary.g-brd-none.g-bg-transparent--hover.g-pos-abs.g-top-0.g-right-0.d-flex.g-width-40.h-100.align-items-center.justify-content-center.g-font-size-18.g-z-index-2(type='submit')
-            i.hs-admin-search
-      // End Top Search Bar
-      // Messages/Notifications/Top Search Bar/Top User
-      .col-auto.d-flex.g-py-12.g-pl-40--lg.ml-auto
-        // Top Messages
-        .g-pos-rel.g-hidden-sm-down.g-mr-5
-          a#messagesInvoker.d-block.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='messagesMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#messagesMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
-            span.u-badge-v1.g-top-7.g-right-7.g-width-18.g-height-18.g-bg-primary.g-font-size-10.g-color-white.rounded-circle.p-0 7
-            i.hs-admin-comment-alt.g-absolute-centered
-          // Top Messages List
-          #messagesMenu.g-absolute-centered--x.g-width-340.g-max-width-400.g-mt-17.rounded(aria-labelledby='messagesInvoker')
-            .media.u-header-dropdown-bordered-v1.g-pa-20
-              h4.d-flex.align-self-center.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 3 new messages
-              .media-body.align-self-center.text-right
-                a.g-color-secondary(href='#!') View All
-            ul.p-0.mb-0
-              // Top Messages List Item
-              li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
-                .d-flex.g-mr-15
-                  img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img5.jpg' alt='Image Description')
-                .media-body
-                  h5.g-font-size-16.g-font-weight-400.g-mb-5
-                    a(href='#!') Verna Swanson
-                  p.g-mb-10 Not so many years businesses used to grunt at using
-                  em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
-                    i.hs-admin-time.icon-clock.g-mr-5
-                    small 5 Min ago
-                a.u-link-v2(href='#!') Read
-              // End Top Messages List Item
-              // Top Messages List Item
-              li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
-                .d-flex.g-mr-15
-                  img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img6.jpg' alt='Image Description')
-                .media-body
-                  h5.g-font-size-16.g-font-weight-400.g-mb-5
-                    a(href='#!') Eddie Hayes
-                  p.g-mb-10 But today and influence of is growing right along illustration
-                  em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
-                    i.hs-admin-time.icon-clock.g-mr-5
-                    small 22 Min ago
-                a.u-link-v2(href='#!') Read
-              // End Top Messages List Item
-              // Top Messages List Item
-              li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
-                .d-flex.g-mr-15
-                  img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img7.jpg' alt='Image Description')
-                .media-body
-                  h5.g-font-size-16.g-font-weight-400.g-mb-5
-                    a(href='#!') Herbert Castro
-                  p.g-mb-10 But today, the use and influence of illustrations is growing right along
-                  em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
-                    i.hs-admin-time.icon-clock.g-mr-5
-                    small 15 Min ago
-                a.u-link-v2(href='#!') Read
-              // End Top Messages List Item
-          // End Top Messages List
-        // End Top Messages
-        // Top Notifications
-        .g-pos-rel.g-hidden-sm-down
-          a#notificationsInvoker.d-block.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='notificationsMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#notificationsMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
-            i.hs-admin-bell.g-absolute-centered
-          // Top Notifications List
-          #notificationsMenu.js-custom-scroll.g-absolute-centered--x.g-width-340.g-max-width-400.g-height-400.g-mt-17.rounded(aria-labelledby='notificationsInvoker')
-            .media.text-uppercase.u-header-dropdown-bordered-v1.g-pa-20
-              h4.d-flex.align-self-center.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 Notifications
-            ul.p-0.mb-0
-              // Top Notifications List Item
-              li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
-                .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
-                  i.hs-admin-bookmark-alt.g-absolute-centered
-                .media-body.align-self-center
-                  p.mb-0 A Pocket PC is a handheld computer features
-                a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
-                  i.hs-admin-close
-              // End Top Notifications List Item
-              // Top Notifications List Item
-              li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
-                .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
-                  i.hs-admin-blackboard.g-absolute-centered
-                .media-body.align-self-center
-                  p.mb-0 The first is a non technical method which requires
-                a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
-                  i.hs-admin-close
-              // End Top Notifications List Item
-              // Top Notifications List Item
-              li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
-                .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
-                  i.hs-admin-calendar.g-absolute-centered
-                .media-body.align-self-center
-                  p.mb-0 Stu Unger is of the biggest superstarsis
-                a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
-                  i.hs-admin-close
-              // End Top Notifications List Item
-              // Top Notifications List Item
-              li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
-                .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
-                  i.hs-admin-pie-chart.g-absolute-centered
-                .media-body.align-self-center
-                  p.mb-0 Sony laptops are among the most well known laptops
-                a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
-                  i.hs-admin-close
-              // End Top Notifications List Item
-              // Top Notifications List Item
-              li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
-                .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
-                  i.hs-admin-bookmark-alt.g-absolute-centered
-                .media-body.align-self-center
-                  p.mb-0 A Pocket PC is a handheld computer features
-                a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
-                  i.hs-admin-close
-              // End Top Notifications List Item
-              // Top Notifications List Item
-              li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
-                .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
-                  i.hs-admin-blackboard.g-absolute-centered
-                .media-body.align-self-center
-                  p.mb-0 The first is a non technical method which requires
-                a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
-                  i.hs-admin-close
-              // End Top Notifications List Item
-          // End Top Notifications List
-        // End Top Notifications
-        // Top Search Bar (Mobi)
-        a#searchInvoker.g-hidden-sm-up.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='searchMenu' aria-haspopup='true' aria-expanded='false' data-is-mobile-only='true' data-dropdown-event='click' data-dropdown-target='#searchMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
-          i.hs-admin-search.g-absolute-centered
-        // End Top Search Bar (Mobi)
-        // Top User
-        .col-auto.d-flex.g-pt-5.g-pt-0--sm.g-pl-10.g-pl-20--sm
-          .g-pos-rel.g-px-10--lg
-            a#profileMenuInvoker.d-block(href='#!' aria-controls='profileMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#profileMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
-              span.g-pos-rel
-                span.u-badge-v2--xs.u-badge--top-right.g-hidden-sm-up.g-bg-secondary.g-mr-5
-                img.g-width-30.g-width-40--md.g-height-30.g-height-40--md.rounded-circle.g-mr-10--sm(src='/img-temp/130x130/img1.jpg' alt='Image description')
-              span.g-pos-rel.g-top-2
-                span.g-hidden-sm-down Charlie Bailey
-                i.hs-admin-angle-down.g-pos-rel.g-top-2.g-ml-10
-            // Top User Menu
-            ul#profileMenu.g-pos-abs.g-left-0.g-width-100x--lg.g-nowrap.g-font-size-14.g-py-20.g-mt-17.rounded(aria-labelledby='profileMenuInvoker')
-              li.g-hidden-sm-up.g-mb-10
-                a.media.g-py-5.g-px-20(href='#!')
-                  span.d-flex.align-self-center.g-pos-rel.g-mr-12
-                    span.u-badge-v1.g-top-minus-3.g-right-minus-3.g-width-18.g-height-18.g-bg-secondary.g-font-size-10.g-color-white.rounded-circle.p-0 10
-                    i.hs-admin-comment-alt
-                  span.media-body.align-self-center Unread Messages
-              li.g-hidden-sm-up.g-mb-10
-                a.media.g-py-5.g-px-20(href='#!')
-                  span.d-flex.align-self-center.g-mr-12
-                    i.hs-admin-bell
-                  span.media-body.align-self-center Notifications
-              li.g-mb-10
-                a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
-                  span.d-flex.align-self-center.g-mr-12
-                    i.hs-admin-user
-                  span.media-body.align-self-center My Profile
-              li.g-mb-10
-                a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
-                  span.d-flex.align-self-center.g-mr-12
-                    i.hs-admin-rocket
-                  span.media-body.align-self-center Upgrade Plan
-              li.g-mb-10
-                a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
-                  span.d-flex.align-self-center.g-mr-12
-                    i.hs-admin-layout-grid-2
-                  span.media-body.align-self-center Latest Projects
-              li.g-mb-10
-                a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
-                  span.d-flex.align-self-center.g-mr-12
-                    i.hs-admin-headphone-alt
-                  span.media-body.align-self-center Get Support
-              li.mb-0
-                a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
-                  span.d-flex.align-self-center.g-mr-12
-                    i.hs-admin-shift-right
-                  span.media-body.align-self-center Sign Out
-            // End Top User Menu
-        // End Top User
-      // End Messages/Notifications/Top Search Bar/Top User
+      //- // Top Search Bar
+      //- form#searchMenu.u-header--search.col-sm.g-py-12.g-ml-15--sm.g-ml-20--md.g-mr-10--sm(aria-labelledby='searchInvoker' action='#!')
+      //-   .input-group.g-max-width-450
+      //-     input.form-control.form-control-md.g-rounded-4(type='text' placeholder='Enter search keywords')
+      //-     button.btn.u-btn-outline-primary.g-brd-none.g-bg-transparent--hover.g-pos-abs.g-top-0.g-right-0.d-flex.g-width-40.h-100.align-items-center.justify-content-center.g-font-size-18.g-z-index-2(type='submit')
+      //-       i.hs-admin-search
+      //- // End Top Search Bar
+      //- // Messages/Notifications/Top Search Bar/Top User
+      //- .col-auto.d-flex.g-py-12.g-pl-40--lg.ml-auto
+      //-   // Top Messages
+      //-   .g-pos-rel.g-hidden-sm-down.g-mr-5
+      //-     a#messagesInvoker.d-block.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='messagesMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#messagesMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-       span.u-badge-v1.g-top-7.g-right-7.g-width-18.g-height-18.g-bg-primary.g-font-size-10.g-color-white.rounded-circle.p-0 7
+      //-       i.hs-admin-comment-alt.g-absolute-centered
+      //-     // Top Messages List
+      //-     #messagesMenu.g-absolute-centered--x.g-width-340.g-max-width-400.g-mt-17.rounded(aria-labelledby='messagesInvoker')
+      //-       .media.u-header-dropdown-bordered-v1.g-pa-20
+      //-         h4.d-flex.align-self-center.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 3 new messages
+      //-         .media-body.align-self-center.text-right
+      //-           a.g-color-secondary(href='#!') View All
+      //-       ul.p-0.mb-0
+      //-         // Top Messages List Item
+      //-         li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
+      //-           .d-flex.g-mr-15
+      //-             img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img5.jpg' alt='Image Description')
+      //-           .media-body
+      //-             h5.g-font-size-16.g-font-weight-400.g-mb-5
+      //-               a(href='#!') Verna Swanson
+      //-             p.g-mb-10 Not so many years businesses used to grunt at using
+      //-             em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
+      //-               i.hs-admin-time.icon-clock.g-mr-5
+      //-               small 5 Min ago
+      //-           a.u-link-v2(href='#!') Read
+      //-         // End Top Messages List Item
+      //-         // Top Messages List Item
+      //-         li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
+      //-           .d-flex.g-mr-15
+      //-             img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img6.jpg' alt='Image Description')
+      //-           .media-body
+      //-             h5.g-font-size-16.g-font-weight-400.g-mb-5
+      //-               a(href='#!') Eddie Hayes
+      //-             p.g-mb-10 But today and influence of is growing right along illustration
+      //-             em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
+      //-               i.hs-admin-time.icon-clock.g-mr-5
+      //-               small 22 Min ago
+      //-           a.u-link-v2(href='#!') Read
+      //-         // End Top Messages List Item
+      //-         // Top Messages List Item
+      //-         li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
+      //-           .d-flex.g-mr-15
+      //-             img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img7.jpg' alt='Image Description')
+      //-           .media-body
+      //-             h5.g-font-size-16.g-font-weight-400.g-mb-5
+      //-               a(href='#!') Herbert Castro
+      //-             p.g-mb-10 But today, the use and influence of illustrations is growing right along
+      //-             em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
+      //-               i.hs-admin-time.icon-clock.g-mr-5
+      //-               small 15 Min ago
+      //-           a.u-link-v2(href='#!') Read
+      //-         // End Top Messages List Item
+      //-     // End Top Messages List
+      //-   // End Top Messages
+      //-   // Top Notifications
+      //-   .g-pos-rel.g-hidden-sm-down
+      //-     a#notificationsInvoker.d-block.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='notificationsMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#notificationsMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-       i.hs-admin-bell.g-absolute-centered
+      //-     // Top Notifications List
+      //-     #notificationsMenu.js-custom-scroll.g-absolute-centered--x.g-width-340.g-max-width-400.g-height-400.g-mt-17.rounded(aria-labelledby='notificationsInvoker')
+      //-       .media.text-uppercase.u-header-dropdown-bordered-v1.g-pa-20
+      //-         h4.d-flex.align-self-center.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 Notifications
+      //-       ul.p-0.mb-0
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-bookmark-alt.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 A Pocket PC is a handheld computer features
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-blackboard.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 The first is a non technical method which requires
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-calendar.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 Stu Unger is of the biggest superstarsis
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-pie-chart.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 Sony laptops are among the most well known laptops
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-bookmark-alt.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 A Pocket PC is a handheld computer features
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-blackboard.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 The first is a non technical method which requires
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-     // End Top Notifications List
+      //-   // End Top Notifications
+      //-   // Top Search Bar (Mobi)
+      //-   a#searchInvoker.g-hidden-sm-up.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='searchMenu' aria-haspopup='true' aria-expanded='false' data-is-mobile-only='true' data-dropdown-event='click' data-dropdown-target='#searchMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-     i.hs-admin-search.g-absolute-centered
+      //-   // End Top Search Bar (Mobi)
+      //-   // Top User
+      //-   .col-auto.d-flex.g-pt-5.g-pt-0--sm.g-pl-10.g-pl-20--sm
+      //-     .g-pos-rel.g-px-10--lg
+      //-       a#profileMenuInvoker.d-block(href='#!' aria-controls='profileMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#profileMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-         span.g-pos-rel
+      //-           span.u-badge-v2--xs.u-badge--top-right.g-hidden-sm-up.g-bg-secondary.g-mr-5
+      //-           img.g-width-30.g-width-40--md.g-height-30.g-height-40--md.rounded-circle.g-mr-10--sm(src='/img-temp/130x130/img1.jpg' alt='Image description')
+      //-         span.g-pos-rel.g-top-2
+      //-           span.g-hidden-sm-down Charlie Bailey
+      //-           i.hs-admin-angle-down.g-pos-rel.g-top-2.g-ml-10
+      //-       // Top User Menu
+      //-       ul#profileMenu.g-pos-abs.g-left-0.g-width-100x--lg.g-nowrap.g-font-size-14.g-py-20.g-mt-17.rounded(aria-labelledby='profileMenuInvoker')
+      //-         li.g-hidden-sm-up.g-mb-10
+      //-           a.media.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-pos-rel.g-mr-12
+      //-               span.u-badge-v1.g-top-minus-3.g-right-minus-3.g-width-18.g-height-18.g-bg-secondary.g-font-size-10.g-color-white.rounded-circle.p-0 10
+      //-               i.hs-admin-comment-alt
+      //-             span.media-body.align-self-center Unread Messages
+      //-         li.g-hidden-sm-up.g-mb-10
+      //-           a.media.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-bell
+      //-             span.media-body.align-self-center Notifications
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-user
+      //-             span.media-body.align-self-center My Profile
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-rocket
+      //-             span.media-body.align-self-center Upgrade Plan
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-layout-grid-2
+      //-             span.media-body.align-self-center Latest Projects
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-headphone-alt
+      //-             span.media-body.align-self-center Get Support
+      //-         li.mb-0
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-shift-right
+      //-             span.media-body.align-self-center Sign Out
+      //-       // End Top User Menu
+      //-   // End Top User
+      //- // End Messages/Notifications/Top Search Bar/Top User
+
       // Top Activity Toggler
-      a#activityInvoker.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='activityMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#activityMenu' data-dropdown-type='css-animation' data-dropdown-animation-in='fadeInRight' data-dropdown-animation-out='fadeOutRight' data-dropdown-duration='300')
-        i.hs-admin-align-right.g-absolute-centered
-      // End Top Activity Toggler
-    // Top Activity Panel
-    #activityMenu.js-custom-scroll.u-header-sidebar.g-pos-fix.g-top-0.g-left-auto.g-right-0.g-z-index-4.g-width-300.g-width-400--sm.g-height-100vh(aria-labelledby='activityInvoker')
-      .u-header-dropdown-bordered-v1.g-pa-20
-        a#activityInvokerClose.pull-right.g-color-lightblue-v2(href='#!' aria-controls='activityMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#activityMenu' data-dropdown-type='css-animation' data-dropdown-animation-in='fadeInRight' data-dropdown-animation-out='fadeOutRight' data-dropdown-duration='300')
-          i.hs-admin-close
-        h4.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 Activity
-      // Activity Short Stat.
-      section.g-pa-20
-        .media.align-items-center.u-link-v5
-          .media-body.align-self-center.g-line-height-1_3.g-font-weight-300.g-font-size-40
-            | 624 
-            span.g-font-size-16 +3%
-          .d-flex.align-self-center.g-font-size-25.g-line-height-1.g-color-secondary.ml-auto $49,000
-          .d-flex.align-self-center.g-ml-8
-            svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-              g(transform='translate(-21.000000, -751.000000)')
-                g(transform='translate(0.000000, 64.000000)')
-                  g(transform='translate(20.000000, 619.000000)')
-                    g(transform='translate(1.000000, 68.000000)')
-                      polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
-            svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-              g(transform='translate(-33.000000, -751.000000)')
-                g(transform='translate(0.000000, 64.000000)')
-                  g(transform='translate(20.000000, 619.000000)')
-                    g(transform='translate(1.000000, 68.000000)')
-                      polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
-        span.g-font-size-16 Transactions
-      // End Activity Short Stat.
-      // Activity Bars
-      section.g-pa-20.g-mb-10
-        // Advertising Income
-        .g-mb-30
-          .media.u-link-v5.g-mb-10
-            span.media-body.align-self-center Advertising Income
-            span.d-flex.align-self-center
-              svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-                g(transform='translate(-21.000000, -751.000000)')
-                  g(transform='translate(0.000000, 64.000000)')
-                    g(transform='translate(20.000000, 619.000000)')
-                      g(transform='translate(1.000000, 68.000000)')
-                        polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
-              svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-                g(transform='translate(-33.000000, -751.000000)')
-                  g(transform='translate(0.000000, 64.000000)')
-                    g(transform='translate(20.000000, 619.000000)')
-                      g(transform='translate(1.000000, 68.000000)')
-                        polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
-          .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
-            .progress-bar.g-bg-teal-v2.g-rounded-2(role='progressbar' style='width: 70%' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100')
-        // End Advertising Income
-        // Projects Income
-        .g-mb-30
-          .media.u-link-v5.g-mb-10
-            span.media-body.align-self-center Projects Income
-            span.d-flex.align-self-center
-              svg.g-fill-red(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-                g(transform='translate(-21.000000, -751.000000)')
-                  g(transform='translate(0.000000, 64.000000)')
-                    g(transform='translate(20.000000, 619.000000)')
-                      g(transform='translate(1.000000, 68.000000)')
-                        polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
-              svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-                g(transform='translate(-33.000000, -751.000000)')
-                  g(transform='translate(0.000000, 64.000000)')
-                    g(transform='translate(20.000000, 619.000000)')
-                      g(transform='translate(1.000000, 68.000000)')
-                        polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
-          .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
-            .progress-bar.g-bg-lightblue-v3.g-rounded-2(role='progressbar' style='width: 40%' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100')
-        // End Projects Income
-        // Template Sales
-        div
-          .media.u-link-v5.g-mb-10
-            span.media-body.align-self-center Template Sales
-            span.d-flex.align-self-center
-              svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-                g(transform='translate(-21.000000, -751.000000)')
-                  g(transform='translate(0.000000, 64.000000)')
-                    g(transform='translate(20.000000, 619.000000)')
-                      g(transform='translate(1.000000, 68.000000)')
-                        polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
-              svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
-                g(transform='translate(-33.000000, -751.000000)')
-                  g(transform='translate(0.000000, 64.000000)')
-                    g(transform='translate(20.000000, 619.000000)')
-                      g(transform='translate(1.000000, 68.000000)')
-                        polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
-          .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
-            .progress-bar.g-bg-darkblue-v2.g-rounded-2(role='progressbar' style='width: 90%' aria-valuenow='90' aria-valuemin='0' aria-valuemax='100')
-        // End Template Sales
-      // End Activity Bars
-      // Activity Accounts
-      section.g-pa-20
-        h5.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mb-10 My accounts
-        .media.u-header-dropdown-bordered-v2.g-py-10
-          .d-flex.align-self-center.g-mr-12
-            span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-teal-v2
-          .media-body.align-self-center Credit Card
-          .d-flex.text-right $12.240
-        .media.u-header-dropdown-bordered-v2.g-py-10
-          .d-flex.align-self-center.g-mr-12
-            span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-lightblue-v3
-          .media-body.align-self-center Debit Card
-          .d-flex.text-right $228.110
-        .media.g-py-10
-          .d-flex.align-self-center.g-mr-12
-            span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-darkblue-v2
-          .media-body.align-self-center Savings Account
-          .d-flex.text-right $128.248.000
-      // End Activity Accounts
-      // Activity Transactions
-      section.g-pa-20
-        h5.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mb-10 Transactions
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-plus.g-color-lightblue-v3
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $240.00
-              p.mb-0.g-mt-5 Addiction When Gambling Becomes
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              small 5 Min ago
-        // End Transaction Item
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-minus.g-color-red
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $126.00
-              p.mb-0.g-mt-5 Make Myspace Your
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              small 25 Nov 2017
-        // End Transaction Item
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-plus.g-color-lightblue-v3
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $560.00
-              p.mb-0.g-mt-5 Writing A Good Headline
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              small 22 Nov 2017
-        // End Transaction Item
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-plus.g-color-lightblue-v3
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $6.00
-              p.mb-0.g-mt-5 Buying Used Electronic Equipment
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              small 13 Oct 2017
-        // End Transaction Item
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-plus.g-color-lightblue-v3
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $320.00
-              p.mb-0.g-mt-5 Gambling Becomes A Problem
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              small 27 Jul 2017
-        // End Transaction Item
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-minus.g-color-red
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $28.00
-              p.mb-0.g-mt-5 Baby Monitor Technology
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              small 05 Mar 2017
-        // End Transaction Item
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-plus.g-color-lightblue-v3
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $490.00
-              p.mb-0.g-mt-5 Adwords Keyword Research For Beginners
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.text-uppercase.g-font-size-11.g-letter-spacing-0_5.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              |  09 Feb 2017
-        // End Transaction Item
-        // Transaction Item
-        .u-header-dropdown-bordered-v2.g-py-20
-          .media.g-pos-rel
-            .d-flex.align-self-start.g-pt-3.g-mr-12
-              i.hs-admin-minus.g-color-red
-            .media-body.align-self-start
-              strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $14.20
-              p.mb-0.g-mt-5 A Good Autoresponder
-            em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.text-uppercase.g-font-size-11.g-letter-spacing-0_5.g-font-style-normal.g-color-lightblue-v2
-              i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
-              |  09 Feb 2017
-        // End Transaction Item
-      // End Activity Transactions
+      if !currentUser
+        a#activityInvoker.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='activityMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#activityMenu' data-dropdown-type='css-animation' data-dropdown-animation-in='fadeInRight' data-dropdown-animation-out='fadeOutRight' data-dropdown-duration='300')
+          i.hs-admin-key.g-absolute-centered
+        // End Top Activity Toggler
+        // Top Activity Panel
+        #activityMenu.js-custom-scroll.u-header-sidebar.g-pos-fix.g-top-0.g-left-auto.g-right-0.g-z-index-4.g-width-300.g-width-400--sm.g-height-100vh(aria-labelledby='activityInvoker')
+          .u-header-dropdown-bordered-v1.g-pa-20
+            a#activityInvokerClose.pull-right.g-color-lightblue-v2(href='#!' aria-controls='activityMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#activityMenu' data-dropdown-type='css-animation' data-dropdown-animation-in='fadeInRight' data-dropdown-animation-out='fadeOutRight' data-dropdown-duration='300')
+              i.hs-admin-close
+            h4.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 Activity
+          // Login.
+          section.g-pa-20
+            form.g-py-15(method='POST' action='/login')
+              // Line Text Inputs
+              .g-brd-around.g-brd-gray-light-v7.g-rounded-4.g-pa-15.g-pa-20--md.g-mb-30
+                h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Email Address
+                // Default Input
+                .form-group.g-mb-30
+                  //- label.g-mb-10(for='inputGroup-4_1') Default Input
+                  .g-pos-rel
+                    span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+                      i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+                    input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='email' placeholder='Enter Email Address' name='email')
+                // End Default Input
+                h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Password
+                // Default Input
+                .form-group.g-mb-30
+                  //- label.g-mb-10(for='inputGroup-4_1') Default Input
+                  .g-pos-rel
+                    span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+                      i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+                    input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='password' placeholder='Enter Password' name='password')
+                // End Default Input
+                .mb-4
+                  button.btn.btn-md.btn-block.u-btn-primary.g-py-13(type='submit') Login
+                  // End Form
+                  footer.text-center(style='margin-top:15px')
+                    p.g-color-gray-dark-v5.g-font-size-13.mb-0
+                      | Want access to the Playbook?   
+                      a.g-font-weight-600(href='register') 
+                        | Register Now
+      else 
+        a(href='logout') logout
+ 
+      //- sectkion.g-pa-20
+      //-   form.g-py-15(method='POST' action='/login')
+      //-     // Line Text Inputs
+      //-     .g-brd-around.g-brd-gray-light-v7.g-rounded-4.g-pa-15.g-pa-20--md.g-mb-30
+      //-       h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Email Address
+      //-       // Default Input
+      //-       .form-group.g-mb-30
+      //-         //- label.g-mb-10(for='inputGroup-4_1') Default Input
+      //-         .g-pos-rel
+      //-           span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+      //-             i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+      //-           input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='email' placeholder='Enter Email Address' name='email')
+      //-       // End Default Input
+      //-       h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Password
+      //-       // Default Input
+      //-       .form-group.g-mb-30
+      //-         //- label.g-mb-10(for='inputGroup-4_1') Default Input
+      //-         .g-pos-rel
+      //-           span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+      //-             i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+      //-           input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='password' placeholder='Enter Password' name='password')
+      //-       // End Default Input
+      //-       .mb-4
+      //-         button.btn.btn-md.btn-block.u-btn-primary.g-py-13(type='submit') Login
+      //-         // End Form
+      //-         footer.text-center(style='margin-top:15px')
+      //-           p.g-color-gray-dark-v5.g-font-size-13.mb-0
+      //-             | Want access to the Playbook?   
+      //-             a.g-font-weight-600(href='register') 
+      //-               | Register Now
+      //- // End Line Text Inputs
+      //-   .media.align-items-center.u-link-v5
+      //-     .media-body.align-self-center.g-line-height-1_3.g-font-weight-300.g-font-size-40
+      //-       | 624 
+      //-       span.g-font-size-16 +3%
+      //-     .d-flex.align-self-center.g-font-size-25.g-line-height-1.g-color-secondary.ml-auto $49,000
+      //-     .d-flex.align-self-center.g-ml-8
+      //-       svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-         g(transform='translate(-21.000000, -751.000000)')
+      //-           g(transform='translate(0.000000, 64.000000)')
+      //-             g(transform='translate(20.000000, 619.000000)')
+      //-               g(transform='translate(1.000000, 68.000000)')
+      //-                 polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-       svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-         g(transform='translate(-33.000000, -751.000000)')
+      //-           g(transform='translate(0.000000, 64.000000)')
+      //-             g(transform='translate(20.000000, 619.000000)')
+      //-               g(transform='translate(1.000000, 68.000000)')
+      //-                 polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-   span.g-font-size-16 Transactions
+      //- // End Activity Short Stat.
+      //- // Activity Bars
+      //- section.g-pa-20.g-mb-10
+      //-   // Advertising Income
+      //-   .g-mb-30
+      //-     .media.u-link-v5.g-mb-10
+      //-       span.media-body.align-self-center Advertising Income
+      //-       span.d-flex.align-self-center
+      //-         svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-21.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-         svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-33.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-     .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
+      //-       .progress-bar.g-bg-teal-v2.g-rounded-2(role='progressbar' style='width: 70%' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100')
+      //-   // End Advertising Income
+      //-   // Projects Income
+      //-   .g-mb-30
+      //-     .media.u-link-v5.g-mb-10
+      //-       span.media-body.align-self-center Projects Income
+      //-       span.d-flex.align-self-center
+      //-         svg.g-fill-red(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-21.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-         svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-33.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-     .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
+      //-       .progress-bar.g-bg-lightblue-v3.g-rounded-2(role='progressbar' style='width: 40%' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100')
+      //-   // End Projects Income
+      //-   // Template Sales
+      //-   div
+      //-     .media.u-link-v5.g-mb-10
+      //-       span.media-body.align-self-center Template Sales
+      //-       span.d-flex.align-self-center
+      //-         svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-21.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-         svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-33.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-     .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
+      //-       .progress-bar.g-bg-darkblue-v2.g-rounded-2(role='progressbar' style='width: 90%' aria-valuenow='90' aria-valuemin='0' aria-valuemax='100')
+      //-   // End Template Sales
+      //- // End Activity Bars
+      //- // Activity Accounts
+      //- section.g-pa-20
+      //-   h5.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mb-10 My accounts
+      //-   .media.u-header-dropdown-bordered-v2.g-py-10
+      //-     .d-flex.align-self-center.g-mr-12
+      //-       span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-teal-v2
+      //-     .media-body.align-self-center Credit Card
+      //-     .d-flex.text-right $12.240
+      //-   .media.u-header-dropdown-bordered-v2.g-py-10
+      //-     .d-flex.align-self-center.g-mr-12
+      //-       span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-lightblue-v3
+      //-     .media-body.align-self-center Debit Card
+      //-     .d-flex.text-right $228.110
+      //-   .media.g-py-10
+      //-     .d-flex.align-self-center.g-mr-12
+      //-       span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-darkblue-v2
+      //-     .media-body.align-self-center Savings Account
+      //-     .d-flex.text-right $128.248.000
+      //- // End Activity Accounts
+      //- // Activity Transactions
+      //- section.g-pa-20
+      //-   h5.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mb-10 Transactions
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $240.00
+      //-         p.mb-0.g-mt-5 Addiction When Gambling Becomes
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 5 Min ago
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-minus.g-color-red
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $126.00
+      //-         p.mb-0.g-mt-5 Make Myspace Your
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 25 Nov 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $560.00
+      //-         p.mb-0.g-mt-5 Writing A Good Headline
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 22 Nov 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $6.00
+      //-         p.mb-0.g-mt-5 Buying Used Electronic Equipment
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 13 Oct 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $320.00
+      //-         p.mb-0.g-mt-5 Gambling Becomes A Problem
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 27 Jul 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-minus.g-color-red
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $28.00
+      //-         p.mb-0.g-mt-5 Baby Monitor Technology
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 05 Mar 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $490.00
+      //-         p.mb-0.g-mt-5 Adwords Keyword Research For Beginners
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.text-uppercase.g-font-size-11.g-letter-spacing-0_5.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         |  09 Feb 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-minus.g-color-red
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $14.20
+      //-         p.mb-0.g-mt-5 A Good Autoresponder
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.text-uppercase.g-font-size-11.g-letter-spacing-0_5.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         |  09 Feb 2017
+      //-   // End Transaction Item
+      //- // End Activity Transactions
     // End Top Activity Panel
 // End Header
 main.container-fluid.px-0.g-pt-65
@@ -980,10 +1045,10 @@ main.container-fluid.px-0.g-pt-65
         // End Menu Leveles
         // Packages
         li.u-sidebar-navigation-v1-menu-item.u-side-nav--top-level-menu-item
-          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='/packages.html')
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='logout')
             span.d-flex.align-self-center.g-font-size-18.g-mr-18
               i.hs-admin-medall
-            span.media-body.align-self-center Packages
+            span.media-body.align-self-center Logout
         // End Packages
     // End Sidebar Nav
     .col.g-ml-45.g-ml-0--lg.g-pb-65--md
@@ -1000,68 +1065,10 @@ main.container-fluid.px-0.g-pt-65
             span.g-valign-middle Panel Variations
       // End Breadcrumb-v1
       .g-pa-20
-          h1.g-font-weight-300.g-font-size-28.g-color-black.g-mb-40 Panel Variations
-          .row
-            .col-md-12
-              // Panel
-              .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
-                header.card-header.g-bg-transparent.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-25--sm.pb-0
-                  .media
-                    h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mr-10.mb-0 Panel title
-                    .media-body.d-flex.justify-content-end
-                      #rangePickerWrapper.d-flex.align-self-center.u-datepicker-right.u-datepicker--v3.g-pr-10
-                        input#rangeDatepicker.g-font-size-12.g-font-size-default--md(type='text' data-rp-wrapper='#rangePickerWrapper' data-rp-type='range' data-rp-date-format='d M Y' data-rp-default-date='["01 Jan 2016", "31 Dec 2017"]')
-                        i.hs-admin-angle-down.g-absolute-centered--y.g-right-0.g-color-gray-light-v6
-                      .align-self-center.g-pos-rel.g-z-index-2
-                        a#dropDown1Invoker.u-link-v5.g-pos-rel.g-top-4.g-line-height-0.g-font-size-24.g-color-gray-light-v6.g-color-secondary--hover.g-ml-10.g-ml-20--md(href='#!' aria-controls='dropDown1' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#dropDown1' data-dropdown-type='jquery-slide')
-                          i.hs-admin-more-alt
-                        #dropDown1.u-shadow-v31.g-pos-abs.g-right-0.g-bg-white(aria-labelledby='dropDown1Invoker')
-                          ul.list-unstyled.g-nowrap.mb-0
-                            li
-                              a.d-flex.align-items-center.u-link-v5.g-bg-gray-light-v8--hover.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-px-25.g-py-14(href='#!')
-                                i.hs-admin-pencil.g-font-size-18.g-color-gray-light-v6.g-mr-10.g-mr-15--md
-                                |                                   Edit
-                            li
-                              a.d-flex.align-items-center.u-link-v5.g-bg-gray-light-v8--hover.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-px-25.g-py-14(href='#!')
-                                i.hs-admin-archive.g-font-size-18.g-color-gray-light-v6.g-mr-10.g-mr-15--md
-                                |                                   Archive
-                            li
-                              a.d-flex.align-items-center.u-link-v5.g-bg-gray-light-v8--hover.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-px-25.g-py-14(href='#!')
-                                i.hs-admin-check.g-font-size-18.g-color-gray-light-v6.g-mr-10.g-mr-15--md
-                                |                                   Mark as Done
-                            li
-                              a.d-flex.align-items-center.u-link-v5.g-bg-gray-light-v8--hover.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-px-25.g-py-14(href='#!')
-                                i.hs-admin-plus.g-font-size-18.g-color-gray-light-v6.g-mr-10.g-mr-15--md
-                                |                                   New Task
-                            li
-                              a.d-flex.align-items-center.u-link-v5.g-bg-gray-light-v8--hover.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-px-25.g-py-14(href='#!')
-                                i.hs-admin-trash.g-font-size-18.g-color-gray-light-v6.g-mr-10.g-mr-15--md
-                                |                                   Delete
-                .card-block.g-pa-15.g-pa-30--sm
-                  h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10 Basic Panel
-                  p.g-font-weight-300.g-color-gray-dark-v6.mb-0
-                    | Businesses often become known today through effective marketing. The marketing may be in the form of a regular news item or half column society news in the Sunday newspaper. The marketing may be in the form of a heart to heart talk
-                    | with Mr. Brown on his prominent local television show. These are all advertising. Businesses cannot get away from the force of advertising. If they want to make their products known in the marketplace they have to use some form of
-                    | advertisement.
-              // End Panel
-              // Panel
-              .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
-                header.card-header.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-20--sm.g-pb-10.g-pb-15--sm
-                  .media
-                    h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mr-10.mb-0 Panel title
-                    .media-body.d-flex.justify-content-end
-                      a.hs-admin-panel.u-link-v5.g-font-size-20.g-color-gray-light-v3.g-color-secondary--hover(href='#!')
-                      a.hs-admin-reload.u-link-v5.g-font-size-20.g-color-gray-light-v3.g-color-secondary--hover.g-ml-20(href='#!')
-                .card-block.g-pa-15.g-pa-30--sm
-                  h4.g-font-weight-300.g-font-size-18.g-font-size-22--md.g-color-black.g-mb-10 Basic Panel with Background
-                  p.g-font-weight-300.g-color-gray-dark-v6.mb-0
-                    | Businesses often become known today through effective marketing. The marketing may be in the form of a regular news item or half column society news in the Sunday newspaper. The marketing may be in the form of a heart to heart talk
-                    | with Mr. Brown on his prominent local television show. These are all advertising. Businesses cannot get away from the force of advertising. If they want to make their products known in the marketplace they have to use some form of
-                    | advertisement.
-              // End Panel
+        block content
+        block sections
       .g-pa-20
         .row
-          block content
           .col-sm-6.col-lg-6.col-xl-3.g-mb-30
             // Panel
             .card.h-100.g-brd-gray-light-v7.g-rounded-3

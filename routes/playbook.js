@@ -83,8 +83,8 @@ const mid = require('../middleware');
 // });
 
 
-// TEST Route
-router.get('/playbook/:key', function(req,res,next){
+// Playbook Route
+router.get('/playbook/:key', mid.requiresLogIn, function(req,res,next){
 	Playbook.findOne( { key : req.params.key } )
 	// .populate('plays').
     .exec(function (error, playbook) {
@@ -93,12 +93,14 @@ router.get('/playbook/:key', function(req,res,next){
       } else { 
         let sectionContent= [];
         let references= [];
+        let faq= [];
         for ( i = 0 ; i < playbook.section.length ; i++){
             sectionContent.push({
                 "name" : playbook.section[i].name,
                 "header" : playbook.section[i].header,
                 "body" : playbook.section[i].body,
-                "listitems" : playbook.section[i].list
+                "listitems" : playbook.section[i].list,
+                "faqitems" : playbook.section[i].faq
             })
             references.push(playbook.section[i].references)
         }
@@ -106,6 +108,7 @@ router.get('/playbook/:key', function(req,res,next){
         //     referenceLinks.push(playbook.references[i])
         // }
         // flatten referencelinks array
+        console.log(sectionContent);
         let referenceLinks = [].concat.apply([], references);
         return res.render('playbook', {
             title: 'Playbook',
