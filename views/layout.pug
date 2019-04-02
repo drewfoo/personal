@@ -1,110 +1,1785 @@
-doctype html(lang='en')
+doctype html
 head
-  //- meta(charset='utf-8')
-  //- meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  //- meta(http-equiv='x-ua-compatible', content='ie=edge')
-  //- title Agile Playbook | #{title}
-  //- link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
-  //- link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-  //- link(rel='stylesheet', href='/css/main.css', type='text/css')
-  //- link(rel='stylesheet', href='/stylesheets/style.css')
   // Title
-  title Agile Playbook
+  title Light Layout | Unify - Responsive Website Template
   // Required Meta Tags Always Come First
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
   // Favicon
-  link(rel='shortcut icon' href='favicon.ico')
+  link(rel='shortcut icon' href='/favicon.ico')
   // Google Fonts
-  link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet')
+  link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik')
   // CSS Global Compulsory
   link(rel='stylesheet' href='/vendor/bootstrap/bootstrap.min.css')
-  link(rel='stylesheet' href='/vendor/bootstrap/offcanvas.css')
   // CSS Global Icons
   link(rel='stylesheet' href='/vendor/icon-awesome/css/font-awesome.min.css')
   link(rel='stylesheet' href='/vendor/icon-line/css/simple-line-icons.css')
   link(rel='stylesheet' href='/vendor/icon-etlinefont/style.css')
   link(rel='stylesheet' href='/vendor/icon-line-pro/style.css')
   link(rel='stylesheet' href='/vendor/icon-hs/style.css')
-  link(rel='stylesheet' href='/vendor/dzsparallaxer/dzsparallaxer.css')
-  link(rel='stylesheet' href='/vendor/dzsparallaxer/dzsscroller/scroller.css')
-  link(rel='stylesheet' href='/vendor/dzsparallaxer/advancedscroller/plugin.css')
+  link(rel='stylesheet' href='/vendor/hs-admin-icons/hs-admin-icons.css')
   link(rel='stylesheet' href='/vendor/animate.css')
+  link(rel='stylesheet' href='/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css')
+  link(rel='stylesheet' href='/vendor/flatpickr/dist/css/flatpickr.min.css')
+  link(rel='stylesheet' href='/vendor/bootstrap-select/css/bootstrap-select.min.css')
+  link(rel='stylesheet' href='/vendor/chartist-js/chartist.min.css')
+  link(rel='stylesheet' href='/vendor/chartist-js-tooltip/chartist-plugin-tooltip.css')
+  link(rel='stylesheet' href='/vendor/fancybox/jquery.fancybox.min.css')
   link(rel='stylesheet' href='/vendor/hamburgers/hamburgers.min.css')
-  link(rel='stylesheet' href='/vendor/slick-carousel/slick/slick.css')
-  link(rel='stylesheet' href='/vendor/fancybox/jquery.fancybox.css')
   // CSS Unify
-  link(rel='stylesheet' href='/css/unify-core.css')
-  link(rel='stylesheet' href='/css/unify-components.css')
-  link(rel='stylesheet' href='/css/unify-globals.css')
+  link(rel='stylesheet' href='/css/unify-admin.css')
   // CSS Customization
   link(rel='stylesheet' href='/css/custom.css')
+// Header
+header#js-header.u-header.u-header--sticky-top
+  .u-header__section.u-header__section--admin-light.u-shadow-v22.g-min-height-65
+    nav.navbar.no-gutters.g-pa-0
+      .col-auto.d-flex.flex-nowrap.u-header-logo-toggler.g-py-12
+        // Logo
+        a.navbar-brand.d-flex.align-self-center.g-hidden-xs-down.g-line-height-1.py-0.g-mt-5(href='/index.html')
+          svg(width='86px' height='32px' viewbox='0 0 86 32' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+            g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd')
+              g(transform='translate(-78.000000, -19.000000)')
+                g(transform='translate(78.000000, 19.000000)')
+                  path.g-fill-primary(d='M0,0 L19.2941176,0 L19.2941176,0 C23.7123956,-8.11624501e-16 27.2941176,3.581722 27.2941176,8 L27.2941176,27.2941176 L8,27.2941176 L8,27.2941176 C3.581722,27.2941176 5.41083001e-16,23.7123956 0,19.2941176 L0,0 Z')
+                  path.g-fill-white(d='M21.036662,24.8752523 L20.5338647,22.6659916 L20.3510293,22.6659916 C19.8533083,23.4481246 19.1448284,24.0626484 18.2255681,24.5095816 C17.3063079,24.9565147 16.2575544,25.1799779 15.0792761,25.1799779 C13.0376043,25.1799779 11.5139914,24.672107 10.5083918,23.6563498 C9.50279224,22.6405927 9,21.1017437 9,19.0397567 L9,8.02392554 L12.6109986,8.02392554 L12.6109986,18.4150692 C12.6109986,19.7050808 12.8750915,20.6725749 13.4032852,21.3175807 C13.9314789,21.9625865 14.7593086,22.2850846 15.886799,22.2850846 C17.3901196,22.2850846 18.4947389,21.8356188 19.2006901,20.9366737 C19.9066413,20.0377286 20.2596117,18.5318912 20.2596117,16.4191164 L20.2596117,8.02392554 L23.855374,8.02392554 L23.855374,24.8752523 L21.036662,24.8752523 Z')
+                  path.g-fill-main(d='M44.4764678,24.4705882 L40.8807055,24.4705882 L40.8807055,14.1099172 C40.8807055,12.809748 40.6191519,11.8397145 40.096037,11.1997875 C39.5729221,10.5598605 38.7425531,10.2399018 37.6049051,10.2399018 C36.0914269,10.2399018 34.9842682,10.6868282 34.2833958,11.5806945 C33.5825234,12.4745608 33.2320924,13.9727801 33.2320924,16.0753974 L33.2320924,24.4705882 L29.6515664,24.4705882 L29.6515664,7.61926145 L32.4550421,7.61926145 L32.9578394,9.8285222 L33.1406747,9.8285222 C33.6485533,9.02607405 34.3697301,8.40647149 35.3042266,7.96969592 C36.2387232,7.53292034 37.27478,7.31453583 38.412428,7.31453583 C42.4551414,7.31453583 44.4764678,9.3714132 44.4764678,13.4852296 L44.4764678,24.4705882 Z M53.7357283,24.4705882 L50.1552023,24.4705882 L50.1552023,7.61926145 L53.7357283,7.61926145 L53.7357283,24.4705882 Z M49.9418944,3.15503112 C49.9418944,2.51510412 50.1171098,2.0224693 50.467546,1.67711187 C50.8179823,1.33175444 51.3182351,1.15907831 51.9683197,1.15907831 C52.5980892,1.15907831 53.0881846,1.33175444 53.4386208,1.67711187 C53.7890571,2.0224693 53.9642725,2.51510412 53.9642725,3.15503112 C53.9642725,3.76448541 53.7890571,4.24442346 53.4386208,4.59485968 C53.0881846,4.94529589 52.5980892,5.12051137 51.9683197,5.12051137 C51.3182351,5.12051137 50.8179823,4.94529589 50.467546,4.59485968 C50.1171098,4.24442346 49.9418944,3.76448541 49.9418944,3.15503112 Z M68.0077253,10.3313195 L63.8939294,10.3313195 L63.8939294,24.4705882 L60.2981671,24.4705882 L60.2981671,10.3313195 L57.525164,10.3313195 L57.525164,8.65532856 L60.2981671,7.55831633 L60.2981671,6.4613041 C60.2981671,4.47042009 60.7654084,2.99505497 61.699905,2.03516447 C62.6344015,1.07527397 64.0615189,0.595335915 65.9812999,0.595335915 C67.2408388,0.595335915 68.4800439,0.803563007 69.6989525,1.22002344 L68.7543031,3.93208145 C67.8705943,3.64766945 67.0275286,3.50546559 66.2250804,3.50546559 C65.4124747,3.50546559 64.820805,3.75686171 64.4500537,4.25966149 C64.0793023,4.76246128 63.8939294,5.51664965 63.8939294,6.52224922 L63.8939294,7.61926145 L68.0077253,7.61926145 L68.0077253,10.3313195 Z M69.0089215,7.61926145 L72.9094094,7.61926145 L76.3375727,17.1724096 C76.8556088,18.5335242 77.2009611,19.813359 77.3736398,21.0119524 L77.49553,21.0119524 C77.5869482,20.453286 77.7545456,19.7752783 77.9983273,18.9779089 C78.242109,18.1805396 79.5321012,14.3943616 81.8683427,7.61926145 L85.738358,7.61926145 L78.5315971,26.7103215 C77.2212704,30.2146837 75.0374253,31.9668385 71.9799963,31.9668385 C71.1877057,31.9668385 70.4157419,31.8805004 69.6640816,31.7078217 L69.6640816,28.8738734 C70.2024329,28.9957643 70.8169567,29.0567088 71.5076716,29.0567088 C73.2344587,29.0567088 74.4482703,28.056203 75.1491427,26.0551615 L75.7738303,24.4705882 L69.0089215,7.61926145 Z')
+        // End Logo
+        // Sidebar Toggler
+        a.js-side-nav.u-header__nav-toggler.d-flex.align-self-center.ml-auto(href='#!' data-hssm-class='u-side-nav--mini u-sidebar-navigation-v1--mini' data-hssm-body-class='u-side-nav-mini' data-hssm-is-close-all-except-this='true' data-hssm-target='#sideNav')
+          i.hs-admin-align-left
+        // End Sidebar Toggler
+      //- // Top Search Bar
+      //- form#searchMenu.u-header--search.col-sm.g-py-12.g-ml-15--sm.g-ml-20--md.g-mr-10--sm(aria-labelledby='searchInvoker' action='#!')
+      //-   .input-group.g-max-width-450
+      //-     input.form-control.form-control-md.g-rounded-4(type='text' placeholder='Enter search keywords')
+      //-     button.btn.u-btn-outline-primary.g-brd-none.g-bg-transparent--hover.g-pos-abs.g-top-0.g-right-0.d-flex.g-width-40.h-100.align-items-center.justify-content-center.g-font-size-18.g-z-index-2(type='submit')
+      //-       i.hs-admin-search
+      //- // End Top Search Bar
+      //- // Messages/Notifications/Top Search Bar/Top User
+      //- .col-auto.d-flex.g-py-12.g-pl-40--lg.ml-auto
+      //-   // Top Messages
+      //-   .g-pos-rel.g-hidden-sm-down.g-mr-5
+      //-     a#messagesInvoker.d-block.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='messagesMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#messagesMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-       span.u-badge-v1.g-top-7.g-right-7.g-width-18.g-height-18.g-bg-primary.g-font-size-10.g-color-white.rounded-circle.p-0 7
+      //-       i.hs-admin-comment-alt.g-absolute-centered
+      //-     // Top Messages List
+      //-     #messagesMenu.g-absolute-centered--x.g-width-340.g-max-width-400.g-mt-17.rounded(aria-labelledby='messagesInvoker')
+      //-       .media.u-header-dropdown-bordered-v1.g-pa-20
+      //-         h4.d-flex.align-self-center.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 3 new messages
+      //-         .media-body.align-self-center.text-right
+      //-           a.g-color-secondary(href='#!') View All
+      //-       ul.p-0.mb-0
+      //-         // Top Messages List Item
+      //-         li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
+      //-           .d-flex.g-mr-15
+      //-             img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img5.jpg' alt='Image Description')
+      //-           .media-body
+      //-             h5.g-font-size-16.g-font-weight-400.g-mb-5
+      //-               a(href='#!') Verna Swanson
+      //-             p.g-mb-10 Not so many years businesses used to grunt at using
+      //-             em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
+      //-               i.hs-admin-time.icon-clock.g-mr-5
+      //-               small 5 Min ago
+      //-           a.u-link-v2(href='#!') Read
+      //-         // End Top Messages List Item
+      //-         // Top Messages List Item
+      //-         li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
+      //-           .d-flex.g-mr-15
+      //-             img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img6.jpg' alt='Image Description')
+      //-           .media-body
+      //-             h5.g-font-size-16.g-font-weight-400.g-mb-5
+      //-               a(href='#!') Eddie Hayes
+      //-             p.g-mb-10 But today and influence of is growing right along illustration
+      //-             em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
+      //-               i.hs-admin-time.icon-clock.g-mr-5
+      //-               small 22 Min ago
+      //-           a.u-link-v2(href='#!') Read
+      //-         // End Top Messages List Item
+      //-         // Top Messages List Item
+      //-         li.media.g-pos-rel.u-header-dropdown-item-v1.g-pa-20
+      //-           .d-flex.g-mr-15
+      //-             img.g-width-40.g-height-40.rounded-circle(src='/img-temp/100x100/img7.jpg' alt='Image Description')
+      //-           .media-body
+      //-             h5.g-font-size-16.g-font-weight-400.g-mb-5
+      //-               a(href='#!') Herbert Castro
+      //-             p.g-mb-10 But today, the use and influence of illustrations is growing right along
+      //-             em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-lightblue-v2
+      //-               i.hs-admin-time.icon-clock.g-mr-5
+      //-               small 15 Min ago
+      //-           a.u-link-v2(href='#!') Read
+      //-         // End Top Messages List Item
+      //-     // End Top Messages List
+      //-   // End Top Messages
+      //-   // Top Notifications
+      //-   .g-pos-rel.g-hidden-sm-down
+      //-     a#notificationsInvoker.d-block.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='notificationsMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#notificationsMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-       i.hs-admin-bell.g-absolute-centered
+      //-     // Top Notifications List
+      //-     #notificationsMenu.js-custom-scroll.g-absolute-centered--x.g-width-340.g-max-width-400.g-height-400.g-mt-17.rounded(aria-labelledby='notificationsInvoker')
+      //-       .media.text-uppercase.u-header-dropdown-bordered-v1.g-pa-20
+      //-         h4.d-flex.align-self-center.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 Notifications
+      //-       ul.p-0.mb-0
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-bookmark-alt.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 A Pocket PC is a handheld computer features
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-blackboard.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 The first is a non technical method which requires
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-calendar.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 Stu Unger is of the biggest superstarsis
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-pie-chart.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 Sony laptops are among the most well known laptops
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-bookmark-alt.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 A Pocket PC is a handheld computer features
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-         // Top Notifications List Item
+      //-         li.media.u-header-dropdown-item-v1.g-parent.g-px-20.g-py-15
+      //-           .d-flex.align-self-center.u-header-dropdown-icon-v1.g-pos-rel.g-width-55.g-height-55.g-font-size-22.rounded-circle.g-mr-15
+      //-             i.hs-admin-blackboard.g-absolute-centered
+      //-           .media-body.align-self-center
+      //-             p.mb-0 The first is a non technical method which requires
+      //-           a.d-flex.g-color-lightblue-v2.g-font-size-12.opacity-0.g-opacity-1--parent-hover.g-transition--ease-in.g-transition-0_2(href='#!')
+      //-             i.hs-admin-close
+      //-         // End Top Notifications List Item
+      //-     // End Top Notifications List
+      //-   // End Top Notifications
+      //-   // Top Search Bar (Mobi)
+      //-   a#searchInvoker.g-hidden-sm-up.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='searchMenu' aria-haspopup='true' aria-expanded='false' data-is-mobile-only='true' data-dropdown-event='click' data-dropdown-target='#searchMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-     i.hs-admin-search.g-absolute-centered
+      //-   // End Top Search Bar (Mobi)
+      //-   // Top User
+      //-   .col-auto.d-flex.g-pt-5.g-pt-0--sm.g-pl-10.g-pl-20--sm
+      //-     .g-pos-rel.g-px-10--lg
+      //-       a#profileMenuInvoker.d-block(href='#!' aria-controls='profileMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#profileMenu' data-dropdown-type='css-animation' data-dropdown-duration='300' data-dropdown-animation-in='fadeIn' data-dropdown-animation-out='fadeOut')
+      //-         span.g-pos-rel
+      //-           span.u-badge-v2--xs.u-badge--top-right.g-hidden-sm-up.g-bg-secondary.g-mr-5
+      //-           img.g-width-30.g-width-40--md.g-height-30.g-height-40--md.rounded-circle.g-mr-10--sm(src='/img-temp/130x130/img1.jpg' alt='Image description')
+      //-         span.g-pos-rel.g-top-2
+      //-           span.g-hidden-sm-down Charlie Bailey
+      //-           i.hs-admin-angle-down.g-pos-rel.g-top-2.g-ml-10
+      //-       // Top User Menu
+      //-       ul#profileMenu.g-pos-abs.g-left-0.g-width-100x--lg.g-nowrap.g-font-size-14.g-py-20.g-mt-17.rounded(aria-labelledby='profileMenuInvoker')
+      //-         li.g-hidden-sm-up.g-mb-10
+      //-           a.media.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-pos-rel.g-mr-12
+      //-               span.u-badge-v1.g-top-minus-3.g-right-minus-3.g-width-18.g-height-18.g-bg-secondary.g-font-size-10.g-color-white.rounded-circle.p-0 10
+      //-               i.hs-admin-comment-alt
+      //-             span.media-body.align-self-center Unread Messages
+      //-         li.g-hidden-sm-up.g-mb-10
+      //-           a.media.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-bell
+      //-             span.media-body.align-self-center Notifications
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-user
+      //-             span.media-body.align-self-center My Profile
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-rocket
+      //-             span.media-body.align-self-center Upgrade Plan
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-layout-grid-2
+      //-             span.media-body.align-self-center Latest Projects
+      //-         li.g-mb-10
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-headphone-alt
+      //-             span.media-body.align-self-center Get Support
+      //-         li.mb-0
+      //-           a.media.g-color-primary--hover.g-py-5.g-px-20(href='#!')
+      //-             span.d-flex.align-self-center.g-mr-12
+      //-               i.hs-admin-shift-right
+      //-             span.media-body.align-self-center Sign Out
+      //-       // End Top User Menu
+      //-   // End Top User
+      //- // End Messages/Notifications/Top Search Bar/Top User
 
-  body
-    // load header.pug
-    include header
-
-    // content block
-    block content
-
-    // footer
-    include footer
-    
-    //- script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
-    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
-    //- script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+      // Top Activity Toggler
+      if !currentUser
+        a#activityInvoker.text-uppercase.u-header-icon-v1.g-pos-rel.g-width-40.g-height-40.rounded-circle.g-font-size-20(href='#!' aria-controls='activityMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#activityMenu' data-dropdown-type='css-animation' data-dropdown-animation-in='fadeInRight' data-dropdown-animation-out='fadeOutRight' data-dropdown-duration='300')
+          i.hs-admin-key.g-absolute-centered
+        // End Top Activity Toggler
+        // Top Activity Panel
+        #activityMenu.js-custom-scroll.u-header-sidebar.g-pos-fix.g-top-0.g-left-auto.g-right-0.g-z-index-4.g-width-300.g-width-400--sm.g-height-100vh(aria-labelledby='activityInvoker')
+          .u-header-dropdown-bordered-v1.g-pa-20
+            a#activityInvokerClose.pull-right.g-color-lightblue-v2(href='#!' aria-controls='activityMenu' aria-haspopup='true' aria-expanded='false' data-dropdown-event='click' data-dropdown-target='#activityMenu' data-dropdown-type='css-animation' data-dropdown-animation-in='fadeInRight' data-dropdown-animation-out='fadeOutRight' data-dropdown-duration='300')
+              i.hs-admin-close
+            h4.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mr-20.g-mb-0 Activity
+          // Login.
+          section.g-pa-20
+            form.g-py-15(method='POST' action='/login')
+              // Line Text Inputs
+              .g-brd-around.g-brd-gray-light-v7.g-rounded-4.g-pa-15.g-pa-20--md.g-mb-30
+                h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Email Address
+                // Default Input
+                .form-group.g-mb-30
+                  //- label.g-mb-10(for='inputGroup-4_1') Default Input
+                  .g-pos-rel
+                    span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+                      i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+                    input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='email' placeholder='Enter Email Address' name='email')
+                // End Default Input
+                h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Password
+                // Default Input
+                .form-group.g-mb-30
+                  //- label.g-mb-10(for='inputGroup-4_1') Default Input
+                  .g-pos-rel
+                    span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+                      i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+                    input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='password' placeholder='Enter Password' name='password')
+                // End Default Input
+                .mb-4
+                  button.btn.btn-md.btn-block.u-btn-primary.g-py-13(type='submit') Login
+                  // End Form
+                  footer.text-center(style='margin-top:15px')
+                    p.g-color-gray-dark-v5.g-font-size-13.mb-0
+                      | Want access to the Playbook?   
+                      a.g-font-weight-600(href='register') 
+                        | Register Now
+      else 
+        a(href='logout') logout
+ 
+      //- sectkion.g-pa-20
+      //-   form.g-py-15(method='POST' action='/login')
+      //-     // Line Text Inputs
+      //-     .g-brd-around.g-brd-gray-light-v7.g-rounded-4.g-pa-15.g-pa-20--md.g-mb-30
+      //-       h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Email Address
+      //-       // Default Input
+      //-       .form-group.g-mb-30
+      //-         //- label.g-mb-10(for='inputGroup-4_1') Default Input
+      //-         .g-pos-rel
+      //-           span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+      //-             i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+      //-           input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='email' placeholder='Enter Email Address' name='email')
+      //-       // End Default Input
+      //-       h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mb-20 Password
+      //-       // Default Input
+      //-       .form-group.g-mb-30
+      //-         //- label.g-mb-10(for='inputGroup-4_1') Default Input
+      //-         .g-pos-rel
+      //-           span.g-pos-abs.g-top-0.g-right-0.d-block.g-width-40.h-100.opacity-0.g-opacity-1--success
+      //-             i.hs-admin-check.g-absolute-centered.g-font-size-default.g-color-secondary
+      //-           input#inputGroup-4_1.form-control.form-control-md.g-brd-none.g-brd-bottom.g-brd-gray-light-v7.g-brd-gray-light-v3--focus.rounded-0.px-0.g-py-10(type='password' placeholder='Enter Password' name='password')
+      //-       // End Default Input
+      //-       .mb-4
+      //-         button.btn.btn-md.btn-block.u-btn-primary.g-py-13(type='submit') Login
+      //-         // End Form
+      //-         footer.text-center(style='margin-top:15px')
+      //-           p.g-color-gray-dark-v5.g-font-size-13.mb-0
+      //-             | Want access to the Playbook?   
+      //-             a.g-font-weight-600(href='register') 
+      //-               | Register Now
+      //- // End Line Text Inputs
+      //-   .media.align-items-center.u-link-v5
+      //-     .media-body.align-self-center.g-line-height-1_3.g-font-weight-300.g-font-size-40
+      //-       | 624 
+      //-       span.g-font-size-16 +3%
+      //-     .d-flex.align-self-center.g-font-size-25.g-line-height-1.g-color-secondary.ml-auto $49,000
+      //-     .d-flex.align-self-center.g-ml-8
+      //-       svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-         g(transform='translate(-21.000000, -751.000000)')
+      //-           g(transform='translate(0.000000, 64.000000)')
+      //-             g(transform='translate(20.000000, 619.000000)')
+      //-               g(transform='translate(1.000000, 68.000000)')
+      //-                 polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-       svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-         g(transform='translate(-33.000000, -751.000000)')
+      //-           g(transform='translate(0.000000, 64.000000)')
+      //-             g(transform='translate(20.000000, 619.000000)')
+      //-               g(transform='translate(1.000000, 68.000000)')
+      //-                 polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-   span.g-font-size-16 Transactions
+      //- // End Activity Short Stat.
+      //- // Activity Bars
+      //- section.g-pa-20.g-mb-10
+      //-   // Advertising Income
+      //-   .g-mb-30
+      //-     .media.u-link-v5.g-mb-10
+      //-       span.media-body.align-self-center Advertising Income
+      //-       span.d-flex.align-self-center
+      //-         svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-21.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-         svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-33.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-     .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
+      //-       .progress-bar.g-bg-teal-v2.g-rounded-2(role='progressbar' style='width: 70%' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100')
+      //-   // End Advertising Income
+      //-   // Projects Income
+      //-   .g-mb-30
+      //-     .media.u-link-v5.g-mb-10
+      //-       span.media-body.align-self-center Projects Income
+      //-       span.d-flex.align-self-center
+      //-         svg.g-fill-red(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-21.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-         svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-33.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-     .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
+      //-       .progress-bar.g-bg-lightblue-v3.g-rounded-2(role='progressbar' style='width: 40%' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100')
+      //-   // End Projects Income
+      //-   // Template Sales
+      //-   div
+      //-     .media.u-link-v5.g-mb-10
+      //-       span.media-body.align-self-center Template Sales
+      //-       span.d-flex.align-self-center
+      //-         svg.g-fill-gray-dark-v9(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-21.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+      //-         svg.g-fill-lightblue-v3(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+      //-           g(transform='translate(-33.000000, -751.000000)')
+      //-             g(transform='translate(0.000000, 64.000000)')
+      //-               g(transform='translate(20.000000, 619.000000)')
+      //-                 g(transform='translate(1.000000, 68.000000)')
+      //-                   polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+      //-     .progress.g-height-4.g-bg-gray-light-v8.g-rounded-2
+      //-       .progress-bar.g-bg-darkblue-v2.g-rounded-2(role='progressbar' style='width: 90%' aria-valuenow='90' aria-valuemin='0' aria-valuemax='100')
+      //-   // End Template Sales
+      //- // End Activity Bars
+      //- // Activity Accounts
+      //- section.g-pa-20
+      //-   h5.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mb-10 My accounts
+      //-   .media.u-header-dropdown-bordered-v2.g-py-10
+      //-     .d-flex.align-self-center.g-mr-12
+      //-       span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-teal-v2
+      //-     .media-body.align-self-center Credit Card
+      //-     .d-flex.text-right $12.240
+      //-   .media.u-header-dropdown-bordered-v2.g-py-10
+      //-     .d-flex.align-self-center.g-mr-12
+      //-       span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-lightblue-v3
+      //-     .media-body.align-self-center Debit Card
+      //-     .d-flex.text-right $228.110
+      //-   .media.g-py-10
+      //-     .d-flex.align-self-center.g-mr-12
+      //-       span.u-badge-v2--sm.g-pos-stc.g-transform-origin--top-left.g-bg-darkblue-v2
+      //-     .media-body.align-self-center Savings Account
+      //-     .d-flex.text-right $128.248.000
+      //- // End Activity Accounts
+      //- // Activity Transactions
+      //- section.g-pa-20
+      //-   h5.text-uppercase.g-font-size-default.g-letter-spacing-0_5.g-mb-10 Transactions
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $240.00
+      //-         p.mb-0.g-mt-5 Addiction When Gambling Becomes
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 5 Min ago
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-minus.g-color-red
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $126.00
+      //-         p.mb-0.g-mt-5 Make Myspace Your
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 25 Nov 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $560.00
+      //-         p.mb-0.g-mt-5 Writing A Good Headline
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 22 Nov 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $6.00
+      //-         p.mb-0.g-mt-5 Buying Used Electronic Equipment
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 13 Oct 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $320.00
+      //-         p.mb-0.g-mt-5 Gambling Becomes A Problem
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 27 Jul 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-minus.g-color-red
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $28.00
+      //-         p.mb-0.g-mt-5 Baby Monitor Technology
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         small 05 Mar 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-plus.g-color-lightblue-v3
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $490.00
+      //-         p.mb-0.g-mt-5 Adwords Keyword Research For Beginners
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.text-uppercase.g-font-size-11.g-letter-spacing-0_5.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         |  09 Feb 2017
+      //-   // End Transaction Item
+      //-   // Transaction Item
+      //-   .u-header-dropdown-bordered-v2.g-py-20
+      //-     .media.g-pos-rel
+      //-       .d-flex.align-self-start.g-pt-3.g-mr-12
+      //-         i.hs-admin-minus.g-color-red
+      //-       .media-body.align-self-start
+      //-         strong.d-block.g-font-size-17.g-font-weight-400.g-line-height-1 $14.20
+      //-         p.mb-0.g-mt-5 A Good Autoresponder
+      //-       em.d-flex.align-items-center.g-pos-abs.g-top-0.g-right-0.text-uppercase.g-font-size-11.g-letter-spacing-0_5.g-font-style-normal.g-color-lightblue-v2
+      //-         i.hs-admin-time.icon-clock.g-font-size-default.g-mr-8
+      //-         |  09 Feb 2017
+      //-   // End Transaction Item
+      //- // End Activity Transactions
+    // End Top Activity Panel
+// End Header
+main.container-fluid.px-0.g-pt-65
+  .row.no-gutters.g-pos-rel.g-overflow-x-hidden
+    // Sidebar Nav
+    #sideNav.col-auto.u-sidebar-navigation-v1.u-sidebar-navigation--light
+      ul#sideNavMenu.u-sidebar-navigation-v1-menu.u-side-nav--top-level-menu.g-min-height-100vh.mb-0
+        // Dashboards
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu1')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-server
+            span.media-body.align-self-center Dashboards
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // Dashboards: Submenu-1
+          ul#subMenu1.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Dashboards v1
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/dashboards/dashboard-v1.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-infinite
+                span.media-body.align-self-center Dashboards v1
+            // End Dashboards v1
+            // Dashboards v2
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/dashboards/dashboard-v2.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-blackboard
+                span.media-body.align-self-center Dashboards v2
+            // End Dashboards v2
+            // Dashboards v3
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/dashboards/dashboard-v3.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-harddrive
+                span.media-body.align-self-center Dashboards v3
+            // End Dashboards v3
+            // Dashboards v4
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/dashboards/dashboard-v4.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-harddrive
+                span.media-body.align-self-center Dashboards v4
+            // End Dashboards v4
+          // End Dashboards: Submenu-1
+        // End Dashboards
+        // Layouts Settings
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item.u-side-nav-opened.has-active
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu2')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-settings
+            span.media-body.align-self-center Layouts Settings
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // Layouts Settings: Submenu-1
+          ul#subMenu2.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0(style='display: block;')
+            // Header Static
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/layout-settings/header-static.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-media-center-alt
+                span.media-body.align-self-center Header Static
+            // End Header Static
+            // Hide Sidebar
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/layout-settings/sidebar-hide.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-sidebar-none
+                span.media-body.align-self-center Hide Sidebar
+            // End Hide Sidebar
+            // Light Layout
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12.active(href='/layout-settings/layout-light.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-media-left-alt
+                span.media-body.align-self-center Light Layout
+            // End Light Layout
+            // Dark Layout: body v.2
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/layout-settings/layout-dark-body-v2.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-media-center-alt
+                span.media-body.align-self-center Dark Layout: body v.2
+            // End Dark Layout: body v.2
+            // Light Layout: body v.2
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/layout-settings/layout-light-body-v2.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-media-center-alt
+                span.media-body.align-self-center Light Layout: body v.2
+            // End Light Layout: body v.2
+          // End Layouts Settings: Submenu-1
+        // End Layouts Settings
+        // App Views
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu4')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-layers
+            span.media-body.align-self-center App Views
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // App Views: Submenu-1
+          ul#subMenu4.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Profile Pages
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu4Profiles')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-list
+                span.media-body.align-self-center Profile Pages
+                span.d-flex.align-self-center.u-side-nav--control-icon
+                  i.hs-admin-angle-right
+              // Menu Leveles: Submenu-2
+              ul#subMenu4Profiles.u-side-nav--third-level-menu
+                // Main
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile.html') Profile Information
+                // End Main
+                // Biography
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-biography.html') Biography
+                // End Biography
+                // Interests
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-interests.html') Interests
+                // End Interests
+                // Mobile
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-mobile.html') Mobile
+                // End Mobile
+                // Photos & Videos
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-photos-and-videos.html') Photos &amp; Videos
+                // End Photos & Videos
+                // Payment Methods
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-payment-methods.html') Payment Methods
+                // End Payment Methods
+                // Transactions
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-transactions.html') Transactions
+                // End Transactions
+                // Security
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-security.html') Security
+                // End Security
+                // Upgrade My Plan
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-upgrade-plan.html') Upgrade My Plan
+                // End Upgrade My Plan
+                // Invited Friends
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-invite.html') Invited Friends
+                // End Invited Friends
+                // Connected Accounts
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/app-views/app-profile-connected-accounts.html') Connected Accounts
+                // End Connected Accounts
+              // End Menu Leveles: Submenu-2
+            // End Profile Pages
+            // Projects
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/app-views/app-projects.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-media-left
+                span.media-body.align-self-center Projects
+            // End Projects
+            // Chat
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/app-views/app-chat.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-comments
+                span.media-body.align-self-center Chat
+            // End Chat
+            // File Manager
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/app-views/app-file-manager.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-folder
+                span.media-body.align-self-center File Manager
+                span.d-flex.align-self-center
+                  span.d-inline-block.text-center.g-min-width-35.g-bg-primary.g-font-size-12.g-color-white.g-rounded-15.g-px-8.g-py-1 10
+            // End File Manager
+            // User Contacts
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/app-views/app-contacts.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-id-badge
+                span.media-body.align-self-center User Contacts
+            // End User Contacts
+          // End App Views: Submenu-1
+        // End App Views
+        // Forms
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu7')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-pencil-alt
+            span.media-body.align-self-center Forms
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // Forms: Submenu-1
+          ul#subMenu7.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Elements
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu7Elements')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-list
+                span.media-body.align-self-center Elements
+                span.d-flex.align-self-center.u-side-nav--control-icon
+                  i.hs-admin-angle-right
+              // Menu Leveles: Submenu-2
+              ul#subMenu7Elements.u-side-nav--third-level-menu
+                // Text Inputs
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-text-inputs.html') Text Inputs
+                // End Text Inputs
+                // Textareas
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-textareas.html') Textareas
+                // End Textareas
+                // Text Editors
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-text-editors.html') Text Editors
+                // End Text Editors
+                // Selects
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-selects.html') Selects
+                // End Selects
+                // Advanced Selects
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-advanced-selects.html') Advanced Selects
+                // End Advanced Selects
+                // Checkboxes &amp; Radios
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-checkboxes-radios.html') Checkboxes &amp; Radios
+                // End Checkboxes &amp; Radios
+                // Toggles
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-toggles.html') Toggles
+                // End Toggles
+                // File Inputs
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-file-inputs.html') File Inputs
+                // End File Inputs
+                // Sliders
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-sliders.html') Sliders
+                // End Sliders
+                // Text Inputs with Tags
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-tags.html') Text Inputs with Tags
+                // End Text Inputs with Tags
+                // Ratings
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-ratings.html') Ratings
+                // End Ratings
+                // Datepickers
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-datepickers.html') Datepickers
+                // End Datepickers
+                // Quantities
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-quantities.html') Quantities
+                // End Quantities
+                // Slider Controls
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-elemets-slider-controls.html') Slider Controls
+                // End Slider Controls
+              // End Menu Leveles: Submenu-2
+            // End Elements
+            // Layouts
+            //
+              <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+              <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="#!">
+              <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+              <i class="hs-admin-layout-media-overlay"></i>
+              </span>
+              <span class="media-body align-self-center">Layouts</span>
+              </a>
+              </li>
+            // End Layouts
+            // Validation
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu7Validation')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-list
+                span.media-body.align-self-center Validation
+                span.d-flex.align-self-center.u-side-nav--control-icon
+                  i.hs-admin-angle-right
+              // Validation: Submneu
+              ul#subMenu7Validation.u-side-nav--third-level-menu
+                // States
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='/forms/forms-validation-states.html') States
+                // End States
+              // Validation: Submneu
+            // End Validation
+          // End Forms: Submenu-1
+        // End Forms
+        // Tables
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu8')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-layout-grid-3
+            span.media-body.align-self-center Tables
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // Tables: Submenu-1
+          ul#subMenu8.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Basic Tables
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/tables/tables-basic.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-list-thumb
+                span.media-body.align-self-center Basic Tables
+            // End Basic Tables
+            // Table Designs
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/tables/tables-complex.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-media-overlay-alt-2
+                span.media-body.align-self-center Complex Tables
+            // End Table Designs
+            // Table Modern
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/tables/tables-modern.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-media-overlay-alt-2
+                span.media-body.align-self-center Modern Tables
+            // End Table Modern
+          // End Tables: Submenu-1
+        // End Tables
+        // Panels/Cards
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu6')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-layout-media-center-alt
+            span.media-body.align-self-center Panels/Cards
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // Panels/Cards: Submenu-1
+          ul#subMenu6.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Panel Variations
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/panels/panel-variations.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-cta-btn-left
+                span.media-body.align-self-center Panel Variations
+            // End Panel Variations
+            // Panel with Tabs
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/panels/panel-options.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-cta-right
+                span.media-body.align-self-center Panel&apos;s Options
+            // End Panel with Tabs
+            //
+              Panel Options
+              <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+              <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/panels/panel-options.html">
+              <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+              <i class="hs-admin-layout-cta-center"></i>
+              </span>
+              <span class="media-body align-self-center">Panel Options</span>
+              </a>
+              </li>
+              End Panel Options
+          // End Panels/Cards: Submenu-1
+        // End Panels/Cards
+        // Notifications
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu9')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-layout-list-thumb
+            span.media-body.align-self-center Notifications
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // Notifications: Submenu-1
+          ul#subMenu9.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Colorful Notifications
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/notifications/notifications-colorful.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-cta-btn-right
+                span.media-body.align-self-center Colorful Notifications
+            // End Colorful Notifications
+            // Light Notifications
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/notifications/notifications-light.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-cta-btn-left
+                span.media-body.align-self-center Light Notifications
+            // End Light Notifications
+            // Dark Notifications
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/notifications/notifications-dark.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-layout-cta-center
+                span.media-body.align-self-center Dark Notifications
+            // End Dark Notifications
+            // Notifications Builder
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/notifications/notifications-builder.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-infinite
+                span.media-body.align-self-center Notifications Builder
+            // End Notifications Builder
+          // Notifications: Submenu-1
+        // End Notifications
+        // Metrics
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='/metrics/metrics.html')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-pie-chart
+            span.media-body.align-self-center Metrics
+        // End Metrics
+        // UI Components
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenu5')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-infinite
+            span.media-body.align-self-center UI Components
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // UI Components: Submenu
+          ul#subMenu5.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Icons
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='/ui-components/ui-icons.html')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-wand
+                span.media-body.align-self-center Icons
+            // End Icons
+            // Buttons
+            //
+              <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+              <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="/ui-components/ui-buttons.html">
+              <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+              <i class="hs-admin-view-grid"></i>
+              </span>
+              <span class="media-body align-self-center">Buttons</span>
+              </a>
+              </li>
+            // End Buttons
+          // End UI Components: Submenu
+        // End UI Components
+        // Timeline History
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='/pages/pages-timeline.html')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              span.u-badge-v2--xs.u-badge--bottom-right.g-bg-secondary
+              i.hs-admin-timer
+            span.media-body.align-self-center Timeline History
+            span.d-flex.align-self-center
+              span.d-inline-block.text-center.g-min-width-35.g-bg-secondary.g-font-size-12.g-color-white.g-rounded-15.g-px-8.g-py-1 5
+        // End Timeline History
+        // Menu Leveles
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenuLevels1')
+            span.d-flex.align-self-center.g-pos-rel.g-font-size-18.g-mr-18
+              i.hs-admin-list-ol
+            span.media-body.align-self-center Menu Levels
+            span.d-flex.align-self-center.u-side-nav--control-icon
+              i.hs-admin-angle-right
+            span.u-side-nav--has-sub-menu__indicator
+          // Menu Leveles: Submenu-1
+          ul#subMenuLevels1.u-sidebar-navigation-v1-menu.u-side-nav--second-level-menu.mb-0
+            // Sub Level 2
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='#!')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-list
+                span.media-body.align-self-center Sub Level 2
+            // End Sub Level 2
+            // Sub Level 2
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--has-sub-menu.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='#!' data-hssm-target='#subMenuLevels2')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-list
+                span.media-body.align-self-center Sub Level 2
+                span.d-flex.align-self-center.u-side-nav--control-icon
+                  i.hs-admin-angle-right
+              // Menu Leveles: Submenu-2
+              ul#subMenuLevels2.u-side-nav--third-level-menu
+                // Sub Level 3
+                li.u-side-nav--third-level-menu-item.u-side-nav--has-sub-menu
+                  a.media.d-flex.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='#!' data-hssm-target='#subMenuLevels3')
+                    span.media-body.align-self-center Sub Level 3
+                    span.d-flex.align-self-center.u-side-nav--control-icon
+                      i.hs-admin-angle-right
+                  // Menu Leveles: Submenu-3
+                  ul#subMenuLevels3.u-side-nav--fourth-level-menu
+                    // Sub Level 4
+                    li.u-side-nav--fourth-level-menu-item
+                      a.u-side-nav--fourth-level-menu-link.g-px-15.g-py-6(href='#!')
+                        span.media-body.align-self-center Sub Level 4
+                    // End Sub Level 4
+                    // Sub Level 4
+                    li.u-side-nav--fourth-level-menu-item
+                      a.u-side-nav--fourth-level-menu-link.g-px-15.g-py-6(href='#!')
+                        span.media-body.align-self-center Sub Level 4
+                    // End Sub Level 4
+                    // Sub Level 4
+                    li.u-side-nav--fourth-level-menu-item
+                      a.u-side-nav--fourth-level-menu-link.g-px-15.g-py-6(href='#!')
+                        span.media-body.align-self-center Sub Level 4
+                    // End Sub Level 4
+                  // End Menu Leveles: Submenu-3
+                // End Sub Level 3
+                // Sub Level 3
+                li.u-side-nav--third-level-menu-item
+                  a.u-side-nav--third-level-menu-link.u-side-nav--hide-on-hidden.g-pl-8.g-pr-15.g-py-6(href='#!') Sub Level 3
+                // End Sub Level 3
+              // End Menu Leveles: Submenu-2
+            // End Sub Level 2
+            // Sub Level 2
+            li.u-sidebar-navigation-v1-menu-item.u-side-nav--second-level-menu-item
+              a.media.u-side-nav--second-level-menu-link.g-px-15.g-py-12(href='#!')
+                span.d-flex.align-self-center.g-mr-15.g-mt-minus-1
+                  i.hs-admin-list
+                span.media-body.align-self-center Sub Level 2
+            // End Sub Level 2
+          // End Menu Leveles: Submenu-1
+        // End Menu Leveles
+        // Packages
+        li.u-sidebar-navigation-v1-menu-item.u-side-nav--top-level-menu-item
+          a.media.u-side-nav--top-level-menu-link.u-side-nav--hide-on-hidden.g-px-15.g-py-12(href='logout')
+            span.d-flex.align-self-center.g-font-size-18.g-mr-18
+              i.hs-admin-medall
+            span.media-body.align-self-center Logout
+        // End Packages
+    // End Sidebar Nav
+    .col.g-ml-45.g-ml-0--lg.g-pb-65--md
+      // Breadcrumb-v1
+      .g-hidden-sm-down.g-bg-gray-light-v8.g-pa-20
+        ul.u-list-inline.g-color-gray-dark-v6
+          li.list-inline-item.g-mr-10
+            a.u-link-v5.g-color-gray-dark-v6.g-color-secondary--hover.g-valign-middle(href='#!') Dashboard
+            i.hs-admin-angle-right.g-font-size-12.g-color-gray-light-v6.g-valign-middle.g-ml-10
+          li.list-inline-item.g-mr-10
+            a.u-link-v5.g-color-gray-dark-v6.g-color-secondary--hover.g-valign-middle(href='#!') Panels
+            i.hs-admin-angle-right.g-font-size-12.g-color-gray-light-v6.g-valign-middle.g-ml-10
+          li.list-inline-item
+            span.g-valign-middle Panel Variations
+      // End Breadcrumb-v1
+      .g-pa-20
+        block content
+        block sections
+      .g-pa-20
+        .row
+          .col-sm-6.col-lg-6.col-xl-3.g-mb-30
+            // Panel
+            .card.h-100.g-brd-gray-light-v7.g-rounded-3
+              .card-block.g-font-weight-300.g-pa-20
+                .media
+                  .d-flex.g-mr-15
+                    .u-header-dropdown-icon-v1.g-pos-rel.g-width-60.g-height-60.g-bg-lightblue-v3.g-font-size-18.g-font-size-24--md.g-color-white.rounded-circle
+                      i.hs-admin-briefcase.g-absolute-centered
+                  .media-body.align-self-center
+                    .d-flex.align-items-center.g-mb-5
+                      span.g-font-size-24.g-line-height-1.g-color-black 99.9%
+                      span.d-flex.align-self-center.g-font-size-0.g-ml-5.g-ml-10--md
+                        i.g-fill-gray-dark-v9
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-21.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+                        i.g-fill-lightblue-v3
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-33.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+                    h6.g-font-size-16.g-font-weight-300.g-color-gray-dark-v6.mb-0 Projects Done
+            // End Panel
+          .col-sm-6.col-lg-6.col-xl-3.g-mb-30
+            // Panel
+            .card.h-100.g-brd-gray-light-v7.g-rounded-3
+              .card-block.g-font-weight-300.g-pa-20
+                .media
+                  .d-flex.g-mr-15
+                    .u-header-dropdown-icon-v1.g-pos-rel.g-width-60.g-height-60.g-bg-teal-v2.g-font-size-18.g-font-size-24--md.g-color-white.rounded-circle
+                      i.hs-admin-check-box.g-absolute-centered
+                  .media-body.align-self-center
+                    .d-flex.align-items-center.g-mb-5
+                      span.g-font-size-24.g-line-height-1.g-color-black 324
+                      span.d-flex.align-self-center.g-font-size-0.g-ml-5.g-ml-10--md
+                        i.g-fill-gray-dark-v9
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-21.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+                        i.g-fill-lightblue-v3
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-33.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+                    h6.g-font-size-16.g-font-weight-300.g-color-gray-dark-v6.mb-0 Total Tasks
+            // End Panel
+          .col-sm-6.col-lg-6.col-xl-3.g-mb-30
+            // Panel
+            .card.h-100.g-brd-gray-light-v7.g-rounded-3
+              .card-block.g-font-weight-300.g-pa-20
+                .media
+                  .d-flex.g-mr-15
+                    .u-header-dropdown-icon-v1.g-pos-rel.g-width-60.g-height-60.g-bg-darkblue-v2.g-font-size-18.g-font-size-24--md.g-color-white.rounded-circle
+                      i.hs-admin-wallet.g-absolute-centered
+                  .media-body.align-self-center
+                    .d-flex.align-items-center.g-mb-5
+                      span.g-font-size-24.g-line-height-1.g-color-black $124.2
+                      span.d-flex.align-self-center.g-font-size-0.g-ml-5.g-ml-10--md
+                        i.g-fill-red
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-21.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+                        i.g-fill-gray-dark-v9
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-33.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+                    h6.g-font-size-16.g-font-weight-300.g-color-gray-dark-v6.mb-0 Projects Done
+            // End Panel
+          .col-sm-6.col-lg-6.col-xl-3.g-mb-30
+            // Panel
+            .card.h-100.g-brd-gray-light-v7.g-rounded-3
+              .card-block.g-font-weight-300.g-pa-20
+                .media
+                  .d-flex.g-mr-15
+                    .u-header-dropdown-icon-v1.g-pos-rel.g-width-60.g-height-60.g-bg-lightred-v2.g-font-size-18.g-font-size-24--md.g-color-white.rounded-circle
+                      i.hs-admin-user.g-absolute-centered
+                  .media-body.align-self-center
+                    .d-flex.align-items-center.g-mb-5
+                      span.g-font-size-24.g-line-height-1.g-color-black 148
+                      span.d-flex.align-self-center.g-font-size-0.g-ml-5.g-ml-10--md
+                        i.g-fill-gray-dark-v9
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-21.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+                        i.g-fill-gray-dark-v9
+                          svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                            g(transform='translate(-33.000000, -751.000000)')
+                              g(transform='translate(0.000000, 64.000000)')
+                                g(transform='translate(20.000000, 619.000000)')
+                                  g(transform='translate(1.000000, 68.000000)')
+                                    polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+                    h6.g-font-size-16.g-font-weight-300.g-color-gray-dark-v6.mb-0 New Clients
+            // End Panel
+          // Statistic Card
+          .col-xl-12
+            // Statistic Card
+            .card.g-brd-gray-light-v7.g-pa-15.g-pa-25-30--md.g-mb-30
+              header.media.g-mb-30
+                h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.mb-0 Project statistics
+                .media-body.d-flex.justify-content-end
+                  #rangePickerWrapper2.d-flex.align-items-center.u-datepicker-right.u-datepicker--v3.g-pr-10
+                    input#rangeDatepicker2.g-font-size-12.g-font-size-default--md(type='text' data-rp-wrapper='#rangePickerWrapper2' data-rp-type='range' data-rp-date-format='d M Y' data-rp-default-date='["01 Jan 2016", "31 Dec 2017"]')
+                    i.hs-admin-angle-down.g-absolute-centered--y.g-right-0.g-color-gray-light-v3
+                  a.d-flex.align-items-center.hs-admin-panel.u-link-v5.g-font-size-20.g-color-gray-light-v3.g-color-secondary--hover.g-ml-5.g-ml-30--md(href='#!')
+              section
+                ul.list-unstyled.d-flex.g-mb-45
+                  li.media
+                    .d-flex.align-self-center.g-mr-8
+                      span.u-badge-v2--md.g-pos-stc.g-transform-origin--top-left.g-bg-lightblue-v3
+                    .media-body.align-self-center.g-font-size-12.g-font-size-default--md Total hits
+                  li.media.g-ml-5.g-ml-35--md
+                    .d-flex.align-self-center.g-mr-8
+                      span.u-badge-v2--md.g-pos-stc.g-transform-origin--top-left.g-bg-darkblue-v2
+                    .media-body.align-self-center.g-font-size-12.g-font-size-default--md Unique visits
+                  li.media.g-ml-5.g-ml-35--md
+                    .d-flex.align-self-center.g-mr-8
+                      span.u-badge-v2--md.g-pos-stc.g-transform-origin--top-left.g-bg-lightred-v2
+                    .media-body.align-self-center.g-font-size-12.g-font-size-default--md New orders
+                .js-area-chart.u-area-chart--v1.g-pos-rel.g-line-height-0(data-height='300px' data-mobile-height='180px' data-high='5000000' data-low='0' data-offset-x='30' data-offset-y='50' data-postfix=' m' data-is-show-area='true' data-is-show-line='false' data-is-show-point='true' data-is-full-width='true' data-is-stack-bars='true' data-is-show-axis-x='true' data-is-show-axis-y='true' data-is-show-tooltips='true' data-tooltip-description-position='right' data-tooltip-custom-class='u-tooltip--v2 g-font-weight-300 g-font-size-default g-color-gray-dark-v6' data-align-text-axis-x='center' data-fill-opacity='.7' data-fill-colors='["#e62154","#3dd1e8","#1d75e5"]' data-stroke-color='#e1eaea' data-stroke-dash-array='0' data-text-size-x='14px' data-text-color-x='#000000' data-text-offset-top-x='10' data-text-size-y='14px' data-text-color-y='#53585e' data-points-colors='["#e62154","#3dd1e8","#1d75e5"]' data-series='[\
+                [\
+                {"meta": "Orders", "value": 300000},\
+                {"meta": "Orders", "value": 500000},\
+                {"meta": "Orders", "value": 700000},\
+                {"meta": "Orders", "value": 1100000},\
+                {"meta": "Orders", "value": 800000},\
+                {"meta": "Orders", "value": 800000},\
+                {"meta": "Orders", "value": 1000000},\
+                {"meta": "Orders", "value": 2300000},\
+                {"meta": "Orders", "value": 700000},\
+                {"meta": "Orders", "value": 300000},\
+                {"meta": "Orders", "value": 600000},\
+                {"meta": "Orders", "value": 300000}\
+                ],\
+                [\
+                {"meta": "Hits", "value": 300000},\
+                {"meta": "Hits", "value": 300000},\
+                {"meta": "Hits", "value": 300000},\
+                {"meta": "Hits", "value": 300000},\
+                {"meta": "Hits", "value": 300000},\
+                {"meta": "Hits", "value": 3300000},\
+                {"meta": "Hits", "value": 500000},\
+                {"meta": "Hits", "value": 500000},\
+                {"meta": "Hits", "value": 800000},\
+                {"meta": "Hits", "value": 1100000},\
+                {"meta": "Hits", "value": 1500000},\
+                {"meta": "Hits", "value": 300000}\
+                ],\
+                [\
+                {"meta": "Visits", "value": 300000},\
+                {"meta": "Visits", "value": 300000},\
+                {"meta": "Visits", "value": 300000},\
+                {"meta": "Visits", "value": 300000},\
+                {"meta": "Visits", "value": 2300000},\
+                {"meta": "Visits", "value": 1000000},\
+                {"meta": "Visits", "value": 500000},\
+                {"meta": "Visits", "value": 500000},\
+                {"meta": "Visits", "value": 500000},\
+                {"meta": "Visits", "value": 1000000},\
+                {"meta": "Visits", "value": 300000},\
+                {"meta": "Visits", "value": 300000}\
+                ]\
+                ]' data-labels='["Jan", "Feb", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]')
+            // End Statistic Card
+          // End Statistic Card
+          // Income Card
+          .col-xl-8
+            // Income Cards
+            .card.g-brd-gray-light-v7.g-mb-30
+              header.media.g-pa-15.g-pa-25-30-0--md.g-mb-20
+                .media-body.align-self-center
+                  h3.text-uppercase.g-font-size-default.g-color-black.g-mb-8 Total Income
+                  #rangePickerWrapper3.u-datepicker-left.u-datepicker--v3.g-pr-10
+                    input#rangeDatepicker3.g-font-size-12.g-font-size-default--md(type='text' data-rp-wrapper='#rangePickerWrapper3' data-rp-type='range' data-rp-date-format='d M Y' data-rp-default-date='["01 Jan 2016", "31 Dec 2017"]')
+                    i.hs-admin-angle-down.g-absolute-centered--y.g-right-0.g-color-gray-light-v3
+                .d-flex.align-self-end.align-items-center
+                  span.g-line-height-1.g-font-weight-300.g-font-size-28.g-color-secondary $48,200
+                  span.d-flex.align-self-center.g-font-size-0.g-ml-10
+                    i.g-fill-gray-dark-v9
+                      svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                        g(transform='translate(-21.000000, -751.000000)')
+                          g(transform='translate(0.000000, 64.000000)')
+                            g(transform='translate(20.000000, 619.000000)')
+                              g(transform='translate(1.000000, 68.000000)')
+                                polygon(points='6 20 0 13.9709049 0.576828937 13.3911999 5.59205874 18.430615 5.59205874 0 6.40794126 0 6.40794126 18.430615 11.4223552 13.3911999 12 13.9709049')
+                    i.g-fill-lightblue-v3
+                      svg(width='12px' height='20px' viewbox='0 0 12 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                        g(transform='translate(-33.000000, -751.000000)')
+                          g(transform='translate(0.000000, 64.000000)')
+                            g(transform='translate(20.000000, 619.000000)')
+                              g(transform='translate(1.000000, 68.000000)')
+                                polygon(transform='translate(18.000000, 10.000000) scale(1, -1) translate(-18.000000, -10.000000)' points='18 20 12 13.9709049 12.5768289 13.3911999 17.5920587 18.430615 17.5920587 0 18.4079413 0 18.4079413 18.430615 23.4223552 13.3911999 24 13.9709049')
+              .js-custom-scroll.g-height-500.g-pa-15.g-pa-0-30-25--md
+                table.table.table-responsive-sm.w-100
+                  thead
+                    tr
+                      th.g-font-weight-300.g-color-gray-dark-v6.g-brd-top-none.g-pl-20 #
+                      th.g-font-weight-300.g-color-gray-dark-v6.g-brd-top-none Name
+                      th.g-font-weight-300.g-color-gray-dark-v6.g-brd-top-none Status
+                      th.g-font-weight-300.g-color-gray-dark-v6.g-brd-top-none Date
+                      th.text-right.g-font-weight-300.g-color-gray-dark-v6.g-brd-top-none Price
+                  tbody
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 1
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Business Cards
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-lightblue-v3.g-bg-lightblue-v3.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 approved
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Aug 12, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $2045
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 2
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Advertising Outdoors
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-lightred-v2.g-bg-lightred-v2.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 pending
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Jun 6, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $995
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 3
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Freelance Design
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-teal-v2.g-bg-teal-v2.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 done
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Sep 8, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $1025
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 4
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Music Improvement
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-lightblue-v3.g-bg-lightblue-v3.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 approved
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Dec 20, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $9562
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 5
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10 Truck Advertising
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-teal-v2.g-bg-teal-v2.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 done
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10 Dec 24, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10 $5470
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 6
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Business Cards
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-lightblue-v3.g-bg-lightblue-v3.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 approved
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Aug 12, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $2045
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 7
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Advertising Outdoors
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-lightred-v2.g-bg-lightred-v2.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 pending
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Jun 6, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $995
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 8
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Freelance Design
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-teal-v2.g-bg-teal-v2.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 done
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Sep 8, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $1025
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 9
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Music Improvement
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-lightblue-v3.g-bg-lightblue-v3.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 approved
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 Dec 20, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom.g-brd-2.g-brd-gray-light-v4.g-py-10 $9562
+                    tr
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10.g-pl-20 10
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10 Truck Advertising
+                      td.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10
+                        span.u-tags-v1.text-center.g-width-100.g-brd-around.g-brd-teal-v2.g-bg-teal-v2.g-font-size-default.g-color-white.g-rounded-50.g-py-4.g-px-15 done
+                      td.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10 Dec 24, 2016
+                      td.text-right.g-font-size-default.g-color-black.g-valign-middle.g-brd-top-none.g-brd-bottom--md.g-brd-2.g-brd-gray-light-v4.g-py-10 $5470
+              .js-area-chart.u-area-chart--v1.g-pos-rel.g-line-height-0(data-height='65px' data-high='2420' data-low='0' data-offset-x='0' data-offset-y='0' data-postfix=' m' data-is-show-area='true' data-is-show-line='false' data-is-show-point='true' data-is-full-width='true' data-is-stack-bars='true' data-is-show-axis-x='false' data-is-show-axis-y='false' data-is-show-tooltips='true' data-tooltip-description-position='left' data-tooltip-custom-class='u-tooltip--v2 g-font-weight-300 g-font-size-default g-color-gray-dark-v6' data-align-text-axis-x='center' data-fill-opacity='1' data-fill-colors='["#67c8d8"]' data-stroke-color='#e1eaea' data-stroke-dash-array='0' data-text-size-x='14px' data-text-color-x='#000000' data-text-offset-top-x='0' data-text-size-y='14px' data-text-color-y='#53585e' data-points-colors='["#1cc9e4"]' data-series='[\
+              [\
+              {"meta": "$", "value": 100},\
+              {"meta": "$", "value": 2100},\
+              {"meta": "$", "value": 350},\
+              {"meta": "$", "value": 2920},\
+              {"meta": "$", "value": 840},\
+              {"meta": "$", "value": 2770}\
+              ]\
+              ]' data-labels='["2013", "2014", "2015", "2016", "2017"]')
+            // End Income Cards
+          // End Income Card
+          // Calendar Card
+          .col-xl-4
+            // Calendar Card
+            .g-mb-30
+              header.u-bg-overlay.g-bg-img-hero.g-bg-black-opacity-0_5--after.g-rounded-4.g-rounded-0--bottom-left.g-rounded-0--bottom-right.g-overflow-hidden(style='background-image: url(/img-temp/400x270/img3.jpg);')
+                .u-bg-overlay__inner.g-color-white.g-pa-30
+                  h3.g-font-weight-300.g-font-size-28.g-color-white.g-mb-35
+                    | Friday 3rd
+                    span.d-block.g-font-size-16 January 2017
+                  a.btn.btn-md.text-uppercase.u-btn-outline-white(href='#') Add event
+              section.g-brd-around.g-brd-top-none.g-brd-gray-light-v7.g-rounded-4.g-rounded-0--top-left.g-rounded-0--top-right
+                .g-pa-10.g-pa-20--md
+                  #datepicker.u-datepicker--v2
+                ul.list-unstyled
+                  li.media.g-bg-gray-light-v8.g-brd-left.g-brd-2.g-brd-darkblue-v2.g-px-30.g-py-15.g-mb-2.g-ml-minus-1
+                    strong.d-flex.align-self-center.g-width-80.g-color-black 8:00am
+                    .media-body.g-font-weight-300.g-color-black Build My Own Website
+                  li.media.g-bg-gray-light-v8.g-brd-left.g-brd-2.g-brd-secondary.g-px-30.g-py-15.g-mb-2.g-ml-minus-1
+                    strong.d-flex.align-self-center.g-width-80.g-color-black 9:00am
+                    .media-body.g-font-weight-300.g-color-black Create New Content
+                  li.media.g-bg-gray-light-v8.g-brd-left.g-brd-2.g-brd-darkblue-v2.g-px-30.g-py-15.g-mb-2.g-ml-minus-1
+                    strong.d-flex.align-self-center.g-width-80.g-color-black 10:00am
+                    .media-body.g-font-weight-300.g-color-black Check Unify Profile Updates
+            // End Calendar Card
+          // End Calendar Card
+          // Activity Card
+          .col-xl-4
+            // Activity Card
+            .card.g-brd-gray-light-v7.g-mb-30
+              header.media.g-pa-15.g-pa-25-30-0--md.g-mb-16
+                h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mr-20.mb-0 Activity
+                .media-body.d-flex.justify-content-end
+                  #rangePickerWrapper.u-datepicker-right.u-datepicker--v3.g-pr-10
+                    input#rangeDatepicker.g-font-size-12.g-font-size-default--md(type='text' data-rp-wrapper='#rangePickerWrapper' data-rp-type='range' data-rp-date-format='d M Y' data-rp-default-date='["01 Jan 2016", "31 Dec 2017"]')
+                    i.hs-admin-angle-down.g-absolute-centered--y.g-right-0.g-color-gray-light-v3
+              .js-custom-scroll.g-height-400.g-pa-15.g-pl-5--md.g-pr-30--md.g-py-25--md
+                section.u-timeline-v2-wrap.g-pos-rel.g-left-25--before.g-mb-20
+                  .g-orientation-left.g-pos-rel.g-ml-25--md.g-pl-20
+                    .g-hidden-sm-down.u-timeline-v2__icon.g-top-35
+                      i.d-block.g-width-16.g-height-16.g-bg-white.g-brd-around.g-brd-2.g-brd-secondary.rounded-circle
+                    .media.g-mb-16
+                      .d-flex.align-self-center.g-mr-15
+                        img.g-width-55.g-height-55.rounded-circle(src='/img-temp/100x100/img1.jpg' alt='Image Description')
+                      .media-body.align-self-center
+                        h3.g-font-weight-300.g-font-size-16.g-mb-3 Htmlstream
+                        em.g-font-style-normal.g-color-secondary Commented on Project
+                    p.g-font-weight-300.g-font-size-default.g-mb-16
+                      | When you browse through videos at YouTube, which do you usually click first: one with around 10 views or one with around 75,000 views
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-gray-dark-v6
+                      i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                      span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-ml-4.g-ml-8--md
+                        | 45 Min 
+                        span.g-hidden-md-down ago
+                  hr.d-flex.g-brd-gray-light-v4.g-ml-35--md.g-my-20.g-my-30--md
+                  .g-orientation-left.g-pos-rel.g-ml-25--md.g-pl-20
+                    .g-hidden-sm-down.u-timeline-v2__icon.g-top-35
+                      i.d-block.g-width-16.g-height-16.g-bg-white.g-brd-around.g-brd-2.g-brd-secondary.rounded-circle
+                    .media.g-mb-25
+                      .d-flex.align-self-center.g-mr-15
+                        img.g-width-55.g-height-55.rounded-circle(src='/img-temp/100x100/img4.jpg' alt='Image Description')
+                      .media-body.align-self-center
+                        h3.g-font-weight-300.g-font-size-16.g-mb-3
+                          | E
+                          span.g-hidden-md-down mma&nbsp;
+                          span.g-hidden-md-up .
+                          | Watson
+                        em.g-font-style-normal.g-color-secondary Added New Files
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-mb-30
+                      i.hs-admin-zip.g-font-size-24.g-color-secondary
+                      span.g-font-weight-300.g-font-size-default.g-color-gray-dark-v6.g-ml-12 Project Updates.zip
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-gray-dark-v6
+                      i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                      span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-ml-4.g-ml-8--md
+                        | 10 Min 
+                        span.g-hidden-md-down ago
+                  hr.d-flex.g-brd-gray-light-v4.g-ml-35--md.g-my-20.g-my-30--md
+                  .g-orientation-left.g-pos-rel.g-ml-25--md.g-pl-20
+                    .g-hidden-sm-down.u-timeline-v2__icon.g-top-35
+                      i.d-block.g-width-16.g-height-16.g-bg-white.g-brd-around.g-brd-2.g-brd-secondary.rounded-circle
+                    .media.g-mb-16
+                      .d-flex.align-self-center.g-mr-15
+                        img.g-width-55.g-height-55.rounded-circle(src='/img-temp/100x100/img5.jpg' alt='Image Description')
+                      .media-body.align-self-center
+                        h3.g-font-weight-300.g-font-size-16.g-mb-3
+                          | V
+                          span.g-hidden-md-down erna&nbsp;
+                          span.g-hidden-md-up .
+                          | Swanson
+                        em.g-font-style-normal.g-color-secondary Commented on Project
+                    p.g-font-weight-300.g-font-size-default.g-mb-16
+                      | The collapse of the online-advertising market in 2001 made marketing on the Internet seem even less compelling. Website usability, press releases, online media buys, podcasts, mobile marketing and more &ndash; there&rsquo;s an entire world
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-gray-dark-v6
+                      i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                      span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-ml-4.g-ml-8--md
+                        | 10 Min 
+                        span.g-hidden-md-down ago
+                  hr.d-flex.g-brd-gray-light-v4.g-ml-35--md.g-my-20.g-my-30--md
+                  .g-orientation-left.g-pos-rel.g-ml-25--md.g-pl-20
+                    .g-hidden-sm-down.u-timeline-v2__icon.g-top-35
+                      i.d-block.g-width-16.g-height-16.g-bg-white.g-brd-around.g-brd-2.g-brd-secondary.rounded-circle
+                    .media.g-mb-16
+                      .d-flex.align-self-center.g-mr-15
+                        img.g-width-55.g-height-55.rounded-circle(src='/img-temp/100x100/img7.jpg' alt='Image Description')
+                      .media-body.align-self-center
+                        h3.g-font-weight-300.g-font-size-16.g-mb-3
+                          | J
+                          span.g-hidden-md-down ohn&nbsp;
+                          span.g-hidden-md-up .
+                          | Doe
+                        em.g-font-style-normal.g-color-secondary Shared Project with Users
+                    ul.list-inline.d-flex.g-mb-20
+                      li.list-inline-item.g-mb-10.g-mb-0--sm.mr-0
+                        img.g-width-30.g-width-40--md.g-height-30.g-height-40--md.rounded-circle(src='/img-temp/100x100/img4.jpg' alt='Image Description')
+                      li.list-inline-item.g-mb-10.g-mb-0--sm.g-ml-7.mr-0
+                        img.g-width-30.g-width-40--md.g-height-30.g-height-40--md.rounded-circle(src='/img-temp/100x100/img7.jpg' alt='Image Description')
+                      li.list-inline-item.g-mb-10.g-mb-0--sm.g-ml-7.mr-0
+                        img.g-width-30.g-width-40--md.g-height-30.g-height-40--md.rounded-circle(src='/img-temp/100x100/img14.jpg' alt='Image Description')
+                      li.list-inline-item.g-mb-10.g-mb-0--sm.g-ml-7.mr-0
+                        img.g-width-30.g-width-40--md.g-height-30.g-height-40--md.rounded-circle(src='/img-temp/100x100/img15.jpg' alt='Image Description')
+                      li.list-inline-item.g-mb-10.g-mb-0--sm.g-ml-7.mr-0
+                        .d-flex.align-items-center.justify-content-center.g-width-30.g-width-40--md.g-height-30.g-height-40--md.g-bg-gray-light-v8.g-font-size-14.g-font-size-16--md.g-color-secondary.rounded-circle +5
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal.g-color-gray-dark-v6
+                      i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                      span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-ml-4.g-ml-8--md
+                        | 10 Min 
+                        span.g-hidden-md-down ago
+                  hr.d-flex.g-brd-gray-light-v4.g-ml-35--md.g-my-20.g-my-30--md
+                a.d-flex.align-items-center.text-uppercase.u-link-v5.g-font-style-normal.g-color-secondary.g-ml-25--md(href='#!')
+                  i.hs-admin-reload.g-font-size-20
+                  span.g-font-size-12.g-font-size-default--md.g-ml-10.g-ml-25--md Load more
+            // End Activity Card
+          // End Activity Card
+          // Tickets Card
+          .col-xl-4
+            // Tickets Cards
+            .card.g-brd-gray-light-v7.g-mb-30
+              header.media.g-pa-15.g-pa-25-30-0--md.g-mb-20
+                h3.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.mb-0 Tickets
+              .js-custom-scroll.g-height-400.g-pa-15.g-pa-0-30-25--md
+                section
+                  .media
+                    .media-body.g-mb-15
+                      h3.g-font-weight-300.g-font-size-16.g-color-black.g-mb-5 Freelance Design
+                      p.g-font-weight-300.g-color-gray-dark-v6.mb-0 15 Tips To Increase Your Adwords
+                    .d-flex
+                      a.u-link-v5.g-font-size-16.g-color-secondary(href='#!') #001-3456
+                  .media
+                    .media-body.align-self-center(href='#!')
+                      span.u-tags-v1.text-center.g-width-140.g-bg-lightblue-v3.g-color-white.g-brd-around.g-brd-lightblue-v3.g-rounded-50.g-py-4.g-px-15 In Progress
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal
+                      i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                      span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-ml-4.g-ml-8--md
+                        | 45 Min 
+                        span.g-hidden-md-down ago
+                hr.d-flex.g-brd-gray-light-v4.g-my-25
+                section
+                  .media
+                    .media-body.g-mb-15
+                      h3.g-font-weight-300.g-font-size-16.g-color-black.g-mb-5 The Flash Tutorial
+                      p.g-font-weight-300.g-color-gray-dark-v6.mb-0 Las Vegas How To Have Non Gambling
+                    .d-flex
+                      a.u-link-v5.g-font-size-16.g-color-secondary(href='#!') #001-3458
+                  .media
+                    .media-body.align-self-center(href='#!')
+                      span.u-tags-v1.text-center.g-width-140.g-bg-teal-v2.g-color-white.g-brd-around.g-brd-teal-v2.g-rounded-50.g-py-4.g-px-15 Done
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal
+                      i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                      span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-ml-4.g-ml-8--md
+                        | 15 Min 
+                        span.g-hidden-md-down ago
+                hr.d-flex.g-brd-gray-light-v4.g-my-25
+                section
+                  .media
+                    .media-body.g-mb-15
+                      h3.g-font-weight-300.g-font-size-16.g-color-black.g-mb-5 Free Advertising
+                      p.g-font-weight-300.g-color-gray-dark-v6.mb-0 How Does An Lcd Screen Work
+                    .d-flex
+                      a.u-link-v5.g-font-size-16.g-color-secondary(href='#!') #001-3454
+                  .media
+                    .media-body.align-self-center(href='#!')
+                      span.u-tags-v1.text-center.g-width-140.g-bg-primary.g-color-white.g-brd-around.g-brd-primary.g-rounded-50.g-py-4.g-px-15 To Do
+                    em.d-flex.align-self-center.align-items-center.g-font-style-normal
+                      i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                      span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-ml-4.g-ml-8--md
+                        | 10 Min 
+                        span.g-hidden-md-down ago
+            // End Tickets Cards
+          // End Tickets Card
+          // Comments Card
+          .col-xl-4
+            // Comments Card
+            .card.g-brd-gray-light-v7.g-mb-30
+              header.media.g-pa-15.g-pa-25-30-0--md.g-mb-20
+                h3.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.mb-0 Recent comments
+              .js-custom-scroll.g-height-400.g-pa-15.g-pa-0-30-25--md
+                section.media
+                  .d-flex.g-mr-12
+                    img.g-width-40.g-width-48--md.g-height-40.g-height-48--md.rounded-circle(src='/img-temp/100x100/img5.jpg' alt='Image Description')
+                  .media-body
+                    h3.g-font-weight-300.g-font-size-16.g-color-black.g-mb-5
+                      | V
+                      span.g-hidden-md-down erna&nbsp;
+                      span.g-hidden-md-up .
+                      | Swanson
+                    p.g-font-weight-300.g-color-gray-dark-v6.g-mb-15 15 Tips To Increase Your Adwords
+                    .media
+                      .media-body.align-self-center(href='#!')
+                        span.u-tags-v1.text-center.g-width-140--md.g-bg-gray-light-v8.g-font-size-12.g-font-size-default--md.g-color-darkblue-v2.g-brd-around.g-brd-gray-light-v8.g-rounded-50.g-py-4.g-px-15
+                          | Dropbox
+                          span.g-hidden-sm-down Project
+                      em.d-flex.align-self-center.align-items-center.g-font-style-normal
+                        i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                        span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-ml-4.g-ml-8--md
+                          | 45 Min 
+                          span.g-hidden-md-down ago
+                hr.d-flex.g-brd-gray-light-v4.g-my-25
+                section.media
+                  .d-flex.g-mr-12
+                    img.g-width-40.g-width-48--md.g-height-40.g-height-48--md.rounded-circle(src='/img-temp/100x100/img14.jpg' alt='Image Description')
+                  .media-body
+                    h3.g-font-weight-300.g-font-size-16.g-color-black.g-mb-5
+                      | E
+                      span.g-hidden-md-down ddie&nbsp;
+                      span.g-hidden-md-up .
+                      | Hayes
+                    p.g-font-weight-300.g-color-gray-dark-v6.g-mb-15 Las Vegas How To Have Non Gambling
+                    .media
+                      .media-body.align-self-center(href='#!')
+                        span.u-tags-v1.text-center.g-width-140--md.g-bg-gray-light-v8.g-font-size-12.g-font-size-default--md.g-color-darkblue-v2.g-brd-around.g-brd-gray-light-v8.g-rounded-50.g-py-4.g-px-15
+                          | Sketch
+                          span.g-hidden-sm-down Project
+                      em.d-flex.align-self-center.align-items-center.g-font-style-normal
+                        i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                        span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-ml-4.g-ml-8--md
+                          | 15 Min 
+                          span.g-hidden-md-down ago
+                hr.d-flex.g-brd-gray-light-v4.g-my-25
+                section.media
+                  .d-flex.g-mr-12
+                    img.g-width-40.g-width-48--md.g-height-40.g-height-48--md.rounded-circle(src='/img-temp/100x100/img7.jpg' alt='Image Description')
+                  .media-body
+                    h3.g-font-weight-300.g-font-size-16.g-color-black.g-mb-5
+                      | H
+                      span.g-hidden-md-down erbert&nbsp;
+                      span.g-hidden-md-up .
+                      | Castro
+                    p.g-font-weight-300.g-color-gray-dark-v6.g-mb-15 But today, the use and influence of is growing right along illustration
+                    .media
+                      .media-body.align-self-center(href='#!')
+                        span.u-tags-v1.text-center.g-width-140--md.g-bg-gray-light-v8.g-font-size-12.g-font-size-default--md.g-color-darkblue-v2.g-brd-around.g-brd-gray-light-v8.g-rounded-50.g-py-4.g-px-15
+                          | Unify
+                          span.g-hidden-sm-down Project
+                      em.d-flex.align-self-center.align-items-center.g-font-style-normal
+                        i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                        span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-ml-4.g-ml-8--md
+                          | 10 Min 
+                          span.g-hidden-md-down ago
+                hr.d-flex.g-brd-gray-light-v4.g-my-25
+                section.media
+                  .d-flex.g-mr-12
+                    img.g-width-40.g-width-48--md.g-height-40.g-height-48--md.rounded-circle(src='/img-temp/100x100/img7.jpg' alt='Image Description')
+                  .media-body
+                    h3.g-font-weight-300.g-font-size-16.g-color-black.g-mb-5
+                      | H
+                      span.g-hidden-md-down erbert&nbsp;
+                      span.g-hidden-md-up .
+                      | Castro
+                    p.g-font-weight-300.g-color-gray-dark-v6.g-mb-15 How Does An Lcd Screen Work
+                    .media
+                      .media-body.align-self-center(href='#!')
+                        span.u-tags-v1.text-center.g-width-140--md.g-bg-gray-light-v8.g-font-size-12.g-font-size-default--md.g-color-darkblue-v2.g-brd-around.g-brd-gray-light-v8.g-rounded-50.g-py-4.g-px-15
+                          | Unify
+                          span.g-hidden-sm-down Project
+                      em.d-flex.align-self-center.align-items-center.g-font-style-normal
+                        i.hs-admin-time.g-font-size-default.g-font-size-18--md.g-color-gray-light-v3
+                        span.g-font-weight-300.g-font-size-12.g-font-size-default--md.g-color-gray-dark-v6.g-ml-4.g-ml-8--md
+                          | 12 Min 
+                          span.g-hidden-md-down ago
+            // Comments Card
+          // End Comments Card
+      // Footer
+      footer#footer.u-footer--bottom-sticky.g-bg-white.g-color-gray-dark-v6.g-brd-top.g-brd-gray-light-v7.g-pa-20
+        .row.align-items-center
+          // Footer Nav
+          .col-md-4.g-mb-10.g-mb-0--md
+            ul.list-inline.text-center.text-md-left.mb-0
+              li.list-inline-item
+                a.g-color-gray-dark-v6.g-color-secondary--hover(href='#!') FAQ
+              li.list-inline-item
+                span.g-color-gray-dark-v6 |
+              li.list-inline-item
+                a.g-color-gray-dark-v6.g-color-secondary--hover(href='#!') Support
+              li.list-inline-item
+                span.g-color-gray-dark-v6 |
+              li.list-inline-item
+                a.g-color-gray-dark-v6.g-color-secondary--hover(href='#!') Contact Us
+          // End Footer Nav
+          // Footer Socials
+          .col-md-4.g-mb-10.g-mb-0--md
+            ul.list-inline.g-font-size-16.text-center.mb-0
+              li.list-inline-item.g-mx-10
+                a.g-color-facebook.g-color-secondary--hover(href='#!')
+                  i.fa.fa-facebook-square
+              li.list-inline-item.g-mx-10
+                a.g-color-google-plus.g-color-secondary--hover(href='#!')
+                  i.fa.fa-google-plus
+              li.list-inline-item.g-mx-10
+                a.g-color-black.g-color-secondary--hover(href='#!')
+                  i.fa.fa-github
+              li.list-inline-item.g-mx-10
+                a.g-color-twitter.g-color-secondary--hover(href='#!')
+                  i.fa.fa-twitter
+          // End Footer Socials
+          // Footer Copyrights
+          .col-md-4.text-center.text-md-right
+            small.d-block.g-font-size-default &copy; 2018 Htmlstream. All Rights Reserved.
+          // End Footer Copyrights
+      // End Footer
 // JS Global Compulsory
 script(src='/vendor/jquery/jquery.min.js')
 script(src='/vendor/jquery-migrate/jquery-migrate.min.js')
 script(src='/vendor/popper.min.js')
 script(src='/vendor/bootstrap/bootstrap.min.js')
-script(src='/vendor/bootstrap/offcanvas.js')
-// JS Implementing Plugins
-script(src='/vendor/dzsparallaxer/dzsparallaxer.js')
-script(src='/vendor/dzsparallaxer/dzsscroller/scroller.js')
-script(src='/vendor/dzsparallaxer/advancedscroller/plugin.js')
-script(src='/vendor/masonry/dist/masonry.pkgd.min.js')
-script(src='/vendor/imagesloaded/imagesloaded.pkgd.min.js')
-script(src='/vendor/slick-carousel/slick/slick.js')
+script(src='/vendor/cookiejs/jquery.cookie.js')
+// jQuery UI Core
+script(src='/vendor/jquery-ui/ui/widget.js')
+script(src='/vendor/jquery-ui/ui/version.js')
+script(src='/vendor/jquery-ui/ui/keycode.js')
+script(src='/vendor/jquery-ui/ui/position.js')
+script(src='/vendor/jquery-ui/ui/unique-id.js')
+script(src='/vendor/jquery-ui/ui/safe-active-element.js')
+// jQuery UI Helpers
+script(src='/vendor/jquery-ui/ui/widgets/menu.js')
+script(src='/vendor/jquery-ui/ui/widgets/mouse.js')
+// jQuery UI Widgets
+script(src='/vendor/jquery-ui/ui/widgets/datepicker.js')
+// JS Plugins Init.
+script(src='/vendor/appear.js')
+script(src='/vendor/bootstrap-select/js/bootstrap-select.min.js')
+script(src='/vendor/flatpickr/dist/js/flatpickr.min.js')
+script(src='/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js')
+script(src='/vendor/chartist-js/chartist.min.js')
+script(src='/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js')
 script(src='/vendor/fancybox/jquery.fancybox.min.js')
 // JS Unify
 script(src='/js/hs.core.js')
-script(src='/js/components/hs.header.js')
+script(src='/js/components/hs.side-nav.js')
 script(src='/js/helpers/hs.hamburgers.js')
+script(src='/js/components/hs.range-datepicker.js')
+script(src='/js/components/hs.datepicker.js')
 script(src='/js/components/hs.dropdown.js')
+script(src='/js/components/hs.scrollbar.js')
+script(src='/js/components/hs.area-chart.js')
+script(src='/js/components/hs.donut-chart.js')
+script(src='/js/components/hs.bar-chart.js')
+script(src='/js/helpers/hs.focus-state.js')
 script(src='/js/components/hs.popup.js')
-script(src='/js/components/hs.carousel.js')
-script(src='/js/components/hs.go-to.js')
 // JS Custom
 script(src='/js/custom.js')
 // JS Plugins Init.
 script.
   $(document).on('ready', function () {
-  // initialization of go to
-  $.HSCore.components.HSGoTo.init('.js-go-to');
-  // initialization of carousel
-  $.HSCore.components.HSCarousel.init('.js-carousel');
-  // initialization of HSDropdown component
-  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-  afterOpen: function(){
-  $(this).find('input[type="search"]').focus();
+  // initialization of custom select
+  $('.js-select').selectpicker();
+  // initialization of hamburger
+  $.HSCore.helpers.HSHamburgers.init('.hamburger');
+  // initialization of charts
+  $.HSCore.components.HSAreaChart.init('.js-area-chart');
+  $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+  $.HSCore.components.HSBarChart.init('.js-bar-chart');
+  // initialization of sidebar navigation component
+  $.HSCore.components.HSSideNav.init('.js-side-nav', {
+  afterOpen: function() {
+  setTimeout(function() {
+  $.HSCore.components.HSAreaChart.init('.js-area-chart');
+  $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+  $.HSCore.components.HSBarChart.init('.js-bar-chart');
+  }, 400);
+  },
+  afterClose: function() {
+  setTimeout(function() {
+  $.HSCore.components.HSAreaChart.init('.js-area-chart');
+  $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+  $.HSCore.components.HSBarChart.init('.js-bar-chart');
+  }, 400);
   }
   });
-  // initialization of masonry
-  $('.masonry-grid').imagesLoaded().then(function () {
-  $('.masonry-grid').masonry({
-  columnWidth: '.masonry-grid-sizer',
-  itemSelector: '.masonry-grid-item',
-  percentPosition: true
+  // initialization of range datepicker
+  $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
+  // initialization of datepicker
+  $.HSCore.components.HSDatepicker.init('#datepicker', {
+  dayNamesMin: [
+  'SU',
+  'MO',
+  'TU',
+  'WE',
+  'TH',
+  'FR',
+  'SA'
+  ]
   });
-  });
+  // initialization of HSDropdown component
+  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+  // initialization of custom scrollbar
+  $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
   // initialization of popups
-  $.HSCore.components.HSPopup.init('.js-fancybox');
+  $.HSCore.components.HSPopup.init('.js-fancybox', {
+  btnTpl: {
+  smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v3 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
+  }
   });
-  $(window).on('load', function () {
-  // initialization of header
-  $.HSCore.components.HSHeader.init($('#js-header'));
-  $.HSCore.helpers.HSHamburgers.init('.hamburger');
   });
-

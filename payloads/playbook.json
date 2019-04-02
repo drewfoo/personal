@@ -1,0 +1,37 @@
+{ 
+    "_id": "ObjectID()",
+    "key": "overview",
+    "name": "Agile Delivery Playbook",
+    "heading": "The Way to Play Agile",
+    "summary": "Lorem Ipsum",
+    "section": [
+        {
+            "name" : "Lorem Ipsum",
+            "header" : "Lorem Ipsum",
+            "body" : "Lorem Ipsum",
+            "img" : "lorem.jpg",
+            "references" : [ "www.agile.org", "www.google.com"],
+            "list" : [ "A", "B", "C" ],
+            "faq" : [ ]
+        },
+        {
+            "name" : "Lorem Ipsum",
+            "header" : "Lorem Ipsum",
+            "body" : "Lorem Ipsum",
+            "img" : "lorem.jpg",
+            "references" : [ "www.agile.org", "www.google.com"],
+            "list" : [ "A", "B", "C" ],
+            "faq" : [
+                {
+                    "question" : "Lorem Ipsum",
+                    "answer" : "Lorem Ipsum"
+                },
+                {
+                    "question" : "Lorem Ipsum",
+                    "answer" : "Lorem Ipsum"
+                }
+            ]
+        }
+    ],
+    "plays": [ "ObjectID()", "ObjectID()", "ObjectID()" ]
+}
