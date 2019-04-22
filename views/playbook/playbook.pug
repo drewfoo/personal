@@ -32,3 +32,14 @@ block sections
                   .card-block.g-pa-15.g-pa-30--sm
                   each link in referenceLinks
                     p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{link}
+  if playContent.length
+    .card.g-brd-gray-light-v7.g-rounded-3.g-mb-30
+                header.card-header.g-brd-bottom-none.g-px-15.g-px-30--sm.g-pt-15.g-pt-20--sm.g-pb-10.g-pb-15--sm
+                  .media
+                    h3.d-flex.align-self-center.text-uppercase.g-font-size-12.g-font-size-default--md.g-color-black.g-mr-10.mb-0 Plays
+                    //- .media-body.d-flex.justify-content-end
+                    //-   a.hs-admin-panel.u-link-v5.g-font-size-20.g-color-gray-light-v3.g-color-secondary--hover(href='#!')
+                    //-   a.hs-admin-reload.u-link-v5.g-font-size-20.g-color-gray-light-v3.g-color-secondary--hover.g-ml-20(href='#!')
+                .card-block.g-pa-15.g-pa-30--sm
+                each plays in playContent
+                  p.g-font-weight-300.g-color-gray-dark-v6.mb-0 #{plays}
