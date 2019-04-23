@@ -1,5 +1,17 @@
 /*------------------------------------
-  Box Shadows
+  Box-shadows Styles
 ------------------------------------*/
 
-@import "box-shadow-v31";
+.u-shadow-none {
+  box-shadow: none !important;
+
+  &--focus:focus {
+    box-shadow: none !important;
+  }
+
+  &--parent-hover {
+    .g-parent:hover & {
+      box-shadow: none !important;
+    }
+  }
+}

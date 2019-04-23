@@ -18,6 +18,12 @@
 
     {% include "html/assets/include/nunjucks/partials/css/css-unify.njk" %}
     {% include "html/assets/include/nunjucks/partials/css/css-custom.njk" %}
+
+    <style>
+      .slick-list, slick-track, .slick-track {
+        height: 100%;
+      }
+    </style>
   </head>
 
   <body>
@@ -25,19 +31,19 @@
       {% include "html/assets/include/nunjucks/partials/blocks/headers/header-main.njk" %}
 
       <!-- Signup -->
-      <section class="clearfix">
-        <div class="row no-gutters align-items-center">
+      <section class="overflow-hidden">
+        <div class="row no-gutters">
           <div class="col-lg-6">
             <!-- Promo Block - Slider -->
-            <div class="js-carousel"
+            <div class="js-carousel h-100"
                  data-autoplay="true"
                  data-infinite="true"
                  data-fade="true"
                  data-speed="5000">
-              <div class="js-slide g-bg-img-hero g-min-height-100vh--lg" style="background-image: url({{ root }}assets/img-temp/900x900/img3.jpg);"
+              <div class="js-slide g-bg-img-hero h-100 g-min-height-50vh" style="background-image: url({{ root }}assets/img-temp/900x900/img3.jpg);"
                    data-calc-target="#js-header"></div>
 
-              <div class="js-slide g-bg-img-hero g-min-height-100vh--lg" style="background-image: url({{ root }}assets/img-temp/900x900/img4.jpg);"
+              <div class="js-slide g-bg-img-hero h-100 g-min-height-50vh" style="background-image: url({{ root }}assets/img-temp/900x900/img4.jpg);"
                    data-calc-target="#js-header"></div>
             </div>
             <!-- End Promo Block - Slider -->
@@ -91,7 +97,7 @@
                     <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
                       <i class="fa g-rounded-2" data-check-icon="&#xf00c"></i>
                     </div>
-                    I accept the <a href="#!">Terms and Conditions</a>
+                    I accept the <a href="#">Terms and Conditions</a>
                   </label>
                 </div>
 

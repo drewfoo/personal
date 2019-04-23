@@ -64,6 +64,8 @@
           setLayout = $this.data('layout'),
           setXGap = $this.data('x-gap'),
           setYGap = $this.data('y-gap'),
+          setLoadMoreAction = $this.data('action'),
+          setLoadMoreItems = $this.data('items'),
           setAnimation = $this.data('animation'),
           setCaptionAnimation = $this.data('caption-animation'),
           setDefaultMediaQueries = [{
@@ -110,6 +112,13 @@
           singlePageInlineDelegate: '.cbp-singlePageInline',
           singlePageInlinePosition: 'below',
           singlePageInlineInFocus: true,
+          plugins: {
+              loadMore: {
+                  element: '#js-cbp-loadMore',
+                  action: setLoadMoreAction,
+                  loadItems: setLoadMoreItems,
+              }
+          },
           singlePageInlineCallback: function (url, element) {
             // to update singlePageInline content use the following method: this.updateSinglePageInline(yourContent)
             var t = this;

@@ -5,7 +5,7 @@
 .u-input-group-v4 {
   position: relative;
 
-  input:not([type="checkbox"], [type="radio"]),
+  input:not([type="checkbox"]):not([type="radio"]),
   textarea,
   [class*="u-select"] {
     background-color: transparent;

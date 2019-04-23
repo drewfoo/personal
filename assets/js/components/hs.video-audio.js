@@ -59,7 +59,8 @@
         //Variables
         var $videoAudio = el;
 
-        plyr.setup($videoAudio);
+        // plyr.setup($videoAudio);
+        const player = new Plyr($videoAudio);
 
         //Add object to collection
         collection = collection.add($videoAudio);

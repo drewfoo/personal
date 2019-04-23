@@ -157,6 +157,11 @@ router.get('/sitemap', mid.requiresLogIn, function(req, res) {
     res.render('sitemap', {title : "Sitemap"});
 });
 
+// Sitemap Route
+router.get('/test', mid.requiresLogIn, function(req, res) {
+    res.render('test', {title : "test"});
+});
+
 module.exports = router;
 
 

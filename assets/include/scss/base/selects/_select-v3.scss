@@ -7,12 +7,12 @@
   border: 1px solid;
 
   &-select {
-    .divider {
+    .dropdown-divider {
       border-top: 1px solid $g-color-gray-light-v7;
     }
 
     .dropdown-toggle {
-      background: none;
+      background: none !important;
       color: inherit;
       border: none;
       @include px-to-rem(padding, 10px 40px 10px 20px);
@@ -37,8 +37,8 @@
       }
     }
 
-    .bs-caret {
-      display: none;
+    .check-mark {
+      display: none !important;
     }
 
     .bs-searchbox {
@@ -83,38 +83,43 @@
         box-shadow: 0 2px 15px 0 rgba($g-color-black, .1);
         @include px-to-rem(margin-top, 10px);
         margin-left: -1px;
-      }
 
-      &[role="listbox"] {
-        li {
-          &.hidden {
-            display: none;
+        [role="listbox"] {
+          li {
+            &.hidden {
+              display: none;
+            }
           }
-        }
 
-        a {
-          display: flex;
-          align-items: center;
-          color: $g-color-gray-dark-v6;
-          white-space: nowrap;
-          @include px-to-rem(min-height, 48px);
-          @include px-to-rem(padding, 0 20px !important);
-
-          i {
-            color: $g-color-gray-dark-v9;
-          }
-        }
-
-        li:hover,
-        li.active {
           a {
-            text-decoration: none;
-            background-color: $g-color-gray-light-v8;
-            color: $g-color-black;
+            display: flex;
+            align-items: center;
+            color: $g-color-gray-dark-v6;
+            white-space: nowrap;
+            @include px-to-rem(min-height, 48px);
+            @include px-to-rem(padding, 0 20px !important);
 
             i {
               color: $g-color-gray-dark-v9;
             }
+          }
+
+          li:hover,
+          li.active {
+            a {
+              text-decoration: none;
+              background-color: $g-color-gray-light-v8;
+              color: $g-color-black;
+
+              i {
+                color: $g-color-gray-dark-v9;
+              }
+            }
+          }
+
+          .text {
+            display: block;
+            width: 100%;
           }
         }
       }

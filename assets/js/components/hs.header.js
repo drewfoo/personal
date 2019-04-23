@@ -37,7 +37,8 @@
 
       if( !element || element.length !== 1 || element.data('HSHeader')) return;
 
-      var self = this;
+      var self = this,
+       windowW = window.innerWidth;
 
       this.element = element;
       this.config = $.extend(true, {}, this._baseConfig, element.data());
@@ -62,13 +63,30 @@
 
             element
               .data('HSHeader')
-              .checkViewport()
-              .update();
+              .checkViewport();
 
           }, 100 );
 
         })
         .trigger('scroll.uHeader');
+
+
+      $(window).on('resize.uHeader', function () {
+        if (window.innerWidth === windowW) return;
+
+        windowW = window.innerWidth;
+
+        if( self.resizeTimeOutId ) clearTimeout( self.resizeTimeOutId );
+
+        self.resizeTimeOutId = setTimeout( function(){
+
+          element
+            .data('HSHeader')
+            .update();
+
+        }, 100 );
+
+      });
 
       return this.element;
 

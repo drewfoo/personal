@@ -3,7 +3,7 @@
 ------------------------------------*/
 
 .u-input-group-v3 {
-  input:not([type="checkbox"], [type="radio"]),
+  input:not([type="checkbox"]):not([type="radio"]),
   textarea,
   [class*="u-select"] {
     margin-top: -5px;

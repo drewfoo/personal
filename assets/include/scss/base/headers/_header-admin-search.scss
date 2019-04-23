@@ -4,7 +4,7 @@
 .u-header--search {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 0 !important;
   // width: calc(100% - 10px);
   width: 100%;
   background-color: $g-color-darkblue-v3;

@@ -1,5 +1,5 @@
 /**
- * Dropdown component.
+ * Dropdown Content component.
  *
  * @author Htmlstream
  * @version 1.0
@@ -25,7 +25,10 @@
       dropdownHideOnScroll: true,
       dropdownHideOnBlur: false,
       dropdownDelay: 350,
+      dropdownOpenedElement: 'init',
       afterOpen: function (invoker) {
+      },
+      beforeClose: function (invoker) {
       },
       afterClose: function (invoker) {
       }
@@ -61,7 +64,7 @@
 
         var $this = $(el), itemConfig;
 
-        if ($this.data('HSDropDown')) return;
+        if ($this.data('HSDropdown')) return;
 
         itemConfig = config && $.isPlainObject(config) ?
           $.extend(true, {}, self._baseConfig, config, $this.data()) :
@@ -71,93 +74,76 @@
 
           case 'css-animation' :
 
-            $this.data('HSDropDown', new DropdownCSSAnimation($this, itemConfig));
+            $this.data('HSDropdown', new DropdownCSSAnimation($this, itemConfig));
 
             break;
 
           case 'jquery-slide' :
 
-            $this.data('HSDropDown', new DropdownJSlide($this, itemConfig));
+            $this.data('HSDropdown', new DropdownJSlide($this, itemConfig));
 
             break;
 
           default :
 
-            $this.data('HSDropDown', new DropdownSimple($this, itemConfig));
+            $this.data('HSDropdown', new DropdownSimple($this, itemConfig));
 
         }
 
         self._pageCollection = self._pageCollection.add($this);
         self._bindEvents($this, itemConfig.dropdownEvent, itemConfig.dropdownDelay);
-        var DropDown = $(el).data('HSDropDown');
+        var UnFold = $(el).data('HSDropdown');
 
-        fieldsQty = $(DropDown.target).find('input, textarea').length;
+        fieldsQty = $(UnFold.target).find('input, textarea').length;
 
-      });
+        if ($(UnFold.target).find('[data-dropdown-target]').length) {
 
-      $(document).on('keyup.HSDropDown', function (e) {
-
-        if (e.keyCode && e.keyCode == 27) {
-
-          self._pageCollection.each(function (i, el) {
-
-            var windW = $(window).width(),
-              optIsMobileOnly = Boolean($(el).data('is-mobile-only'));
-
-            if (!optIsMobileOnly) {
-              $(el).data('HSDropDown').hide();
-            } else if (optIsMobileOnly && windW < 769) {
-              $(el).data('HSDropDown').hide();
-            }
-
-          });
+          $this.addClass('target-of-invoker-has-dropdowns');
 
         }
 
       });
 
-      $(window).on('click', function (e) {
+      $(document).on('click touchstart', 'body', function (e) {
+
+        if (e.target.id == self._baseConfig.dropdownOpenedElement) return;
+
+        if ($(e.target).closest('#' + self._baseConfig.dropdownOpenedElement).length) return;
 
         self._pageCollection.each(function (i, el) {
 
-          var windW = $(window).width(),
+          var windW = window.innerWidth,
             optIsMobileOnly = Boolean($(el).data('is-mobile-only'));
 
           if (!optIsMobileOnly) {
-            $(el).data('HSDropDown').hide();
+
+            $(el).data('HSDropdown').hide();
+
           } else if (optIsMobileOnly && windW < 769) {
-            $(el).data('HSDropDown').hide();
+
+            $(el).data('HSDropdown').hide();
+
           }
 
-        });
-
-      });
-
-      self._pageCollection.each(function (i, el) {
-
-        var target = $(el).data('HSDropDown').config.dropdownTarget;
-
-        $(target).on('click', function(e) {
-
-          e.stopPropagation();
+          $(el).data('HSDropdown').config.beforeClose.call(self.target, self.element);
 
         });
 
       });
 
-      $(window).on('scroll.HSDropDown', function (e) {
+      $(window).on('scroll.HSDropdown', function () {
 
         self._pageCollection.each(function (i, el) {
 
-          var DropDown = $(el).data('HSDropDown');
+          var UnFold = $(el).data('HSDropdown');
 
-          if (DropDown.getOption('dropdownHideOnScroll') && fieldsQty === 0) {
+          if (UnFold.getOption('dropdownHideOnScroll') && fieldsQty === 0) {
 
-            DropDown.hide();
+            UnFold.hide();
 
-          } else if (DropDown.getOption('dropdownHideOnScroll') && !(/iPhone|iPad|iPod/i.test(navigator.userAgent))) {
+          } else if (UnFold.getOption('dropdownHideOnScroll') && !(/iPhone|iPad|iPod/i.test(navigator.userAgent))) {
 
-            DropDown.hide();
+            UnFold.hide();
 
           }
 
@@ -165,7 +151,7 @@
 
       });
 
-      $(window).on('resize.HSDropDown', function (e) {
+      $(window).on('resize.HSDropdown', function () {
 
         if (self._resizeTimeOutId) clearTimeout(self._resizeTimeOutId);
 
@@ -173,13 +159,27 @@
 
           self._pageCollection.each(function (i, el) {
 
-            var DropDown = $(el).data('HSDropDown');
+            var UnFold = $(el).data('HSDropdown');
 
-            DropDown.smartPosition(DropDown.target);
+            UnFold.smartPosition(UnFold.target);
 
           });
 
         }, 50);
+
+      });
+
+      $(document).on('keydown.HSDropdown', function (e) {
+
+        if ($('body').hasClass('u-dropdown-opened')) {
+
+          if (e.keyCode && e.keyCode === 38 || e.keyCode && e.keyCode === 40) {
+
+            e.preventDefault();
+
+          }
+
+        }
 
       });
 
@@ -197,32 +197,34 @@
      */
     _bindEvents: function ($invoker, eventType, delay) {
 
-      var $dropdown = $($invoker.data('dropdown-target'));
+      var self = this,
+        $dropdown = $($invoker.data('dropdown-target'));
 
-      // if (eventType == 'hover' && !_isTouch()) {
-      if (eventType == 'hover') {
+      if (eventType === 'hover' && !_isTouch()) {
 
-        $invoker.on('mouseenter.HSDropDown', function (e) {
+        $invoker.on('mouseenter.HSDropdown', function () {
 
           var $invoker = $(this),
-            HSDropDown = $invoker.data('HSDropDown');
+            HSDropdown = $invoker.data('HSDropdown');
 
-          if (!HSDropDown) return;
+          if (!HSDropdown) return;
 
-          if (HSDropDown.dropdownTimeOut) clearTimeout(HSDropDown.dropdownTimeOut);
-          HSDropDown.show();
+          if (HSDropdown.dropdownTimeOut) clearTimeout(HSDropdown.dropdownTimeOut);
+          HSDropdown.show();
+          $('body').addClass('u-dropdown-opened');
 
         })
-          .on('mouseleave.HSDropDown', function (e) {
+          .on('mouseleave.HSDropdown', function () {
 
             var $invoker = $(this),
-              HSDropDown = $invoker.data('HSDropDown');
+              HSDropdown = $invoker.data('HSDropdown');
 
-            if (!HSDropDown) return;
+            if (!HSDropdown) return;
 
-            HSDropDown.dropdownTimeOut = setTimeout(function () {
+            HSDropdown.dropdownTimeOut = setTimeout(function () {
 
-              HSDropDown.hide();
+              HSDropdown.hide();
+              $('body').removeClass('u-dropdown-opened');
 
             }, delay);
 
@@ -230,44 +232,75 @@
 
         if ($dropdown.length) {
 
-          $dropdown.on('mouseenter.HSDropDown', function (e) {
+          $dropdown.on('mouseenter.HSDropdown', function () {
 
-            var HSDropDown = $invoker.data('HSDropDown');
+            var HSDropdown = $invoker.data('HSDropdown');
 
-            if (HSDropDown.dropdownTimeOut) clearTimeout(HSDropDown.dropdownTimeOut);
-            HSDropDown.show();
+            if (HSDropdown.dropdownTimeOut) clearTimeout(HSDropdown.dropdownTimeOut);
+            HSDropdown.show();
 
           })
-            .on('mouseleave.HSDropDown', function (e) {
+            .on('mouseleave.HSDropdown', function () {
 
-              var HSDropDown = $invoker.data('HSDropDown');
+              var HSDropdown = $invoker.data('HSDropdown');
 
-              HSDropDown.dropdownTimeOut = setTimeout(function () {
-                HSDropDown.hide();
+              HSDropdown.dropdownTimeOut = setTimeout(function () {
+                HSDropdown.hide();
               }, delay);
 
             });
         }
 
-      }
-      else {
+      } else {
 
-        $invoker.on('click.HSDropDown', function (e) {
+        $invoker.on('click.HSDropdown', function (e) {
 
-          var $curInvoker = $(this);
+          var $curInvoker = $(this),
+            $dropdownNotHasInnerDropdowns = $('[data-dropdown-target].active:not(.target-of-invoker-has-dropdowns)'),
+            $dropdownHasInnerDropdown = $('[data-dropdown-target].active.target-of-invoker-has-dropdowns');
 
-          if (!$curInvoker.data('HSDropDown')) return;
+          self._baseConfig.dropdownOpenedElement = $curInvoker.data('HSDropdown').target[0].id;
 
-          if ($('[data-dropdown-target].active').length) {
-            $('[data-dropdown-target].active').data('HSDropDown').toggle();
+          if (!$curInvoker.data('HSDropdown')) return;
+
+          if (!$curInvoker.hasClass('target-of-invoker-has-dropdowns')) {
+
+            if ($dropdownNotHasInnerDropdowns.length) {
+
+              $dropdownNotHasInnerDropdowns.data('HSDropdown').toggle();
+
+            }
+
+          } else {
+
+            if ($dropdownHasInnerDropdown.length) {
+
+              $dropdownHasInnerDropdown.data('HSDropdown').toggle();
+
+            }
+
           }
 
-          $curInvoker.data('HSDropDown').toggle();
+          $curInvoker.data('HSDropdown').toggle();
 
           e.stopPropagation();
+
           e.preventDefault();
 
         });
+
+        if (Boolean($invoker.data('dropdown-target-is-menu'))) {
+
+          var $target = $($invoker.data('dropdown-target')),
+            $targetItems = $target.children();
+
+          $targetItems.on('click', function() {
+
+            $invoker.data('HSDropdown').toggle();
+
+          });
+
+        }
 
       }
 
@@ -301,8 +334,7 @@
 
       if (this.defaultState) {
         this.show();
-      }
-      else {
+      } else {
         this.hide();
       }
 
@@ -318,7 +350,7 @@
         );
       }
 
-      target.removeClass('u-dropdown--reverse-y');
+      // target.removeClass('u-dropdown--reverse-y');
 
       var $w = $(window),
         styles = getComputedStyle(target.get(0)),
@@ -326,7 +358,7 @@
         targetOuterGeometry = target.offset();
 
       // horizontal axis
-      if (direction == 'right') {
+      if (direction === 'right') {
 
         if (!target.data('baseDirection')) target.data('baseDirection', {
           direction: 'right',
@@ -337,13 +369,12 @@
 
           target.css(
             'right',
-            (parseInt(target.css('right'), 10) - (targetOuterGeometry.left - 10 )) * -1
+            (parseInt(target.css('right'), 10) - (targetOuterGeometry.left - 10)) * -1
           );
 
         }
 
-      }
-      else {
+      } else {
 
         if (!target.data('baseDirection')) target.data('baseDirection', {
           direction: 'left',
@@ -363,7 +394,9 @@
 
       // vertical axis
       if (targetOuterGeometry.top + target.outerHeight() - $w.scrollTop() > $w.height()) {
-        target.addClass('u-dropdown--reverse-y');
+
+        // target.addClass('u-dropdown--reverse-y');
+
       }
 
     };
@@ -398,7 +431,7 @@
   }
 
   /**
-   * Shows dropdown.
+   * Shows Dropdown.
    *
    * @public
    * @return {DropdownSimple}
@@ -416,10 +449,10 @@
     this.config.afterOpen.call(this.target, this.element);
 
     return this;
-  }
+  };
 
   /**
-   * Hides dropdown.
+   * Hides Dropdown.
    *
    * @public
    * @return {DropdownSimple}
@@ -435,7 +468,7 @@
     this.config.afterClose.call(this.target, this.element);
 
     return this;
-  }
+  };
 
   /**
    * DropdownCSSAnimation constructor.
@@ -464,6 +497,7 @@
       this.target.on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function (e) {
 
         if (self.target.hasClass(self.config.dropdownAnimationOut)) {
+
           self.target.removeClass(self.config.dropdownAnimationOut)
             .addClass('u-dropdown--hidden');
 
@@ -488,7 +522,7 @@
   }
 
   /**
-   * Shows dropdown.
+   * Shows Dropdown.
    *
    * @public
    * @return {DropdownCSSAnimation}
@@ -505,10 +539,10 @@
       .removeClass(this.config.dropdownAnimationOut)
       .addClass(this.config.dropdownAnimationIn);
 
-  }
+  };
 
   /**
-   * Hides dropdown.
+   * Hides Dropdown.
    *
    * @public
    * @return {DropdownCSSAnimation}
@@ -522,7 +556,7 @@
     this.target.removeClass(this.config.dropdownAnimationIn)
       .addClass(this.config.dropdownAnimationOut);
 
-  }
+  };
 
   /**
    * DropdownSlide constructor.
@@ -544,7 +578,7 @@
   }
 
   /**
-   * Shows dropdown.
+   * Shows Dropdown.
    *
    * @public
    * @return {DropdownJSlide}
@@ -567,10 +601,10 @@
       }
     });
 
-  }
+  };
 
   /**
-   * Hides dropdown.
+   * Hides Dropdown.
    *
    * @public
    * @return {DropdownJSlide}
@@ -583,7 +617,7 @@
 
     $('[data-dropdown-target="' + activeEls + '"]').removeClass('active');
 
-    this.target.stop().slideUp({
+    this.target.slideUp({
       duration: self.config.dropdownDuration,
       easing: self.config.dropdownEasing,
       complete: function () {

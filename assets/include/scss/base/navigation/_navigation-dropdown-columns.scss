@@ -5,7 +5,10 @@
 @media (min-width: $g-lg) {
 	[class*="u-dropdown-col-"] {
 		column-gap: 1px;
-		column-rule: 1px solid $g-color-gray-light-v5;
+
+		.hs-sub-menu-opened & {
+			column-rule: 1px solid $g-color-gray-light-v5;
+		}
 
 		& > * {
 			min-width: 200px;

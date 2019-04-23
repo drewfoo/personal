@@ -5,7 +5,7 @@
 .u-input-group-v1 {
   position: relative;
 
-  input:not([type="checkbox"], [type="radio"]),
+  input:not([type="checkbox"]):not([type="radio"]),
   textarea,
   [class*="u-select"] {
     line-height: 1.75rem;

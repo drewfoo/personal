@@ -1,1474 +1,512 @@
 /*------------------------------------
   Colors
 ------------------------------------*/
+/* Basic Colors
+------------------------------------*/
+/* Inherit Colors */
+.g-color-inherit {
+  color: inherit !important;
+}
 
-.g-color {
-  /* Primary Color */
-  &-primary {
-    &--hover:hover,
-    &--focus:focus,
-    &--disabled:disabled,
-    &--active.active,
-    &--opened[aria-expanded="true"] {
+/* Main Colors */
+.g-color-main {
+  color: $g-color-main !important;
+
+  &--hover:hover {
+    color: $g-color-main !important;
+  }
+}
+
+/* Primary Colors */
+.g-color-primary {
+  color: $g-color-primary !important;
+
+  .u-block-hover:hover &--hover,
+  &--hover:hover {
+    color: $g-color-primary !important;
+  }
+
+  &--parent-hover {
+    .g-parent:hover & {
       color: $g-color-primary !important;
     }
+  }
 
-    &--checked {
-      input[type="checkbox"]:checked + &,
-      input[type="checkbox"]:checked + * + & {
-        color: $g-color-primary !important;
-      }
+  &-opacity {
+    &-0_3 {
+      color: rgba($g-color-primary, .3) !important;
     }
 
-    &--parent-hover {
-      .g-parent:hover & {
-        color: $g-color-primary !important;
-      }
-    }
-
-    &--parent-active {
-      .g-parent.active & {
-        color: $g-color-primary !important;
-      }
-    }
-
-    &--sibling-opened {
-      .u-sibling.opened + & {
-        color: $g-color-primary !important;
-      }
+    &-0_4 {
+      color: rgba($g-color-primary, .4) !important;
     }
   }
 
-  /* Secondary Color */
-  &-secondary {
-    &--hover:hover,
-    &--focus:focus,
-    &--disabled:disabled,
-    &--active.active,
-    &--opened[aria-expanded="true"] {
+  &--active.active {
+    color: $g-color-primary !important;
+  }
+
+  &--parent-active {
+    .active & {
+      color: $g-color-primary !important;
+    }
+  }
+
+  //Pseudo-elements color // Z
+  &--before::before,
+  &--after::after {
+    color: $g-color-primary;
+  }
+}
+
+/* Secondary Colors */
+.g-color-secondary {
+  color: $g-color-secondary !important;
+
+  .u-block-hover:hover &--hover,
+  &--hover:hover {
+    color: $g-color-secondary !important;
+  }
+
+  &--parent-hover {
+    .g-parent:hover & {
       color: $g-color-secondary !important;
     }
+  }
+}
 
-    &--checked {
-      input[type="checkbox"]:checked + &,
-      input[type="checkbox"]:checked + * + & {
-        color: $g-color-secondary !important;
-      }
-    }
+/* Black Colors */
+.g-color-black {
+  color: $g-color-black !important;
 
-    &--parent-hover {
-      .g-parent:hover & {
-        color: $g-color-secondary !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-black !important;
+  }
 
-    &--parent-active {
-      .g-parent.active & {
-        color: $g-color-secondary !important;
-      }
-    }
-
-    &--sibling-opened {
-      .u-sibling.opened + & {
-        color: $g-color-secondary !important;
-      }
+  &--parent-hover {
+    .g-parent:hover & {
+      color: $g-color-black !important;
     }
   }
 
-  /* Gray Colors */
-  &-gray {
-    // Gray Light
-    &-light {
-      &-v6 {
-        color: $g-color-gray-light-v6 !important;
+  &--active.active {
+    color: $g-color-black !important;
+  }
 
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-light-v6 !important;
-        }
+  &-opacity {
+    &-0_1 {
+      color: rgba($g-color-black, .1) !important;
+    }
+    &-0_3 {
+      color: rgba($g-color-black, .3) !important;
+    }
+    &-0_5 {
+      color: rgba($g-color-black, .5) !important;
+    }
+    &-0_6 {
+      color: rgba($g-color-black, .6) !important;
+    }
+    &-0_7 {
+      color: rgba($g-color-black, .7) !important;
+    }
+    &-0_8 {
+      color: rgba($g-color-black, .8) !important;
 
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-light-v6 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-light-v6 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-light-v6 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-light-v6 !important;
-          }
-        }
-      }
-
-      &-v7 {
-        color: $g-color-gray-light-v7 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-light-v7 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-light-v7 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-light-v7 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-light-v7 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-light-v7 !important;
-          }
-        }
-      }
-
-      &-v8 {
-        color: $g-color-gray-light-v8 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-light-v8 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-light-v8 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-light-v8 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-light-v8 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-light-v8 !important;
-          }
-        }
-      }
-
-      &-v9 {
-        color: $g-color-gray-light-v9 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-light-v9 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-light-v9 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-light-v9 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-light-v9 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-light-v9 !important;
-          }
-        }
-      }
-
-      &-v11 {
-        color: $g-color-gray-light-v11 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-light-v11 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-light-v11 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-light-v11 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-light-v11 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-light-v11 !important;
-          }
+      &--child {
+        * {
+          color: rgba($g-color-black, .8) !important;
         }
       }
     }
+    &-0_9 {
+      color: rgba($g-color-black, .9) !important;
+    }
+  }
+}
 
-    // Gray Dark
-    &-dark {
-      &-v6 {
-        color: $g-color-gray-dark-v6 !important;
+/* White Colors */
+.g-color-white {
+  color: $g-color-white !important;
 
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-dark-v6 !important;
-        }
+  &--opened-menu:not(.collapsed) {
+    color: $g-color-white !important;
+  }
 
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-dark-v6 !important;
-          }
-        }
+  .u-block-hover:hover &--hover,
+  &--hover:hover {
+    color: $g-color-white !important;
+  }
 
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-dark-v6 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-dark-v6 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-dark-v6 !important;
-          }
-        }
-      }
-
-      &-v7 {
-        color: $g-color-gray-dark-v7 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-dark-v7 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-dark-v7 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-dark-v7 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-dark-v7 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-dark-v7 !important;
-          }
-        }
-      }
-
-      &-v8 {
-        color: $g-color-gray-dark-v8 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-dark-v8 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-dark-v8 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-dark-v8 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-dark-v8 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-dark-v8 !important;
-          }
-        }
-      }
-
-      &-v9 {
-        color: $g-color-gray-dark-v9 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-dark-v9 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-dark-v9 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-dark-v9 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-dark-v9 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-dark-v9 !important;
-          }
-        }
-      }
-
-      &-v10 {
-        color: $g-color-gray-dark-v10 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-dark-v10 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-dark-v10 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-dark-v10 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-dark-v10 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-dark-v10 !important;
-          }
-        }
-      }
-
-      &-v11 {
-        color: $g-color-gray-dark-v11 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-dark-v11 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-dark-v11 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-dark-v11 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-dark-v11 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-dark-v11 !important;
-          }
-        }
-      }
-
-      &-v12 {
-        color: $g-color-gray-dark-v12 !important;
-
-        &--hover:hover,
-        &--focus:focus,
-        &--disabled:disabled,
-        &--active.active,
-        &--opened[aria-expanded="true"] {
-          color: $g-color-gray-dark-v12 !important;
-        }
-
-        &--checked {
-          input[type="checkbox"]:checked + &,
-          input[type="checkbox"]:checked + * + & {
-            color: $g-color-gray-dark-v12 !important;
-          }
-        }
-
-        &--parent-hover {
-          .g-parent:hover & {
-            color: $g-color-gray-dark-v12 !important;
-          }
-        }
-
-        &--parent-active {
-          .g-parent.active & {
-            color: $g-color-gray-dark-v12 !important;
-          }
-        }
-
-        &--sibling-opened {
-          .u-sibling.opened + & {
-            color: $g-color-gray-dark-v12 !important;
-          }
-        }
-      }
+  &--parent-hover {
+    .g-parent:hover & {
+      color: $g-color-white !important;
     }
   }
 
-  /* Lightblue Colors */
-  &-lightblue {
+  &--active.active {
+    color: $g-color-white !important;
+  }
+
+  &--parent-active {
+    .active & {
+      color: $g-color-white !important;
+    }
+  }
+
+  &--child {
+    * {
+      color: $g-color-white !important;
+    }
+  }
+
+  &-opacity {
+    &-0_1 {
+      color: rgba($g-color-white, .1) !important;
+    }
+    &-0_2 {
+      color: rgba($g-color-white, .2) !important;
+    }
+    &-0_3 {
+      color: rgba($g-color-white, .3) !important;
+    }
+    &-0_5,
+    &-0_5--hover:hover {
+      color: rgba($g-color-white, .5) !important;
+    }
+    &-0_6 {
+      color: rgba($g-color-white, .6) !important;
+
+      &--parent-hover {
+        .g-parent:hover & {
+          color: rgba($g-color-white, .6) !important;
+        }
+      }
+    }
+    &-0_7,
+    &-0_7--hover:hover {
+      color: rgba($g-color-white, .7) !important;
+    }
+    &-0_75 {
+      color: rgba($g-color-white, .75) !important;
+    }
+    &-0_8 {
+      color: rgba($g-color-white, .8) !important;
+
+      &--child {
+        * {
+          color: rgba($g-color-white, .8) !important;
+        }
+      }
+    }
+    &-0_9,
+    &-0_9--hover:hover {
+      color: rgba($g-color-white, .9) !important;
+    }
+  }
+}
+
+.u-block-hover:hover .g-color-white-opacity-0_7--hover {
+  color: rgba($g-color-white, .7) !important;
+}
+
+/* Gray Colors */
+.g-color-gray {
+  // Gray Light
+  &-light {
+    &-v1 {
+      color: $g-color-gray-light-v1 !important;
+
+      &--hover:hover {
+        color: $g-color-gray-light-v1 !important;
+      }
+    }
     &-v2 {
-      color: $g-color-lightblue-v2 !important;
+      color: $g-color-gray-light-v2 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightblue-v2 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightblue-v2 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightblue-v2 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightblue-v2 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightblue-v2 !important;
-        }
+      &--hover:hover {
+        color: $g-color-gray-light-v2 !important;
       }
     }
-
     &-v3 {
-      color: $g-color-lightblue-v3 !important;
+      color: $g-color-gray-light-v3 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightblue-v3 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightblue-v3 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightblue-v3 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightblue-v3 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightblue-v3 !important;
-        }
+      &--hover:hover {
+        color: $g-color-gray-light-v3 !important;
       }
     }
-
     &-v4 {
-      color: $g-color-lightblue-v4 !important;
+      color: $g-color-gray-light-v4 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightblue-v4 !important;
+      &--hover:hover {
+        color: $g-color-gray-light-v4 !important;
       }
 
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightblue-v4 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightblue-v4 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightblue-v4 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightblue-v4 !important;
+      &-opacity {
+        &-0_6 {
+          color: rgba($g-color-gray-light-v4, .6) !important;
         }
       }
     }
-
     &-v5 {
-      color: $g-color-lightblue-v5 !important;
+      color: $g-color-gray-light-v5 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightblue-v5 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightblue-v5 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightblue-v5 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightblue-v5 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightblue-v5 !important;
-        }
-      }
-    }
-
-    &-v6 {
-      color: $g-color-lightblue-v6 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightblue-v6 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightblue-v6 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightblue-v6 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightblue-v6 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightblue-v6 !important;
-        }
-      }
-    }
-
-    &-v9 {
-      color: $g-color-lightblue-v9 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightblue-v9 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightblue-v9 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightblue-v9 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightblue-v9 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightblue-v9 !important;
-        }
+      &--hover:hover {
+        color: $g-color-gray-light-v5 !important;
       }
     }
   }
 
-  /* Darkblue Colors */
-  &-darkblue {
+  // Gray Dark
+  &-dark {
+    &-v1 {
+      color: $g-color-gray-dark-v1 !important;
+
+      &--hover:hover {
+        color: $g-color-gray-dark-v1 !important;
+      }
+    }
     &-v2 {
-      color: $g-color-darkblue-v2 !important;
+      color: $g-color-gray-dark-v2 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v2 !important;
+      &--hover:hover {
+        color: $g-color-gray-dark-v2 !important;
       }
 
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v2 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-darkblue-v2 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v2 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v2 !important;
+      &-opacity {
+        &-0_75 {
+          color: rgba($g-color-gray-dark-v2, .75) !important;
         }
       }
     }
-
     &-v3 {
-      color: $g-color-darkblue-v3 !important;
+      color: $g-color-gray-dark-v3 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v3 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v3 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-darkblue-v3 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v3 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v3 !important;
-        }
+      &--hover:hover {
+        color: $g-color-gray-dark-v3 !important;
       }
     }
-
     &-v4 {
-      color: $g-color-darkblue-v4 !important;
+      color: $g-color-gray-dark-v4 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v4 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v4 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-darkblue-v4 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v4 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v4 !important;
-        }
+      &--hover:hover {
+        color: $g-color-gray-dark-v4 !important;
       }
     }
-
     &-v5 {
-      color: $g-color-darkblue-v5 !important;
+      color: $g-color-gray-dark-v5 !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v5 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v5 !important;
-        }
+      &--hover:hover {
+        color: $g-color-gray-dark-v5 !important;
       }
 
       &--parent-hover {
         .g-parent:hover & {
-          color: $g-color-darkblue-v5 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v5 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v5 !important;
-        }
-      }
-    }
-
-    &-v6 {
-      color: $g-color-darkblue-v6 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v6 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v6 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-darkblue-v6 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v6 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v6 !important;
-        }
-      }
-    }
-
-    &-v7 {
-      color: $g-color-darkblue-v7 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v7 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v7 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-darkblue-v7 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v7 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v7 !important;
-        }
-      }
-    }
-
-    &-v8 {
-      color: $g-color-darkblue-v8 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v8 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v8 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-darkblue-v8 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v8 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v8 !important;
-        }
-      }
-    }
-
-    &-v9 {
-      color: $g-color-darkblue-v9 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-darkblue-v9 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-darkblue-v9 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-darkblue-v9 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-darkblue-v9 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-darkblue-v9 !important;
+          color: $g-color-gray-dark-v5 !important;
         }
       }
     }
   }
+}
 
-  /* Teal Colors */
-  &-teal {
-    &-v2 {
-      color: $g-color-teal-v2 !important;
+/* Complementary Colors
+------------------------------------*/
+/* Color Green */
+.g-color-green {
+  color: $g-color-green !important;
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-teal-v2 !important;
-      }
+  &--hover:hover {
+    color: $g-color-green !important;
+  }
+}
 
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-teal-v2 !important;
-        }
-      }
+/* Color Blue */
+.g-color-blue {
+  color: $g-color-blue !important;
 
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-teal-v2 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-teal-v2 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-teal-v2 !important;
-        }
-      }
-    }
-
-    &-v3 {
-      color: $g-color-teal-v3 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-teal-v3 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-teal-v3 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-teal-v3 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-teal-v3 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-teal-v3 !important;
-        }
-      }
-    }
+  &--hover:hover {
+    color: $g-color-blue !important;
   }
 
-  /* Green Colors */
-  &-green {
-    &-v2 {
-      color: $g-color-green-v2 !important;
+  &-dark-v1 {
+    color: $g-color-blue-dark-v1 !important; // Z
+  }
+}
 
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-green-v2 !important;
-      }
+/* Color Light Blue */
+.g-color-lightblue {
+  color: $g-color-lightblue !important;
 
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-green-v2 !important;
-        }
-      }
+  &--hover:hover {
+    color: $g-color-lightblue !important;
+  }
+}
 
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-green-v2 !important;
-        }
-      }
+.g-color-lightblue-v1 {
+  color: $g-color-lightblue-v1 !important;
 
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-green-v2 !important;
-        }
-      }
+  &--hover:hover {
+    color: $g-color-lightblue-v1 !important;
+  }
+}
 
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-green-v2 !important;
-        }
-      }
-    }
+/* Color Dark Blue */
+.g-color-darkblue {
+  color: $g-color-darkblue !important;
+
+  &--hover:hover {
+    color: $g-color-darkblue !important;
+  }
+}
+
+/* Color Indigo */
+.g-color-indigo {
+  color: $g-color-indigo !important;
+
+  &--hover:hover {
+    color: $g-color-indigo !important;
+  }
+}
+
+/* Color Red */
+.g-color-red {
+  color: $g-color-red !important;
+
+  &--hover:hover {
+    color: $g-color-red !important;
   }
 
-  /* Lightred Colors */
-  &-lightred {
-    &-v2 {
-      color: $g-color-lightred-v2 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightred-v2 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightred-v2 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightred-v2 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightred-v2 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightred-v2 !important;
-        }
-      }
-    }
-
-    &-v3 {
-      color: $g-color-lightred-v3 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightred-v3 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightred-v3 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightred-v3 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightred-v3 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightred-v3 !important;
-        }
-      }
-    }
-
-    &-v4 {
-      color: $g-color-lightred-v4 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightred-v4 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightred-v4 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightred-v4 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightred-v4 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightred-v4 !important;
-        }
-      }
-    }
-
-    &-v5 {
-      color: $g-color-lightred-v5 !important;
-
-      &--hover:hover,
-      &--focus:focus,
-      &--disabled:disabled,
-      &--active.active,
-      &--opened[aria-expanded="true"] {
-        color: $g-color-lightred-v5 !important;
-      }
-
-      &--checked {
-        input[type="checkbox"]:checked + &,
-        input[type="checkbox"]:checked + * + & {
-          color: $g-color-lightred-v5 !important;
-        }
-      }
-
-      &--parent-hover {
-        .g-parent:hover & {
-          color: $g-color-lightred-v5 !important;
-        }
-      }
-
-      &--parent-active {
-        .g-parent.active & {
-          color: $g-color-lightred-v5 !important;
-        }
-      }
-
-      &--sibling-opened {
-        .u-sibling.opened + & {
-          color: $g-color-lightred-v5 !important;
-        }
-      }
+  &--parent-hover {
+    *:hover > & {
+      color: $g-color-red !important;
     }
   }
+}
 
-  /* Pink Colors */
-  &-pink-v2 {
-    color: $g-color-pink-v2 !important;
+/* Color Light Red */
+.g-color-lightred {
+  color: $g-color-lightred !important;
 
-    &--hover:hover,
-    &--focus:focus,
-    &--disabled:disabled,
-    &--active.active,
-    &--opened[aria-expanded="true"] {
-      color: $g-color-pink-v2 !important;
-    }
+  &--hover:hover {
+    color: $g-color-lightred !important;
+  }
+}
 
-    &--checked {
-      input[type="checkbox"]:checked + &,
-      input[type="checkbox"]:checked + * + & {
-        color: $g-color-pink-v2 !important;
-      }
-    }
+/* Color Dark Red */
+.g-color-darkred {
+  color: $g-color-darkred !important;
 
-    &--parent-hover {
-      .g-parent:hover & {
-        color: $g-color-pink-v2 !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-darkred !important;
+  }
+}
 
-    &--parent-active {
-      .g-parent.active & {
-        color: $g-color-pink-v2 !important;
-      }
-    }
+/* Color Purple */
+.g-color-purple {
+  color: $g-color-purple;
 
-    &--sibling-opened {
-      .u-sibling.opened + & {
-        color: $g-color-pink-v2 !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-purple !important;
   }
 
-  /* Lightbrown Colors */
-  &-lightbrown {
-    color: $g-color-lightbrown !important;
+  &-dark-v1 {
+    color: $g-color-purple-dark-v1 !important; // Z
+  }
+}
 
-    &--hover:hover,
-    &--focus:focus,
-    &--disabled:disabled,
-    &--active.active,
-    &--opened[aria-expanded="true"] {
-      color: $g-color-lightbrown !important;
-    }
+/* Color Dark Purple */
+.g-color-darkpurple {
+  color: $g-color-darkpurple !important;
 
-    &--checked {
-      input[type="checkbox"]:checked + &,
-      input[type="checkbox"]:checked + * + & {
-        color: $g-color-lightbrown !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-darkpurple !important;
+  }
+}
 
-    &--parent-hover {
-      .g-parent:hover & {
-        color: $g-color-lightbrown !important;
-      }
-    }
+/* Color Pink */
+.g-color-pink {
+  color: $g-color-pink;
 
-    &--parent-active {
-      .g-parent.active & {
-        color: $g-color-lightbrown !important;
-      }
-    }
-
-    &--sibling-opened {
-      .u-sibling.opened + & {
-        color: $g-color-lightbrown !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-pink !important;
   }
 
-  /* Lightyellow Colors */
-  &-lightyellow {
-    color: $g-color-lightyellow !important;
+  &-dark-v1 {
+    color: $g-color-pink-dark-v1 !important; // Z
+  }
+}
 
-    &--hover:hover,
-    &--focus:focus,
-    &--disabled:disabled,
-    &--active.active,
-    &--opened[aria-expanded="true"] {
-      color: $g-color-lightyellow !important;
-    }
+/* Color Orange */
+.g-color-orange {
+  color: $g-color-orange !important;
 
-    &--checked {
-      input[type="checkbox"]:checked + &,
-      input[type="checkbox"]:checked + * + & {
-        color: $g-color-lightyellow !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-orange !important;
+  }
+}
 
-    &--parent-hover {
-      .g-parent:hover & {
-        color: $g-color-lightyellow !important;
-      }
-    }
+/* Color Deep Orange */
+.g-color-deeporange {
+  color: $g-color-deeporange !important;
 
-    &--parent-active {
-      .g-parent.active & {
-        color: $g-color-lightyellow !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-deeporange !important;
+  }
+}
 
-    &--sibling-opened {
-      .u-sibling.opened + & {
-        color: $g-color-lightyellow !important;
-      }
-    }
+/* Color Yellow */
+.g-color-yellow {
+  color: $g-color-yellow !important;
+
+  &--hover:hover {
+    color: $g-color-yellow !important;
+  }
+}
+
+/* Color Aqua */
+.g-color-aqua {
+  color: $g-color-aqua;
+
+  &--hover:hover {
+    color: $g-color-aqua !important;
   }
 
-  /* Dropbox Colors */
-  &-dropbox {
-    color: $g-color-dropbox !important;
+  &-dark-v1 {
+    color: $g-color-aqua-dark-v1 !important; // Z
+  }
+}
 
-    &--hover:hover,
-    &--focus:focus,
-    &--disabled:disabled,
-    &--active.active,
-    &--opened[aria-expanded="true"] {
-      color: $g-color-dropbox !important;
-    }
+/* Color Cyan */
+.g-color-cyan {
+  color: $g-color-cyan !important;
 
-    &--checked {
-      input[type="checkbox"]:checked + &,
-      input[type="checkbox"]:checked + * + & {
-        color: $g-color-dropbox !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-cyan !important;
+  }
+}
 
-    &--parent-hover {
-      .g-parent:hover & {
-        color: $g-color-dropbox !important;
-      }
-    }
+/* Color Teal */
+.g-color-teal {
+  color: $g-color-teal !important;
 
-    &--parent-active {
-      .g-parent.active & {
-        color: $g-color-dropbox !important;
-      }
-    }
+  &--hover:hover {
+    color: $g-color-teal !important;
+  }
+}
 
-    &--sibling-opened {
-      .u-sibling.opened + & {
-        color: $g-color-dropbox !important;
-      }
-    }
+/* Color Brown */
+.g-color-brown {
+  color: $g-color-brown !important;
+
+  &--hover:hover {
+    color: $g-color-brown !important;
+  }
+}
+
+/* Color Blue Gray */
+.g-color-bluegray {
+  color: $g-color-bluegray !important;
+
+  &--hover:hover {
+    color: $g-color-bluegray !important;
   }
 }

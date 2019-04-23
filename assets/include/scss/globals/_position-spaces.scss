@@ -50,8 +50,16 @@
   @include px-to-rem(top, 10px !important);
 }
 
+.g-top-12 {
+  @include px-to-rem(top, 12px !important);
+}
+
 .g-top-15 {
   @include px-to-rem(top, 15px);
+}
+
+.g-top-18 {
+  @include px-to-rem(top, 18px);
 }
 
 .g-top-20 {
@@ -338,6 +346,10 @@
 
 .g-right-10 {
   @include px-to-rem(right, 10px !important);
+}
+
+.g-right-12 {
+  @include px-to-rem(right, 12px !important);
 }
 
 .g-right-14 {

@@ -5,7 +5,11 @@
  * @version 1.0
  *
  */
-var isEmpty = f => /^function[^{]+\{\s*\}/m.test(f.toString());
+
+var isEmpty = function isEmpty(f) {
+  return (/^function[^{]+\{\s*\}/m.test(f.toString())
+  );
+};
 
 ;(function ($) {
   'use strict';
@@ -47,7 +51,7 @@ var isEmpty = f => /^function[^{]+\{\s*\}/m.test(f.toString());
       if (!$(selector).length) return;
 
       this.config = config && $.isPlainObject(config) ?
-          $.extend({}, this._baseConfig, config) : this._baseConfig;
+        $.extend({}, this._baseConfig, config) : this._baseConfig;
 
       this.config.itemSelector = selector;
 
@@ -60,8 +64,8 @@ var isEmpty = f => /^function[^{]+\{\s*\}/m.test(f.toString());
     initRangeSlider: function () {
       //Variables
       var $self = this,
-          config = $self.config,
-          collection = $self.pageCollection;
+        config = $self.config,
+        collection = $self.pageCollection;
 
       //Actions
       this.collection.each(function (i, el) {
@@ -76,8 +80,8 @@ var isEmpty = f => /^function[^{]+\{\s*\}/m.test(f.toString());
         $this.ionRangeSlider({
           hide_min_max: config.hide_min_max,
           hide_from_to: config.hide_from_to,
-          onStart: isEmpty(config.onStart) == true ? function(data) {
-            if(graphForegroundTarget) {
+          onStart: isEmpty(config.onStart) === true ? function (data) {
+            if (graphForegroundTarget) {
               var w = (100 - (data.from_percent + (100 - data.to_percent)));
 
               $(graphForegroundTarget).css({
@@ -91,39 +95,39 @@ var isEmpty = f => /^function[^{]+\{\s*\}/m.test(f.toString());
               });
             }
 
-            if(minResult && type == 'single') {
-              if($(minResult).is('input')) {
+            if (minResult && type === 'single') {
+              if ($(minResult).is('input')) {
                 $(minResult).val(data.from);
               } else {
                 $(minResult).text(data.from);
               }
-            } else if(minResult || maxResult && type == 'double') {
-              if($(minResult).is('input')) {
+            } else if (minResult || maxResult && type === 'double') {
+              if ($(minResult).is('input')) {
                 $(minResult).val(data.from);
               } else {
                 $(minResult).text(data.from);
               }
 
-              if($(minResult).is('input')) {
+              if ($(minResult).is('input')) {
                 $(maxResult).val(data.to);
               } else {
                 $(maxResult).text(data.to);
               }
             }
 
-            if(hasGrid && type == 'single') {
-              $(data.slider).find('.irs-grid-text').each(function(i) {
+            if (hasGrid && type === 'single') {
+              $(data.slider).find('.irs-grid-text').each(function (i) {
                 var current = $(this);
 
-                if($(current).text() == data.from) {
+                if ($(current).text() === data.from) {
                   $(data.slider).find('.irs-grid-text').removeClass('current');
                   $(current).addClass('current');
                 }
               });
             }
           } : config.onStart,
-          onChange: isEmpty(config.onChange) == true ? function(data) {
-            if(graphForegroundTarget) {
+          onChange: isEmpty(config.onChange) === true ? function (data) {
+            if (graphForegroundTarget) {
               var w = (100 - (data.from_percent + (100 - data.to_percent)));
 
               $(graphForegroundTarget).css({
@@ -137,68 +141,113 @@ var isEmpty = f => /^function[^{]+\{\s*\}/m.test(f.toString());
               });
             }
 
-            if(minResult && type == 'single') {
-              if($(minResult).is('input')) {
+            if (minResult && type === 'single') {
+              if ($(minResult).is('input')) {
                 $(minResult).val(data.from);
               } else {
                 $(minResult).text(data.from);
               }
-            } else if(minResult || maxResult && type == 'double') {
-              if($(minResult).is('input')) {
+            } else if (minResult || maxResult && type === 'double') {
+              if ($(minResult).is('input')) {
                 $(minResult).val(data.from);
               } else {
                 $(minResult).text(data.from);
               }
 
-              if($(minResult).is('input')) {
+              if ($(minResult).is('input')) {
                 $(maxResult).val(data.to);
               } else {
                 $(maxResult).text(data.to);
               }
             }
 
-            if(hasGrid && type == 'single') {
-              $(data.slider).find('.irs-grid-text').each(function(i) {
+            if (hasGrid && type === 'single') {
+              $(data.slider).find('.irs-grid-text').each(function (i) {
                 var current = $(this);
 
-                if($(current).text() == data.from) {
+                if ($(current).text() === data.from) {
                   $(data.slider).find('.irs-grid-text').removeClass('current');
                   $(current).addClass('current');
                 }
               });
             }
           } : config.onChange,
-          onFinish: isEmpty(config.onFinish) == true ? function(data) {} : config.onFinish,
-          onUpdate: isEmpty(config.onUpdate) == true ? function(data) {} : config.onUpdate
+          onFinish: isEmpty(config.onFinish) === true ? function (data) {} : config.onFinish,
+          onUpdate: isEmpty(config.onUpdate) === true ? function (data) {
+            if (graphForegroundTarget) {
+              var w = (100 - (data.from_percent + (100 - data.to_percent)));
+
+              $(graphForegroundTarget).css({
+                left: data.from_percent + '%',
+                width: w + '%'
+              });
+
+              $(graphForegroundTarget + '> *').css({
+                width: $(graphForegroundTarget).parent().width(),
+                'transform': 'translateX(-' + data.from_percent + '%)'
+              });
+            }
+
+            if (minResult && type === 'single') {
+              if ($(minResult).is('input')) {
+                $(minResult).val(data.from);
+              } else {
+                $(minResult).text(data.from);
+              }
+            } else if (minResult || maxResult && type === 'double') {
+              if ($(minResult).is('input')) {
+                $(minResult).val(data.from);
+              } else {
+                $(minResult).text(data.from);
+              }
+
+              if ($(minResult).is('input')) {
+                $(maxResult).val(data.to);
+              } else {
+                $(maxResult).text(data.to);
+              }
+            }
+
+            if (hasGrid && type === 'single') {
+              $(data.slider).find('.irs-grid-text').each(function (i) {
+                var current = $(this);
+
+                if ($(current).text() === data.from) {
+                  $(data.slider).find('.irs-grid-text').removeClass('current');
+                  $(current).addClass('current');
+                }
+              });
+            }
+          } : config.onUpdate
         });
 
         var slider = $this.data('ionRangeSlider');
 
-        if(minResult && type == 'single' && $(minResult).is('input')) {
-          $(minResult).on('change', function() {
+        if (minResult && type === 'single' && $(minResult).is('input')) {
+          $(minResult).on('change', function () {
             slider.update({
               from: $(this).val()
             });
           });
-        } else if(minResult || maxResult && type == 'double' && $(minResult).is('input') || $(maxResult).is('input')) {
-          $(minResult).on('change', function() {
+        } else if (minResult || maxResult && type === 'double' && $(minResult).is('input') || $(maxResult).is('input')) {
+          $(minResult).on('change', function () {
             slider.update({
               from: $(this).val()
             });
           });
-          $(maxResult).on('change', function() {
+          $(maxResult).on('change', function () {
             slider.update({
               to: $(this).val()
             });
           });
         }
 
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
           $(graphForegroundTarget + '> *').css({
             width: ''
           });
 
-          setTimeout(function() {
+          setTimeout(function () {
             $(graphForegroundTarget + '> *').css({
               width: $(graphForegroundTarget).parent().width()
             });

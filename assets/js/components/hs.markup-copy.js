@@ -74,7 +74,7 @@
           e.preventDefault();
         });
 
-        new Clipboard(el, {
+        new ClipboardJS(el, {
           text: function (button) {
             //Variables
             var target = $(button).data('content-target');

@@ -8,9 +8,9 @@
     display: inline-block;
 
     input {
-      width: 100% !important;
       color: $g-color-gray-dark-v6;
       border: none;
+      outline: none;
     }
 
     .flatpickr-calendar {
@@ -156,7 +156,7 @@
       &.selected.nextMonthDay,
       &.startRange.nextMonthDay,
       &.endRange.nextMonthDay {
-        background-color: $g-color-white;
+        background-color: $g-color-gray-light-v8;
         color: $g-color-black;
         border-color: $g-color-lightred-v2;
         border-radius: 50%;
@@ -190,12 +190,20 @@
         background-color: $g-color-gray-light-v8;
       }
 
-      &.startRange::after {
-        right: -1px;
+      &.startRange {
+        right: 1px;
+
+        &::after {
+          right: -1px;
+        }
       }
 
-      &.endRange::before {
-        left: -1px;
+      &.endRange {
+        left: 1px;
+
+        &::before {
+          left: -1px;
+        }
       }
     }
   }

@@ -3,16 +3,17 @@
 ------------------------------------*/
 
 .u-select--v1 {
-  line-height: 1;
   position: relative;
+  line-height: 1;
 
   &-select {
     .dropdown-toggle {
       display: flex;
       line-height: 1;
-      background: none;
+      background: none !important;
       border: none;
       padding: 0;
+      top: -5px;
 
       &::after {
         content: "";
@@ -26,8 +27,8 @@
       }
     }
 
-    .bs-caret {
-      display: none;
+    .check-mark {
+      display: none !important;
     }
 
     .dropdown-menu {
@@ -36,23 +37,27 @@
         box-shadow: 0 10px 15px 0 rgba($g-color-black, .1);
         @include px-to-rem(margin-top, 10px);
         @include px-to-rem(margin-left, -10px);
-      }
 
-      &[role="listbox"] {
-        a {
-          display: flex;
-          align-items: center;
-          white-space: nowrap;
-          @include px-to-rem(min-height, 50px);
-          @include px-to-rem(padding, 0 25px);
+        [role="listbox"] {
+          a {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            @include px-to-rem(min-height, 50px);
+            @include px-to-rem(padding, 0 25px);
 
-          &:hover {
-            text-decoration: none;
-            background-color: $g-color-gray-light-v8;
+            &:hover {
+              text-decoration: none;
+              background-color: $g-color-gray-light-v8;
+            }
           }
         }
       }
     }
+  }
+
+  .filter-option {
+    position: static !important;
   }
 }
 
@@ -64,11 +69,11 @@
           min-width: calc(100% + 60px);
           @include px-to-rem(margin-top, 25px);
           @include px-to-rem(margin-left, -30px);
-        }
 
-        &[role="listbox"] {
-          a {
-            @include px-to-rem(padding, 0 30px);
+          [role="listbox"] {
+            a {
+              @include px-to-rem(padding, 0 30px);
+            }
           }
         }
       }
