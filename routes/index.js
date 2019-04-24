@@ -135,7 +135,7 @@ router.post('/register', function(req,res,next){
 
 // Homepage Route
 router.get('/', function(req, res){
-    res.render('layout', {title : "HEY", message : "This is the main index.js page"});
+    res.render('index', {title : "HEY", message : "This is the main index.js page"});
 });
 
 // GET /logout

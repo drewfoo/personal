@@ -58,6 +58,8 @@ header#js-header.u-header.u-header--sticky-top
           button.btn.u-btn-outline-primary.g-brd-none.g-bg-transparent--hover.g-pos-abs.g-top-0.g-right-0.d-flex.g-width-40.h-100.align-items-center.justify-content-center.g-font-size-18.g-z-index-2(type='submit')
             i.hs-admin-search
       // End Top Search Bar
+      form(action='/logout')
+        button.btn.btn-md.u-btn-primary.rounded.g-py-13.g-px-25(type='submit') Logout
       // Messages/Notifications/Top Search Bar/Top User
       .col-auto.d-flex.g-py-12.g-pl-40--lg.ml-auto
         // Top Messages
@@ -982,6 +984,8 @@ main.container-fluid.px-0.g-pt-65
     .col.g-ml-45.g-ml-0--lg.g-pb-65--md
       .g-pa-20
         .row
+          block content
+          block register
             
 // JS Global Compulsory
 script(src='/vendor/jquery/jquery.min.js')
