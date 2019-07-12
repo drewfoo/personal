@@ -2,20 +2,20 @@
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
-// {} also the same thing as saying googleapis.google; desctructing assignment
+// {} is the same thing as saying googleapis.google; desctructing assignment
 
 // if modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
-// the file token.json stores the user's access and refresh tokens, and is created automaitcally when the auth flow completes for the first time below
+// the file token.json stores the user's access and refresh tokens, and is created automatically when the auth flow completes for the first time below
 const TOKEN_PATH = 'token.json';
 
 // load client secrets from a local file.
-// readFile method looks at credentials.jso to get the credentials object to pass through the function code block
+// readFile method looks at credentials.json to get the credentials object to pass through the function code block which is to call the authorize function and pass through the contnet, and listlabels as a call back function
 fs.readFile('credentials.json', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
-    // Authorize a client with credentials, then call the Gmail API.
     authorize(JSON.parse(content), listLabels);
 });
+
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
