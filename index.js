@@ -1,21 +1,20 @@
-// setting required modules
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
-// {} is the same thing as saying googleapis.google; desctructing assignment
 
-// if modifying these scopes, delete token.json.
+// If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
-// the file token.json stores the user's access and refresh tokens, and is created automatically when the auth flow completes for the first time below
+// The file token.json stores the user's access and refresh tokens, and is
+// created automatically when the authorization flow completes for the first
+// time.
 const TOKEN_PATH = 'token.json';
 
-// load client secrets from a local file.
-// readFile method looks at credentials.json to get the credentials object to pass through the function code block which is to call the authorize function and pass through the contnet, and listlabels as a call back function
+// Load client secrets from a local file.
 fs.readFile('credentials.json', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
+    // Authorize a client with credentials, then call the Gmail API.
     authorize(JSON.parse(content), listLabels);
 });
-
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -24,9 +23,11 @@ fs.readFile('credentials.json', (err, content) => {
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials, callback) {
+    // eslint-disable-next-line camelcase
     const { client_secret, client_id, redirect_uris } = credentials.installed;
     const oAuth2Client = new google.auth.OAuth2(
-        client_id, client_secret, redirect_uris[0]);
+        client_id, client_secret, redirect_uris[0]
+    );
 
     // Check if we have previously stored a token.
     fs.readFile(TOKEN_PATH, (err, token) => {
