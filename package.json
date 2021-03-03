@@ -28,7 +28,7 @@
         "kerberos": "^1.0.0",
         "mongodb": "^3.1.7",
         "mongoose": "^5.3.8",
-        "pug": "^2.0.3"
+        "pug": "^3.0.1"
     },
     "devDependencies": {
         "eslint": "^5.9.0",
